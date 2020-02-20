@@ -12,5 +12,6 @@ public class CameraMiniMap : MonoBehaviour
     void FixedUpdate()
     {
         transform.position = trans.position  - offset; 
+        
     }
 }

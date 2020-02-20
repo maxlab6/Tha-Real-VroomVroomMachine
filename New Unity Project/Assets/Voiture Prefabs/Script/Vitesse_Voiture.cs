@@ -12,7 +12,7 @@ public class Vitesse_Voiture : MonoBehaviour
     {
         vitesseKMH = Controle_Voiture.vitesse;
 
-        txtVitesse.GetComponent<Text>().text = vitesseKMH.ToString("0") + "Km/h";
+        txtVitesse.text = vitesseKMH.ToString("0") + " Km/h";
 
     }
 
