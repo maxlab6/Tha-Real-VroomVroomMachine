@@ -49,7 +49,7 @@ public class Controle_Voiture : MonoBehaviour
 
     }
 
-
+    
     void FixedUpdate()
     {
         vitesse = (rb.velocity.magnitude) * 3.6f;
@@ -202,6 +202,7 @@ public class Controle_Voiture : MonoBehaviour
     }
     void Update()
     {
+        WheelHit hit;
 
         //changing tyre direction
         Vector3 temp = Wheel_Transformation_FL.localEulerAngles;
@@ -217,6 +218,9 @@ public class Controle_Voiture : MonoBehaviour
         Change_Position_Roue(Wheel_Collider_RL, Wheel_Transformation_RL);
         Change_Position_Roue(Wheel_Collider_RR, Wheel_Transformation_RR);
 
+        rb.AddForce(1000 * Vector3.up);
+        
+        Debug.Log(Wheel_Collider_FL.GetGroundHit(out hit));
     }
 
 
