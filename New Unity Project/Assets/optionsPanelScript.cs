@@ -8,7 +8,6 @@ public class optionsPanelScript : MonoBehaviour
 {
     public AudioMixer mixer1;
 
-    float sliderValue = GameObject.Find("MusicSlider").GetComponent<Slider>().value;
     public void SetMusicVolume(float sliderValue)
     {
 
