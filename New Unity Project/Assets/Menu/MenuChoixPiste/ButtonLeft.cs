@@ -5,26 +5,34 @@ using UnityEngine.UI;
 
 public class MouvementImage : MonoBehaviour
 {
-    public Sprite spritePiste1;
-    public Sprite spritePiste2;
-    public Sprite spritePiste3;
-    public Image imagePiste1;
-    public Image imagePiste2;
-    public Image imagePiste3;
+    /*public Sprite spritePisteC;
+    public Sprite spritePisteG;
+    public Sprite spritePisteD;
+    public GameObject gOPisteC;
+    public GameObject gOPisteG;
+    public GameObject gOPisteD;*/
+    public List<GameObject> listGO = new List<GameObject>;
+
+    public List listComparaison = new ArrayList();
+
+    void start()
+    {
+        listSprite.Add(".../Assets/Menu/MenuChoixPiste.Annotation 2020-02-24 101500.png");
+    }
 
     void Update()
     {
-        if (this.gameObject.GetComponent<SpriteRenderer>().sprite == spritePiste1)
-        {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = spritePiste2;
-        }
-        if (this.gameObject.GetComponent<SpriteRenderer>().sprite == spritePiste2)
-        {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = spritePiste3;
-        }
-        if (this.gameObject.GetComponent<SpriteRenderer>().sprite == spritePiste3)
-        {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = spritePiste1;
-        }
+        gOPisteC = GameObject.FindGameObjectWithTag("Image");
+        spritePisteC = gOPisteC.GetComponent<Sprite>();
+        //spritePisteC.texture.EncodeToPNG().Equals(listSprite.)
+
+        gOPisteG = GameObject.FindGameObjectWithTag("Image1");
+        spritePisteG = gOPisteG.GetComponent<Sprite>();
+
+        gOPisteD = GameObject.FindGameObjectWithTag("Image2");
+        spritePisteD = gOPisteD.GetComponent<Sprite>();
+
+        gOPisteC.
+
     }
 }
