@@ -6,8 +6,10 @@ public class Temps : MonoBehaviour
 {
 
     public Text tempsTxt;
+    private float temps;
+    
 
-    private float heure, minute, seconde;
+    private float heure, minute, seconde, miliseconde;
 
     void Start()
     {
@@ -17,9 +19,13 @@ public class Temps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        seconde = (int)(Time.deltaTime % 60f);
-        minute = (int)(Time.deltaTime / 60f);
-        heure = (int)(Time.deltaTime / 360f);
-        tempsTxt.text = heure.ToString() + " : " + minute.ToString() + " : " + seconde.ToString();
+        temps +=  Time.deltaTime;
+        miliseconde = temps % 100f;
+        seconde =  (temps % 60f) % 100;
+        minute = (int) (temps / 60f);
+
+        tempsTxt.text = minute.ToString("00") + " : " + seconde.ToString("00.00")/* + miliseconde.ToString()*/;
+        
+        
     }
 }
