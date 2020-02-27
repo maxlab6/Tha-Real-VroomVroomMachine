@@ -10,8 +10,6 @@ public class optionsPanelScript : MonoBehaviour
 
     public void SetMusicVolume(float sliderValue)
     {
-
         mixer1.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
-
     }
 }
