@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 2040786457591135758}
   - component: {fileID: 2040786457592134862}
   - component: {fileID: 2040786457596415150}
-  - component: {fileID: 2260507556633980634}
   m_Layer: 9
   m_Name: ModularTrackCantSmallRight
   m_TagString: Untagged
@@ -171,16 +170,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 52f3b50c1579446dfa7dac35f5ac2e0a, type: 3}
---- !u!114 &2260507556633980634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040786457590129166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1

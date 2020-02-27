@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 1579282987819372526}
   - component: {fileID: 1579282987820502318}
   - component: {fileID: 1579282987816156492}
-  - component: {fileID: 1644974464755198482}
   m_Layer: 9
   m_Name: ModularTrackStraight
   m_TagString: Untagged
@@ -171,16 +170,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300002, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
---- !u!114 &1644974464755198482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579282987822437358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
