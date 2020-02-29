@@ -2647,6 +2647,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1149713845089636424, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: maxTorque
+      value: 1000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149713845089636424, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: maxBrakeTorque
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149713845089636424, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: steeringAngle
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149713845089636425, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149713845089636425, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149713845089636425, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1149713845089636427, guid: 659527ff69c806e4585f075abd2987c0,
         type: 3}
       propertyPath: m_Name
@@ -2711,6 +2741,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733882757695036957, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 45000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733882757695036957, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733882757695036957, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733882758130295331, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 45000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733882758130295331, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733882758130295331, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733882759090239920, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 45000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733882759090239920, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733882759090239920, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733882759213344720, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 45000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733882759213344720, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733882759213344720, guid: 659527ff69c806e4585f075abd2987c0,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 659527ff69c806e4585f075abd2987c0, type: 3}
