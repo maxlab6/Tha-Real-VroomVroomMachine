@@ -28,8 +28,10 @@ public class Controle_Voiture : MonoBehaviour
     public float drift;
     public float hauteurReset;
 
-    public static float vitesse;
+    public float forceAntiFlip = 100;
 
+    public static float vitesse;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -234,5 +236,15 @@ public class Controle_Voiture : MonoBehaviour
         _transform.position = _pos;
         _transform.Rotate(Wheel_Collider_FL.rpm / 60 * 360 * Time.deltaTime, 0, 0);
 
+        ForceVersLeBas();
+
+    }
+
+    //Plus la voiture va vite, plus il y a un grande force d'appliquer sur la voiture pour
+    //l'empecher de se renverser
+    private void ForceVersLeBas()
+    {
+        Wheel_Collider_FL.attachedRigidbody.AddForce(-transform.up * forceAntiFlip *
+                                                     Wheel_Collider_FL.attachedRigidbody.velocity.magnitude);
     }
 }
