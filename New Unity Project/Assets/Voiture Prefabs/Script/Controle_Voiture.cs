@@ -25,6 +25,7 @@ public class Controle_Voiture : MonoBehaviour
     private Rigidbody rb;
     
     public float steeringAngle;
+    private float tempSteeringAngle;
     public float drift;
     public float hauteurReset;
 
@@ -197,9 +198,21 @@ public class Controle_Voiture : MonoBehaviour
             }
         }
 
+        if(vitesse < 50)
+        {
+            tempSteeringAngle = (-(Mathf.Abs(vitesse)/5) + steeringAngle);
+            Debug.Log(tempSteeringAngle);
+        }else
+        {
+            tempSteeringAngle = 15;
+            Debug.Log(tempSteeringAngle);
+        }
+        
 
-        Wheel_Collider_FL.steerAngle = steeringAngle * Input.GetAxis("Horizontal");
-        Wheel_Collider_FR.steerAngle = steeringAngle * Input.GetAxis("Horizontal");
+        Wheel_Collider_FL.steerAngle = tempSteeringAngle * Input.GetAxis("Horizontal");
+        Wheel_Collider_FR.steerAngle = tempSteeringAngle * Input.GetAxis("Horizontal");
+
+        
 
     }
     void Update()
@@ -220,9 +233,6 @@ public class Controle_Voiture : MonoBehaviour
         Change_Position_Roue(Wheel_Collider_RL, Wheel_Transformation_RL);
         Change_Position_Roue(Wheel_Collider_RR, Wheel_Transformation_RR);
 
-        rb.AddForce(1000 * Vector3.up);
-        
-        Debug.Log(Wheel_Collider_FL.GetGroundHit(out hit));
     }
 
 
