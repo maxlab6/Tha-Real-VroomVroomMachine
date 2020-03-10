@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -350,7 +350,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 276624857}
-        m_MethodName: OnClickD
+        m_MethodName: buttonD
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -404,9 +404,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 276624851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb2283a2cd340574aa87ff35bd97a9cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 1955b21114ebb5545a9746547ca134b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageC: {fileID: 416242356}
+  imageG: {fileID: 1206484147}
+  imageD: {fileID: 460281229}
+  spriteJ1: {fileID: 21300000, guid: 42cf041a6cd398147a660b2f93783be5, type: 3}
+  spriteJ2: {fileID: 21300000, guid: dff65e37376c1e64aa735007d8e638b9, type: 3}
+  spriteF1: {fileID: 21300000, guid: 61ca91095bd393447893b540d7c7b80e, type: 3}
+  compteur: 0
 --- !u!1 &416242354
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,8 +832,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: fb2283a2cd340574aa87ff35bd97a9cf, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 594236504}
+        m_MethodName: buttonG
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -880,9 +887,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 594236498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 275b8823016ce9c43a20acaf5de5a44f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1955b21114ebb5545a9746547ca134b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageC: {fileID: 416242356}
+  imageG: {fileID: 1206484147}
+  imageD: {fileID: 460281229}
+  spriteJ1: {fileID: 21300000, guid: 42cf041a6cd398147a660b2f93783be5, type: 3}
+  spriteJ2: {fileID: 21300000, guid: dff65e37376c1e64aa735007d8e638b9, type: 3}
+  spriteF1: {fileID: 21300000, guid: 61ca91095bd393447893b540d7c7b80e, type: 3}
+  compteur: 0
 --- !u!1 &774146879
 GameObject:
   m_ObjectHideFlags: 0
