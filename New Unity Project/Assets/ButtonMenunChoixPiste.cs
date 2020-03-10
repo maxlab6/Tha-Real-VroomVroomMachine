@@ -12,11 +12,13 @@ public class ButtonMenunChoixPiste : MonoBehaviour
     public Sprite spriteJ1;
     public Sprite spriteJ2;
     public Sprite spriteF1;
+    public Sprite spriteE1;
+    public Sprite spriteE2;
 
     public int compteur = 0;
-    public static int valMax = 2;
+    public static int valMax = 4;
 
-    public void buttonG()
+    public void buttonD()
     {
         if (compteur == 0)
         {
@@ -29,26 +31,38 @@ public class ButtonMenunChoixPiste : MonoBehaviour
 
         if (compteur == 0)
         {
-            imageC.overrideSprite = spriteF1;
             imageG.overrideSprite = spriteJ2;
+            imageC.overrideSprite = spriteF1;
             imageD.overrideSprite = spriteJ1;
         }
         if (compteur == 1)
         {
+            imageG.overrideSprite = spriteE1;
             imageC.overrideSprite = spriteJ2;
-            imageG.overrideSprite = spriteJ1;
             imageD.overrideSprite = spriteF1;
         }
         if (compteur == 2)
         {
-            imageC.overrideSprite = spriteJ1;
-            imageG.overrideSprite = spriteF1;
+            imageG.overrideSprite = spriteE2;
+            imageC.overrideSprite = spriteE1;
             imageD.overrideSprite = spriteJ2;
+        }
+        if (compteur == 3)
+        {
+            imageG.overrideSprite = spriteJ1;
+            imageC.overrideSprite = spriteE2;
+            imageD.overrideSprite = spriteE1;
+        }
+        if (compteur == 4)
+        {
+            imageG.overrideSprite = spriteF1;
+            imageC.overrideSprite = spriteJ1;
+            imageD.overrideSprite = spriteE2;
         }
 
     }
 
-    public void buttonD()
+    public void buttonG()
     {
         if (compteur == valMax)
         {
@@ -61,21 +75,33 @@ public class ButtonMenunChoixPiste : MonoBehaviour
 
         if (compteur == 0)
         {
-            imageC.overrideSprite = spriteF1;
             imageG.overrideSprite = spriteJ2;
+            imageC.overrideSprite = spriteF1;
             imageD.overrideSprite = spriteJ1;
         }
         if (compteur == 1)
         {
+            imageG.overrideSprite = spriteE1;
             imageC.overrideSprite = spriteJ2;
-            imageG.overrideSprite = spriteJ1;
             imageD.overrideSprite = spriteF1;
         }
         if (compteur == 2)
         {
-            imageC.overrideSprite = spriteJ1;
-            imageG.overrideSprite = spriteF1;
+            imageG.overrideSprite = spriteE2;
+            imageC.overrideSprite = spriteE1;
             imageD.overrideSprite = spriteJ2;
+        }
+        if (compteur == 3)
+        {
+            imageG.overrideSprite = spriteJ1;
+            imageC.overrideSprite = spriteE2;
+            imageD.overrideSprite = spriteE1;
+        }
+        if (compteur == 4)
+        {
+            imageG.overrideSprite = spriteF1;
+            imageC.overrideSprite = spriteJ1;
+            imageD.overrideSprite = spriteE2;
         }
 
     }

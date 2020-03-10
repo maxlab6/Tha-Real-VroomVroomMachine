@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1076,7 +1076,7 @@ GameObject:
   - component: {fileID: 343729262}
   - component: {fileID: 343729261}
   m_Layer: 5
-  m_Name: Image1
+  m_Name: ImageG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1339,7 +1339,7 @@ GameObject:
   - component: {fileID: 353492787}
   - component: {fileID: 353492786}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ImageC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1412,6 +1412,7 @@ GameObject:
   - component: {fileID: 442647428}
   - component: {fileID: 442647427}
   - component: {fileID: 442647426}
+  - component: {fileID: 442647430}
   m_Layer: 5
   m_Name: RightArrowButton
   m_TagString: Untagged
@@ -1490,7 +1491,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 442647428}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 442647430}
+        m_MethodName: buttonD
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &442647428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1526,6 +1538,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442647424}
   m_CullTransparentMesh: 0
+--- !u!114 &442647430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442647424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1955b21114ebb5545a9746547ca134b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageC: {fileID: 353492786}
+  imageG: {fileID: 343729261}
+  imageD: {fileID: 761767856}
+  spriteJ1: {fileID: 21300000, guid: 42cf041a6cd398147a660b2f93783be5, type: 3}
+  spriteJ2: {fileID: 21300000, guid: dff65e37376c1e64aa735007d8e638b9, type: 3}
+  spriteF1: {fileID: 21300000, guid: 61ca91095bd393447893b540d7c7b80e, type: 3}
+  spriteE1: {fileID: 21300000, guid: 0da8b29ddaa23f5428dffcab0df6c933, type: 3}
+  spriteE2: {fileID: 21300000, guid: 3f66c4a022bf5074e90a2c4239a27559, type: 3}
+  compteur: 0
 --- !u!1 &446099954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,7 +2401,7 @@ GameObject:
   - component: {fileID: 761767857}
   - component: {fileID: 761767856}
   m_Layer: 5
-  m_Name: Image2
+  m_Name: ImageD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2550,9 +2583,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 849501654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef80b3347a2ce9e4fb6a5dd8c4c44bf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1955b21114ebb5545a9746547ca134b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageC: {fileID: 353492786}
+  imageG: {fileID: 343729261}
+  imageD: {fileID: 761767856}
+  spriteJ1: {fileID: 21300000, guid: 42cf041a6cd398147a660b2f93783be5, type: 3}
+  spriteJ2: {fileID: 21300000, guid: dff65e37376c1e64aa735007d8e638b9, type: 3}
+  spriteF1: {fileID: 21300000, guid: 61ca91095bd393447893b540d7c7b80e, type: 3}
+  spriteE1: {fileID: 21300000, guid: 0da8b29ddaa23f5428dffcab0df6c933, type: 3}
+  spriteE2: {fileID: 21300000, guid: 3f66c4a022bf5074e90a2c4239a27559, type: 3}
+  compteur: 0
 --- !u!114 &849501657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2604,7 +2646,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 849501659}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 849501656}
+        m_MethodName: buttonG
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &849501659
 MonoBehaviour:
   m_ObjectHideFlags: 0
