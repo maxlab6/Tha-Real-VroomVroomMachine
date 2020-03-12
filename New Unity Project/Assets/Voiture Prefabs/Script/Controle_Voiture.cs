@@ -16,6 +16,8 @@ public class Controle_Voiture : MonoBehaviour
 
     private Rigidbody rb;
 
+    private WheelHit hit;
+
     private Vector3 orientation;
 
     public float maxBrakeTorque = 1000;
@@ -167,25 +169,17 @@ public class Controle_Voiture : MonoBehaviour
 
         if(Mathf.Abs(vitesse) < 50)
         {
-            tempSteeringAngle = (-(Mathf.Abs(vitesse)/5) + steeringAngle);
-            Debug.Log(tempSteeringAngle);
+            tempSteeringAngle = (-(Mathf.Abs(vitesse)/5) + steeringAngle);            
         }else
         {
             tempSteeringAngle = 15;
-            Debug.Log(tempSteeringAngle);
         }
         
-
         Wheel_Collider_FL.steerAngle = tempSteeringAngle * Input.GetAxis("Horizontal");
         Wheel_Collider_FR.steerAngle = tempSteeringAngle * Input.GetAxis("Horizontal");
-
-        
-
     }
     void Update()
     {
-        WheelHit hit;
-
         //changing tyre direction
         Vector3 temp = Wheel_Transformation_FL.localEulerAngles;
         Vector3 temp1 = Wheel_Transformation_FR.localEulerAngles;
@@ -198,7 +192,6 @@ public class Controle_Voiture : MonoBehaviour
         Change_Position_Roue(Wheel_Collider_FR, Wheel_Transformation_FR);
         Change_Position_Roue(Wheel_Collider_RL, Wheel_Transformation_RL);
         Change_Position_Roue(Wheel_Collider_RR, Wheel_Transformation_RR);
-
     }
 
 
@@ -223,4 +216,5 @@ public class Controle_Voiture : MonoBehaviour
         Wheel_Collider_FL.attachedRigidbody.AddForce(-transform.up * forceAntiFlip *
                                                      Wheel_Collider_FL.attachedRigidbody.velocity.magnitude);
     }
+
 }

@@ -11,8 +11,18 @@ public class Camera_Multiple : MonoBehaviour
     public Camera CameraConducteurArriere;
 
     private Vector3 CamPos;
+    public Vector3 PositionCameraPoursuiteAvancer;
+    public Vector3 RotationCameraPoursuiteAvancer;
 
-    private float orientation;
+    public Vector3 PositionCameraPoursuiteReculer;
+    public Vector3 RotationCameraPoursuiteReculer;
+
+    public Vector3 PositionCameraTop;
+    public Vector3 RotationCameraTop;
+
+    public float VitesseTransition;
+    public float VitesseChangementCamera;
+    private float VitesseVoiture;
 
     private bool CamTop;
     private bool CamChase;
@@ -34,9 +44,9 @@ public class Camera_Multiple : MonoBehaviour
         //Appel la fonction pour le choix de camera
         ChoixCamera();
 
-         //Détermine si le véhicule avance ou recule.
-         orientation = Controle_Voiture.vitesse;
-        
+        //Obtient la vitesse du Script Controle_Voiture
+        VitesseVoiture = Controle_Voiture.vitesse;
+
         if (CameraMultiple.enabled == true)
         {
             //Initialisation variable de rotation
@@ -45,33 +55,48 @@ public class Camera_Multiple : MonoBehaviour
             //Vérifie quelle caméra est active
             if (CamChase == true)
             {
-                if (orientation > -10f)
+
+                if (Input.GetKey(KeyCode.V))
+                {
+                    //Camera de poursuite reculon
+
+                    //Position de la camera
+                    CamPos.x = CarToFollow.position.x + (PositionCameraPoursuiteReculer.x * Mathf.Sin(CarToFollow.transform.eulerAngles.y * Mathf.PI / 180));
+                    CamPos.y = PositionCameraPoursuiteReculer.y + CarToFollow.position.y;
+                    CamPos.z = CarToFollow.position.z + (PositionCameraPoursuiteReculer.z * Mathf.Cos(CarToFollow.transform.eulerAngles.y * Mathf.PI / 180));
+
+                    //Rotation de la camera           
+                    rot.x = RotationCameraPoursuiteReculer.x;
+                    rot.y = RotationCameraPoursuiteReculer.y + CarToFollow.transform.localEulerAngles.y;
+                    rot.z = RotationCameraPoursuiteReculer.z;                    
+                }
+                else if (VitesseVoiture > VitesseChangementCamera)
                 {
                     //Camera de poursuite avancer
 
                     //Position de la camera
-                    CamPos.x = CarToFollow.position.x - (15f * Mathf.Sin(CarToFollow.transform.eulerAngles.y * Mathf.PI / 180));
-                    CamPos.y = 10f + CarToFollow.position.y;
-                    CamPos.z = CarToFollow.position.z - (15f * Mathf.Cos(CarToFollow.transform.eulerAngles.y * Mathf.PI / 180));
+                    CamPos.x = CarToFollow.position.x - (PositionCameraPoursuiteAvancer.x * Mathf.Sin(CarToFollow.transform.eulerAngles.y * Mathf.PI / 180));
+                    CamPos.y = PositionCameraPoursuiteAvancer.y + CarToFollow.position.y;
+                    CamPos.z = CarToFollow.position.z - (PositionCameraPoursuiteAvancer.z * Mathf.Cos(CarToFollow.transform.eulerAngles.y * Mathf.PI / 180));
 
                     //Rotation de la camera                               
-                    rot.x = 30f;
-                    rot.y = CarToFollow.transform.localEulerAngles.y;
-                    rot.z = 0;                
+                    rot.x = RotationCameraPoursuiteAvancer.x;
+                    rot.y = RotationCameraPoursuiteAvancer.y + CarToFollow.transform.localEulerAngles.y;
+                    rot.z = RotationCameraPoursuiteAvancer.z;
                 }
                 else
                 {
                     //Camera de poursuite reculon
 
                     //Position de la camera
-                    CamPos.x = CarToFollow.position.x + (15f * Mathf.Sin(CarToFollow.transform.eulerAngles.y * Mathf.PI / 180));
-                    CamPos.y = 10f + CarToFollow.position.y;
-                    CamPos.z = CarToFollow.position.z + (15f * Mathf.Cos(CarToFollow.transform.eulerAngles.y * Mathf.PI / 180));
+                    CamPos.x = CarToFollow.position.x + (PositionCameraPoursuiteReculer.x * Mathf.Sin(CarToFollow.transform.eulerAngles.y * Mathf.PI / 180));
+                    CamPos.y = PositionCameraPoursuiteReculer.y + CarToFollow.position.y;
+                    CamPos.z = CarToFollow.position.z + (PositionCameraPoursuiteReculer.z * Mathf.Cos(CarToFollow.transform.eulerAngles.y * Mathf.PI / 180));
 
                     //Rotation de la camera           
-                    rot.x = 30f;
-                    rot.y = CarToFollow.transform.localEulerAngles.y + 180;
-                    rot.z = 0;
+                    rot.x = RotationCameraPoursuiteReculer.x;
+                    rot.y = RotationCameraPoursuiteReculer.y + CarToFollow.transform.localEulerAngles.y;
+                    rot.z = RotationCameraPoursuiteReculer.z;
                 }
             }
             else if (CamTop == true)
@@ -79,24 +104,29 @@ public class Camera_Multiple : MonoBehaviour
                 //Camera avec une vue du haut.
 
                 //Position de la camera
-                CamPos.x = CarToFollow.position.x;
-                CamPos.y = 30f + CarToFollow.position.y;
-                CamPos.z = CarToFollow.position.z;
+                CamPos.x = CarToFollow.position.x + PositionCameraTop.x;
+                CamPos.y = CarToFollow.position.y + PositionCameraTop.y;
+                CamPos.z = CarToFollow.position.z + PositionCameraTop.z;
 
                 //Rotation de la camera           
-                rot.x = 90f;
-                rot.y = CarToFollow.transform.localEulerAngles.y;
-                rot.z = 0;
+                rot.x = RotationCameraTop.x;
+                rot.y = RotationCameraTop.y + CarToFollow.transform.localEulerAngles.y;
+                rot.z = RotationCameraTop.z; ;
             }
 
 
             //Attribue les valeurs défini à la position et la rotation.
-            transform.position = Vector3.Lerp(transform.position, CamPos, 8f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, CamPos, VitesseTransition * Time.deltaTime);
             transform.rotation = Quaternion.Euler(rot);
         }
         else if (CameraMultiple.enabled == false)
         {
-            if(orientation > -10f)
+            if (Input.GetKey(KeyCode.V))
+            {
+                CameraConducteurAvant.enabled = false;
+                CameraConducteurArriere.enabled = true;
+            }
+            else if(VitesseVoiture > VitesseChangementCamera)
             {
                 CameraConducteurAvant.enabled = true;
                 CameraConducteurArriere.enabled = false;
@@ -118,7 +148,7 @@ public class Camera_Multiple : MonoBehaviour
             CamChase = true;
             CamTop = false;
 
-            CameraMultiple.enabled = true;        
+            CameraMultiple.enabled = true;
             CameraConducteurAvant.enabled = false;
             CameraConducteurArriere.enabled = false;
         }
