@@ -74,6 +74,8 @@ public class Camera_Multiple : MonoBehaviour
                 {
                     //Camera de poursuite avancer
 
+                    //Camera de poursuite reculon
+
                     //Position de la camera
                     CamPos.x = CarToFollow.position.x - (PositionCameraPoursuiteAvancer.x * Mathf.Sin(CarToFollow.transform.eulerAngles.y * Mathf.PI / 180));
                     CamPos.y = PositionCameraPoursuiteAvancer.y + CarToFollow.position.y;
@@ -86,7 +88,7 @@ public class Camera_Multiple : MonoBehaviour
                 }
                 else
                 {
-                    //Camera de poursuite reculon
+                    //Camera de poursuite avancer
 
                     //Position de la camera
                     CamPos.x = CarToFollow.position.x + (PositionCameraPoursuiteReculer.x * Mathf.Sin(CarToFollow.transform.eulerAngles.y * Mathf.PI / 180));
