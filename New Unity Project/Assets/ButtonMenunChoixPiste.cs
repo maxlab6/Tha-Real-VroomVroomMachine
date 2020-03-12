@@ -17,9 +17,10 @@ public class ButtonMenunChoixPiste : MonoBehaviour
     public Sprite spriteE1;
     public Sprite spriteE2;
 
+    public static int compteur = 0;
     public static int valMax = 4;
 
-    public void buttonG()
+    public void buttonD()
     {
         if (getCompteur() == 0)
         {
@@ -36,7 +37,7 @@ public class ButtonMenunChoixPiste : MonoBehaviour
 
     }
 
-    public void buttonD()
+    public void buttonG()
     {
         if (getCompteur() == valMax)
         {
@@ -55,44 +56,46 @@ public class ButtonMenunChoixPiste : MonoBehaviour
 
     public void setCompteur(int c)
     {
-        GameObject.Find("GameObjectCompteur").GetComponent<scriptCompteur>().setCompteur(c);
+        //GameObject.Find("GameObjectCompteur").GetComponent<scriptCompteur>().setCompteur(c);
+        compteur = c;
     }
     public int getCompteur()
     {
-        return GameObject.Find("GameObjectCompteur").GetComponent<scriptCompteur>().getCompteur();
+        //return GameObject.Find("GameObjectCompteur").GetComponent<scriptCompteur>().getCompteur();
+        return compteur;
     }
 
     public void setImage(int c)
     {
-        if (c == 0)
+        switch (c)
         {
+            case 0:
             imageG.overrideSprite = spriteJ2;
             imageC.overrideSprite = spriteF1;
             imageD.overrideSprite = spriteJ1;
-        }
-        if (c == 1)
-        {
+                break;
+            case 1:
             imageG.overrideSprite = spriteE1;
             imageC.overrideSprite = spriteJ2;
             imageD.overrideSprite = spriteF1;
-        }
-        if (c == 2)
-        {
+                break;
+            case 2:
             imageG.overrideSprite = spriteE2;
             imageC.overrideSprite = spriteE1;
             imageD.overrideSprite = spriteJ2;
-        }
-        if (c == 3)
-        {
+                break;
+            case 3:
             imageG.overrideSprite = spriteJ1;
             imageC.overrideSprite = spriteE2;
             imageD.overrideSprite = spriteE1;
-        }
-        if (c == 4)
-        {
+                break;
+            case 4:
             imageG.overrideSprite = spriteF1;
             imageC.overrideSprite = spriteJ1;
             imageD.overrideSprite = spriteE2;
+                break;
+            default:
+                break;
         }
 
         
@@ -100,11 +103,25 @@ public class ButtonMenunChoixPiste : MonoBehaviour
 
     public void buttonChoisir()
     {
-        if (getCompteur() == 0)
+        int c = getCompteur();
+        switch (c)
         {
-            print("hold on");
-            SceneManager.LoadScene("PisteFelix", LoadSceneMode.Additive);
-            print("ca marche pas");
+            case 0:
+                SceneManager.LoadScene("PisteFelix", LoadSceneMode.Single);
+                break;
+
+            case 1:
+                SceneManager.LoadScene("PisteJoV2", LoadSceneMode.Single);
+                break;
+            case 2:
+                SceneManager.LoadScene("PisteÉlian1", LoadSceneMode.Single);
+                break;
+            case 3:
+                SceneManager.LoadScene("PisteÉlian2", LoadSceneMode.Single);
+                break;
+            case 4:
+                SceneManager.LoadScene("MapJo", LoadSceneMode.Single);
+                break;
         }
     }
 }
