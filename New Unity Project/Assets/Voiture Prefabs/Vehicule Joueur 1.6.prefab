@@ -527,7 +527,7 @@ RectTransform:
   - {fileID: 2234271091874499060}
   - {fileID: 8053883117465705056}
   m_Father: {fileID: 5386439857936161934}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3149,6 +3149,51 @@ TrailRenderer:
   m_MinVertexDistance: 0.3
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!1 &5894568847749424294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5627979890283262241}
+  - component: {fileID: 2681306543814465308}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5627979890283262241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5894568847749424294}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 32.700012, y: 13, z: -2.5899963}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5386439857936161934}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2681306543814465308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5894568847749424294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13eccbf199fe4884a93a83ba81c3e737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  retour: {fileID: 8053883117628440696}
+  paneau: {fileID: 8053883117465705063}
 --- !u!1 &6569457742076962162
 GameObject:
   m_ObjectHideFlags: 0
@@ -3159,7 +3204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5386439857936161934}
   m_Layer: 0
-  m_Name: Vehicule Joueur 1.5 1
+  m_Name: Vehicule Joueur 1.6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3179,6 +3224,7 @@ Transform:
   - {fileID: 5261047109328695039}
   - {fileID: 5301681928060755102}
   - {fileID: 6936797376776187996}
+  - {fileID: 5627979890283262241}
   - {fileID: 2234271091036681852}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3847,9 +3893,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47026dec8b2e77f469186b0e05161d2d, type: 3}
+--- !u!1 &8053883117465705063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3598153000837704076, guid: 47026dec8b2e77f469186b0e05161d2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6785254553322320875}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8053883117465705056 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3598153000837704075, guid: 47026dec8b2e77f469186b0e05161d2d,
     type: 3}
   m_PrefabInstance: {fileID: 6785254553322320875}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8053883117628440696 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3598153001025581971, guid: 47026dec8b2e77f469186b0e05161d2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6785254553322320875}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
