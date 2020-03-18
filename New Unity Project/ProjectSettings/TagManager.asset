@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Plancher
+  - Herbe
+  - Asphalte
+  - Terre
+  - Sable
+  - Rampe
   layers:
   - Default
   - TransparentFX

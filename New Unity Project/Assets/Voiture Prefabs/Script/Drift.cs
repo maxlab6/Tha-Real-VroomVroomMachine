@@ -31,6 +31,6 @@ public class Drift : MonoBehaviour
     {
         WheelHit hit;
         collider.GetGroundHit(out hit);
-        Debug.Log(hit.sidewaysSlip);
+        //Debug.Log(hit.sidewaysSlip);
     }
 }
