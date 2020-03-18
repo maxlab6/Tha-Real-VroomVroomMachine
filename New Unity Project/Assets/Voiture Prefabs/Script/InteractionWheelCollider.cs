@@ -26,7 +26,11 @@ public class InteractionWheelCollider : MonoBehaviour
     private void DetectionSol(WheelCollider _collider)
     {
         _collider.GetGroundHit(out hit);
+
+        
         TypeSol = hit.collider.gameObject.tag;
+        
+       
 
         WheelFrictionCurve W_F_F;
         WheelFrictionCurve W_F_S;

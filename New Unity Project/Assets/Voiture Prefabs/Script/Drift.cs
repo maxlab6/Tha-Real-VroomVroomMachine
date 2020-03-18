@@ -4,33 +4,43 @@ using UnityEngine;
 
 public class Drift : MonoBehaviour
 {
-    public GameObject emmetteurMarqueAD;
-    public GameObject emmetteurMarqueAG;
-    public GameObject emmetteurMarqueDD;
-    public GameObject emmetteurMarqueDG;
+    public TrailRenderer emmetteurMarqueAD;
+    public TrailRenderer emmetteurMarqueAG;
+    public TrailRenderer emmetteurMarqueDD;
+    public TrailRenderer emmetteurMarqueDG;
 
     public WheelCollider roueAD;
     public WheelCollider roueAG;
     public WheelCollider roueDD;
     public WheelCollider roueDG;
 
-    
+    public float pointDeDerapage;
 
 
     // Update is called once per frame
     void Update()
     {
-        //VerifieDerapage(roueAD);
-        //VerifieDerapage(roueAG);
-        VerifieDerapage(roueDD);
-        VerifieDerapage(roueDG);
+        VerifieDerapage(roueAD, emmetteurMarqueAD);
+        VerifieDerapage(roueAG, emmetteurMarqueAG);
+        VerifieDerapage(roueDD, emmetteurMarqueDD);
+        VerifieDerapage(roueDG, emmetteurMarqueDG);
 
     }
 
-    private void VerifieDerapage(WheelCollider collider)
+    private void VerifieDerapage(WheelCollider collider, TrailRenderer emmetteurMarque)
     {
         WheelHit hit;
         collider.GetGroundHit(out hit);
-        //Debug.Log(hit.sidewaysSlip);
+
+
+        if(collider.GetGroundHit(out hit) == true && Mathf.Abs(hit.sidewaysSlip) > pointDeDerapage)
+        {
+            emmetteurMarque.emitting = true;
+        }
+        else
+        {
+            emmetteurMarque.emitting = false;
+        }
+
     }
 }
