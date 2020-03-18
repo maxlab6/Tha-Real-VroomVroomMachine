@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plancher
   - mur
+  - car
   layers:
   - Default
   - TransparentFX
