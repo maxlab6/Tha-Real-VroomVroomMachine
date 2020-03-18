@@ -36,7 +36,7 @@ public class Controle_Voiture : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Plancher")
+        if (collision.gameObject.tag == "Herbe"|| collision.gameObject.tag == "Rampe"|| collision.gameObject.tag == "Asphalte")
         {
             if (Input.GetKeyDown(KeyCode.R))
             {

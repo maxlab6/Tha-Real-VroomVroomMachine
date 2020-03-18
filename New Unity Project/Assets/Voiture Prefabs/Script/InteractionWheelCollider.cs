@@ -34,7 +34,7 @@ public class InteractionWheelCollider : MonoBehaviour
         W_F_F = _collider.forwardFriction;
         W_F_S = _collider.sidewaysFriction;
 
-        if(TypeSol == "Plancher")
+        if(TypeSol == "Asphalte")
         {
             W_F_F.extremumSlip = 0.8f;
             W_F_F.extremumValue = 1f;
@@ -48,19 +48,33 @@ public class InteractionWheelCollider : MonoBehaviour
             W_F_S.asymptoteValue = 0.75f;
             W_F_S.stiffness = 1.1f;
         }
-        else
+        else if(TypeSol == "Herbe")
         {
             W_F_F.extremumSlip = 0.8f;
             W_F_F.extremumValue = 1f;
             W_F_F.asymptoteSlip = 0.8f;
             W_F_F.asymptoteValue = 0.5f;
-            W_F_F.stiffness = 0.001f;
+            W_F_F.stiffness = 1f;
 
             W_F_S.extremumSlip = 0.4f;
             W_F_S.extremumValue = 1f;
             W_F_S.asymptoteSlip = 0.5f;
             W_F_S.asymptoteValue = 0.75f;
-            W_F_S.stiffness = 0.001f;
+            W_F_S.stiffness = 1f;
+        }
+        else if(TypeSol == "Rampe")
+        {
+            W_F_F.extremumSlip = 0.8f;
+            W_F_F.extremumValue = 1f;
+            W_F_F.asymptoteSlip = 0.8f;
+            W_F_F.asymptoteValue = 0.5f;
+            W_F_F.stiffness = 2f;
+
+            W_F_S.extremumSlip = 0.4f;
+            W_F_S.extremumValue = 1f;
+            W_F_S.asymptoteSlip = 0.5f;
+            W_F_S.asymptoteValue = 0.75f;
+            W_F_S.stiffness = 2f;
         }
 
         _collider.forwardFriction = W_F_F;
