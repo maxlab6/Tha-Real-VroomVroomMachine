@@ -1902,6 +1902,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: car
       objectReference: {fileID: 0}
+    - target: {fileID: 287862814757146248, guid: 4a1eaa18a27e36545a73e734070d20cb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
+      objectReference: {fileID: 0}
     - target: {fileID: 385529855103816713, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
       propertyPath: m_RootOrder
@@ -1935,7 +1940,7 @@ PrefabInstance:
     - target: {fileID: 1074971661621210214, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
       propertyPath: pointDeDerapage
-      value: 0.28
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1104950164111659091, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
@@ -1945,12 +1950,17 @@ PrefabInstance:
     - target: {fileID: 1145099274880115219, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
       propertyPath: m_Parameters.textureMode
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1145099274880115219, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
       propertyPath: m_Time
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145099274880115219, guid: 4a1eaa18a27e36545a73e734070d20cb,
+        type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1278265559558534424, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
@@ -1966,6 +1976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967412670698017265, guid: 4a1eaa18a27e36545a73e734070d20cb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 2248501833541920282, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
@@ -1997,6 +2012,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3397576441781825833, guid: 4a1eaa18a27e36545a73e734070d20cb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188039054511428480, guid: 4a1eaa18a27e36545a73e734070d20cb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
+      objectReference: {fileID: 0}
     - target: {fileID: 4569954859158901361, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
       propertyPath: m_RootOrder
@@ -2010,12 +2035,17 @@ PrefabInstance:
     - target: {fileID: 5562314631185847319, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
       propertyPath: m_Parameters.textureMode
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5562314631185847319, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
       propertyPath: m_Time
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562314631185847319, guid: 4a1eaa18a27e36545a73e734070d20cb,
+        type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6167558168070712402, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
@@ -2100,22 +2130,37 @@ PrefabInstance:
     - target: {fileID: 8352020707960465441, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
       propertyPath: m_Parameters.textureMode
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8352020707960465441, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
       propertyPath: m_Time
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8352020707960465441, guid: 4a1eaa18a27e36545a73e734070d20cb,
+        type: 3}
+      propertyPath: m_Parameters.numCapVertices
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352020707960465441, guid: 4a1eaa18a27e36545a73e734070d20cb,
+        type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 8632811601149603798, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
       propertyPath: m_Parameters.textureMode
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8632811601149603798, guid: 4a1eaa18a27e36545a73e734070d20cb,
         type: 3}
       propertyPath: m_Time
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8632811601149603798, guid: 4a1eaa18a27e36545a73e734070d20cb,
+        type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7771621957000213295, guid: 4a1eaa18a27e36545a73e734070d20cb, type: 3}
