@@ -1,51 +1,18 @@
 fileFormatVersion: 2
-guid: cc6220a25a03090439126017a49f7a18
+guid: 3c7e1edda642f8042a349011253134fe
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Body1
-    100002: Body2
-    100004: Body3
-    100006: Body4
-    100008: Body5
-    100010: Body6
-    100012: Body7
-    100014: Body8
-    100016: //RootNode
+    100002: //RootNode
     400000: Body1
-    400002: Body2
-    400004: Body3
-    400006: Body4
-    400008: Body5
-    400010: Body6
-    400012: Body7
-    400014: Body8
-    400016: //RootNode
-    2100000: Steel - Satin
+    400002: //RootNode
+    2100000: No Name
+    2100002: Powder Coat (Black)
+    2100004: Powder Coat (Red)
     2300000: Body1
-    2300002: Body2
-    2300004: Body3
-    2300006: Body4
-    2300008: Body5
-    2300010: Body6
-    2300012: Body7
-    2300014: Body8
     3300000: Body1
-    3300002: Body2
-    3300004: Body3
-    3300006: Body4
-    3300008: Body5
-    3300010: Body6
-    3300012: Body7
-    3300014: Body8
     4300000: Body1
-    4300002: Body2
-    4300004: Body3
-    4300006: Body4
-    4300008: Body5
-    4300010: Body6
-    4300012: Body7
-    4300014: Body8
   externalObjects: {}
   materials:
     importMaterials: 1

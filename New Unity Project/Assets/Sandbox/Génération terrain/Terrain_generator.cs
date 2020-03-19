@@ -5,8 +5,8 @@ using UnityEngine;
 public class Terrain_generator : MonoBehaviour
 {
     public int Hauteur;
-    public int Longeur;
-    public int Largeur;
+    private int Longeur = 500;
+    private int Largeur = 512;
 
     public float scale;
 
@@ -25,7 +25,7 @@ public class Terrain_generator : MonoBehaviour
 
     TerrainData GenerateTerrain(TerrainData terrainData)
     {
-        terrainData.heightmapResolution = Longeur + 30;
+        terrainData.heightmapResolution = 530;
         terrainData.size = new Vector3(Longeur, Hauteur, Largeur);
         terrainData.SetHeights(0, 0, GenerateHeights());
         return terrainData;
