@@ -29,7 +29,7 @@ public class InteractionWheelCollider : MonoBehaviour
 
         
         TypeSol = hit.collider.gameObject.tag;
-        
+        hit.collider.gameObject.terr
        
 
         WheelFrictionCurve W_F_F;

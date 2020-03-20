@@ -12,6 +12,8 @@ public class Terrain_generator : MonoBehaviour
 
     private float offsetX;
     private float offsetZ;
+    private float HauteurRandom;
+    private float ScaleRandom;
 
 
 
@@ -19,9 +21,16 @@ public class Terrain_generator : MonoBehaviour
     {
         offsetX = Random.Range(0f, 9999f);
         offsetZ = Random.Range(0f, 9999f);
-        Terrain terrain = GetComponent<Terrain>();
-        terrain.terrainData = GenerateTerrain(terrain.terrainData);
+        
     }
+
+    private void Update()
+    {
+       Terrain terrain = GetComponent<Terrain>();
+        terrain.terrainData = GenerateTerrain(terrain.terrainData); 
+    }
+
+
 
     TerrainData GenerateTerrain(TerrainData terrainData)
     {
