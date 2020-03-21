@@ -12,6 +12,7 @@ TagManager:
   - Rampe
   - mur
   - car
+  - BoutonChanger
   layers:
   - Default
   - TransparentFX

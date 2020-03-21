@@ -28,6 +28,8 @@ public class Controle_Voiture : MonoBehaviour
     public float forceAntiFlip = 100;
 
     public static float vitesse;
+
+    public static bool BoutonChanger = false;
     
     void Start()
     {
@@ -42,12 +44,24 @@ public class Controle_Voiture : MonoBehaviour
             {
                 rb.MovePosition(new Vector3(rb.position.x, rb.position.y + hauteurReset, rb.position.z));
                 rb.MoveRotation(Quaternion.Euler(rb.transform.localEulerAngles.x, rb.transform.localEulerAngles.y, 0));
+                rb.velocity = new Vector3(0f, 0f, 0f);
+                rb.angularVelocity = new Vector3(0f, 0f, 0f);
             }
         }
-
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "BoutonChanger")
+        {
+            BoutonChanger = true;
+        }
+    }
+
+
+
+
+
     void FixedUpdate()
     {
         orientation = transform.InverseTransformDirection(rb.velocity);
