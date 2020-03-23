@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 3566523099875237275}
   - component: {fileID: 3566523099876204379}
   - component: {fileID: 3566523099878392216}
-  - component: {fileID: 3566523099878392217}
-  - component: {fileID: 5176221104175777231}
   m_Layer: 0
   m_Name: Pont Droit V2
   m_TagString: Untagged
@@ -96,29 +94,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 82a6d98d9871b0f4d91e577a6467bbf8, type: 3}
---- !u!65 &3566523099878392217
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3566523099878392219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2000.0001, y: 916.98065, z: 85.424805}
-  m_Center: {x: 0.0058174124, y: 1548.0929, z: 111.23047}
---- !u!65 &5176221104175777231
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3566523099878392219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2000, y: 916.9807, z: 85.4248}
-  m_Center: {x: 0.005859375, y: 1548.093, z: -107}
