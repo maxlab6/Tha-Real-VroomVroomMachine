@@ -23,9 +23,9 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
+  - Unwalkable
+  - Walkable
+  - Start_Finish
   - 
   - 
   - 
