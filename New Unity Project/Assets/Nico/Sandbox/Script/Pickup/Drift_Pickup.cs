@@ -68,20 +68,12 @@ public class Drift_Pickup : MonoBehaviour
 
     private void PositionTrailMaker()
     {
+        //Debug.Log(Mathf.Atan( (WT_FR.transform.localPosition.y - WT_FL.transform.localPosition.y)/(WT_FR.transform.localPosition.x - WT_FL.transform.localPosition.x) )*2*Mathf.PI);
         
-        if(rb.transform.eulerAngles.z < 0f)
-        {
-            orientation = 360 + rb.transform.eulerAngles.z;
-        }
-        else
-        {
-            orientation = rb.transform.eulerAngles.z;
-        }
-
-        Trail_FL.position = new Vector3(WT_FL.transform.position.x /*-((0.62f) * Mathf.Sin(orientation)) - 0.25f*/,WT_FL.transform.position.y - (0.62f * Mathf.Cos(orientation)*2*Mathf.PI),WT_FL.transform.position.z);
-        Trail_FR.position = new Vector3(WT_FR.transform.position.x + ((0.62f) * Mathf.Sin(orientation)) + 0.25f, WT_FR.transform.position.y - (0.62f * Mathf.Cos(orientation)), WT_FR.transform.position.z);
-        Trail_RL.position = new Vector3(WT_RL.transform.position.x - ((0.62f) * Mathf.Sin(orientation)) - 0.25f, WT_RL.transform.position.y - (0.62f * Mathf.Cos(orientation)), WT_RL.transform.position.z);
-        Trail_RR.position = new Vector3(WT_RR.transform.position.x + ((0.62f) * Mathf.Sin(orientation)) + 0.25f, WT_RR.transform.position.y - (0.62f * Mathf.Cos(orientation)), WT_RR.transform.position.z);
-         
+        Trail_FL.localPosition = new Vector3(WT_FL.transform.localPosition.x, WT_FL.transform.localPosition.y - 0.62f, WT_FL.transform.localPosition.z);
+        Trail_FR.localPosition = new Vector3(WT_FR.transform.localPosition.x, WT_FR.transform.localPosition.y - 0.62f, WT_FR.transform.localPosition.z);
+        Trail_RL.localPosition = new Vector3(WT_RL.transform.localPosition.x, WT_RL.transform.localPosition.y - 0.62f, WT_RL.transform.localPosition.z);
+        Trail_RR.localPosition = new Vector3(WT_RR.transform.localPosition.x, WT_RR.transform.localPosition.y - 0.62f, WT_RR.transform.localPosition.z);
+       
     }
 }

@@ -37,10 +37,7 @@ public class Grid : MonoBehaviour
             {
                 Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
                 int surface;
-                
-                
-
-
+                               
                 if (Physics.CheckSphere(worldPoint, nodeRadius, start_Finish_Mask) == true)
                 {   
                     //Detect start finish line
@@ -50,17 +47,13 @@ public class Grid : MonoBehaviour
                 {
                     //Detect Road
                     surface = 1;                          
-                }                
+                }               
                 else
                 {
                     //detect the rest
                     surface = 3;
                 }
-                   grid[x, y] = new Node(surface, worldPoint);  
-
-                
-                
-                
+                   grid[x, y] = new Node(surface, worldPoint);                  
             }
         }
     }
