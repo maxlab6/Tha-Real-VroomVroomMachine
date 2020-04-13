@@ -13,6 +13,7 @@ TagManager:
   - mur
   - car
   - BoutonChanger
+  - Terrain
   layers:
   - Default
   - TransparentFX

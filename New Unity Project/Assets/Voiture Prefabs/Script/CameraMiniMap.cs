@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class CameraMiniMap : MonoBehaviour
 {
-    
-    public Transform trans;
-    
+    public GameObject Pickup;
+    public GameObject Vus;    
     public Vector3 offset;
+
     // Update is called once per frame
+
     void FixedUpdate()
     {
-        transform.position = trans.position  - offset; 
+        if(Pickup.activeSelf == true)
+        {
+            transform.position = Pickup.transform.position  - offset;
+        }
+        else if(Vus.activeSelf == true)
+        {
+            transform.position = Vus.transform.position - offset;
+        }
+
+
+         
         
     }
 }
