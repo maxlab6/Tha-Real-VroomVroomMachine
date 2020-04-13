@@ -57,7 +57,8 @@ public class Menu_Pause_SandBox : MonoBehaviour
 			Pause_Options.onClick.AddListener(OptionPause);
 			Pause_MenuPrincipale.onClick.AddListener(MenuPrincipalePause);
 			Pause_Quitter.onClick.AddListener(QuitterPause);	
-		}												
+		}
+
 	}
 
 	private void TrouverObjet()

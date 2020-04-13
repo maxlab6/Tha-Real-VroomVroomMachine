@@ -73,6 +73,12 @@ public class Choix_Véhicule : MonoBehaviour
     public Friction_Roue_Pickup ScriptFrictionPickup_RL;
     public Friction_Roue_Pickup ScriptFrictionPickup_RR;
 
+    public Vector3 Velocity;
+    public Vector3 AngularVelocity;
+
+
+
+
 
     void Start()
     {
@@ -143,6 +149,20 @@ public class Choix_Véhicule : MonoBehaviour
         else if(Vus.activeSelf == true )
         {
             Actif = Vus;
+        }
+
+        if (MenuChoix.activeSelf == false)
+        {
+            Velocity = new Vector3(Actif.GetComponent<Rigidbody>().velocity.x, Actif.GetComponent<Rigidbody>().velocity.y, Actif.GetComponent<Rigidbody>().velocity.z);
+            AngularVelocity = new Vector3(Actif.GetComponent<Rigidbody>().angularVelocity.x, Actif.GetComponent<Rigidbody>().angularVelocity.y, Actif.GetComponent<Rigidbody>().angularVelocity.z);
+            Actif.GetComponent<Rigidbody>().useGravity = true;
+        }
+        else
+        {
+            Actif.GetComponent<Rigidbody>().useGravity = false;
+            Actif.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+            Actif.GetComponent<Rigidbody>().angularVelocity = new Vector3(0f, 0f, 0f);
+
         }
 
                   
@@ -253,6 +273,8 @@ public class Choix_Véhicule : MonoBehaviour
         MenuChoix.SetActive(false);
         CarViewer.SetActive(false);
         Affichage.SetActive(true);
+        Actif.GetComponent<Rigidbody>().velocity = new Vector3(Velocity.x, Velocity.y, Velocity.z);
+        Actif.GetComponent<Rigidbody>().angularVelocity = new Vector3(AngularVelocity.x, AngularVelocity.y, AngularVelocity.z);
     }
 
     private void RetourChoix()
@@ -261,6 +283,8 @@ public class Choix_Véhicule : MonoBehaviour
         CarViewer.SetActive(false);
         MenuPause.SetActive(true);
         Time.timeScale = 0f;
+        Actif.GetComponent<Rigidbody>().velocity = new Vector3(Velocity.x, Velocity.y, Velocity.z);
+        Actif.GetComponent<Rigidbody>().angularVelocity = new Vector3(AngularVelocity.x, AngularVelocity.y, AngularVelocity.z);
     }
 
     private void PlacerVehicule(GameObject _vehicule)
