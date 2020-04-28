@@ -27,9 +27,9 @@ TagManager:
   - Unwalkable
   - Walkable
   - Start_Finish
-  - 
-  - 
-  - 
+  - Car
+  - Wall
+  - Finish Line
   - 
   - 
   - 
