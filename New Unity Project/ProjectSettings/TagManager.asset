@@ -14,6 +14,9 @@ TagManager:
   - car
   - BoutonChanger
   - Terrain
+  - carAiMax
+  - Arrive
+  - checkpointMax
   layers:
   - Default
   - TransparentFX
@@ -27,9 +30,9 @@ TagManager:
   - Unwalkable
   - Walkable
   - Start_Finish
-  - 
-  - 
-  - 
+  - peuPasPasser
+  - Route
+  - Herbre
   - 
   - 
   - 
