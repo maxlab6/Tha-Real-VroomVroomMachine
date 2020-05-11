@@ -13,6 +13,10 @@ TagManager:
   - mur
   - car
   - BoutonChanger
+  - Terrain
+  - AiE
+  - waypointsE
+  - waypoints
   layers:
   - Default
   - TransparentFX
@@ -23,10 +27,10 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
+  - peuPasPasser
+  - Route
+  - Herbe
+  - Voiture
   - 
   - 
   - 
