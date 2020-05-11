@@ -14,6 +14,7 @@ TagManager:
   - car
   - BoutonChanger
   - Terrain
+  - Check Points
   layers:
   - Default
   - TransparentFX
@@ -30,8 +31,8 @@ TagManager:
   - Car
   - Wall
   - Finish Line
-  - 
-  - 
+  - Route
+  - Herbe
   - 
   - 
   - 
