@@ -17,6 +17,10 @@ TagManager:
   - carAiMax
   - Arrive
   - checkpointMax
+  - Terrain
+  - AiE
+  - waypointsE
+  - waypoints
   layers:
   - Default
   - TransparentFX
@@ -33,6 +37,13 @@ TagManager:
   - peuPasPasser
   - Route
   - Herbre
+  - Voiture
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
