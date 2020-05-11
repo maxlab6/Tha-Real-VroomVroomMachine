@@ -21,6 +21,7 @@ TagManager:
   - AiE
   - waypointsE
   - waypoints
+  - Check Points
   layers:
   - Default
   - TransparentFX
@@ -38,9 +39,8 @@ TagManager:
   - Route
   - Herbre
   - Voiture
-  - 
-  - 
-  - 
+  - Finish Line
+  - Wall
   - 
   - 
   - 

@@ -1344,14 +1344,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &1551496626171474178
+--- !u!1001 &4776057593515707769
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1551496626360224184, guid: bd23a9b7117193a4a84be4c4fb4635a3,
+    - target: {fileID: 4776057593461110208, guid: 749baa84e3e22ce47b12508848df3c7e,
         type: 3}
       propertyPath: m_Name
       value: "Piste\xC9lian2"
@@ -1411,10 +1411,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1551496626360224187, guid: bd23a9b7117193a4a84be4c4fb4635a3,
-        type: 3}
-      propertyPath: m_Name
-      value: "Piste\xC9lian2"
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bd23a9b7117193a4a84be4c4fb4635a3, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 749baa84e3e22ce47b12508848df3c7e, type: 3}
