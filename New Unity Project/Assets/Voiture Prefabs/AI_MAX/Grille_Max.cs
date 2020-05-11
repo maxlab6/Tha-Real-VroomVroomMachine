@@ -31,7 +31,7 @@ public class Grille_Max : MonoBehaviour
 
         if (nomScene == "PisteÉlian1") { ajustementX = -2; ajustementY = 1; }
         else if (nomScene == "PisteÉlian2") { ajustementX = 2; ajustementY = 2; }
-        else if (nomScene == "PisteFelix") { ajustementX = 0; ajustementY = 0; }
+        else if (nomScene == "PisteFelix") { ajustementX = 0; ajustementY = 1; }
 
         //permet d'avoir le nombre de case selon la grosseur de la grille et la grosseur d'une case
         doubleLongueurSommet = longueurSommet * 2;

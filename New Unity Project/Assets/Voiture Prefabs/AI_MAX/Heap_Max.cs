@@ -124,14 +124,3 @@ public class Heap_Max<T> where T : IHeapItem<T>
         itemB.HeapIndex = tempIndexItemA;
     }
 }
-
-//Permet à chaque items (sommet) de garder en mémoire
-//leur indexe dans le tableau
-public interface IHeapItem<T> : IComparable<T>
-{
-    int HeapIndex
-    {
-        get;
-        set;
-    }
-}

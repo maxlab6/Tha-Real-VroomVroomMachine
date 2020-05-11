@@ -5,7 +5,7 @@ using UnityEngine;
 public class VoitureAi_Max : MonoBehaviour
 {
     //Pour pathFinding
-    public Transform target;                  //Position du checkpoint Actuelle
+    public Transform cible;                  //Position du checkpoint Actuelle
     int compteurCheckpoints;                  //compteur de checkpoint
     Vector3[] path;                           //Chemin renvoyer par PathFinding qui est géré par PathRequestManager
     int targetIndex;                          //Index du target
@@ -158,7 +158,7 @@ public class VoitureAi_Max : MonoBehaviour
         ForceVersLeBas();
         orientation = rb.transform.InverseTransformDirection(rb.velocity);
         vitesse = Mathf.Abs(orientation.z * 3.6f);
-        float distance = Vector3.Distance(transform.position, target.transform.position);
+        float distance = Vector3.Distance(transform.position, cible.transform.position);
 
 
         Debug.Log("compteur Checkpoints = " + compteurCheckpoints);
@@ -173,16 +173,16 @@ public class VoitureAi_Max : MonoBehaviour
             if (compteurCheckpoints == checkpoints.Count)
             {
                 compteurCheckpoints = 0;
-                target = checkpoints[compteurCheckpoints];
-                PathRequestManager_Max.RequestPath(transform.position, target.position, OnPathFound);
+                cible = checkpoints[compteurCheckpoints];
+                PathRequestManager_Max.RequestPath(transform.position, cible.position, OnPathFound);
 
                 compteurCheckpoints++;
             }
             //au sinon le checkpoint est changé pour le suivant
             else
             {
-                target = checkpoints[compteurCheckpoints];
-                PathRequestManager_Max.RequestPath(transform.position, target.position, OnPathFound);
+                cible = checkpoints[compteurCheckpoints];
+                PathRequestManager_Max.RequestPath(transform.position, cible.position, OnPathFound);
 
                 compteurCheckpoints += 1;
             }
