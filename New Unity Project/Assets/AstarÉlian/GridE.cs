@@ -6,6 +6,8 @@ using UnityEngine;
 public class GridE : MonoBehaviour
 {
     public bool drawGrid;
+    public int offsetX;
+    public int offsetZ;
     public LayerMask undrivableMask;
     public Vector2 gridWorldSize;
     public float nodeRadius;
@@ -28,7 +30,7 @@ public class GridE : MonoBehaviour
         {
             drivableMask.value = drivableMask |= region.terrainMask.value;
             drivableRegionsDictionnary.Add((int)Mathf.Log(region.terrainMask.value, 2), region.terrainPenalty);
-        } 
+        }
 
         CreateGrid();
     }
@@ -43,8 +45,6 @@ public class GridE : MonoBehaviour
 
     void CreateGrid()
     {
-        Debug.Log(gridSizeX);
-        Debug.Log(gridSizeY);
         grid = new NodeE[gridSizeX, gridSizeY];
         Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2 - Vector3.forward * gridWorldSize.y / 2;
 
@@ -53,8 +53,8 @@ public class GridE : MonoBehaviour
         {
             for (int j = 0; j < gridSizeY; j++)
             {
-                Vector3 worldPoint = worldBottomLeft + Vector3.right * (i * nodeDiameter + nodeRadius) + Vector3.forward * (j * nodeDiameter + nodeRadius);
-                bool drivable = !(Physics.CheckSphere(worldPoint, nodeRadius,undrivableMask));
+                Vector3 worldPoint = worldBottomLeft + new Vector3(offsetX, 0, offsetZ) + Vector3.right * (i * nodeDiameter + nodeRadius) + Vector3.forward * (j * nodeDiameter + nodeRadius);
+                bool drivable = !(Physics.CheckSphere(worldPoint, nodeRadius, undrivableMask));
 
                 int movementPenalty = 0;
 
@@ -62,7 +62,7 @@ public class GridE : MonoBehaviour
                 {
                     Ray ray = new Ray(worldPoint + Vector3.up * 50, Vector3.down);
                     RaycastHit hit;
-                    if(Physics.Raycast(ray,out hit, 100, drivableMask))
+                    if (Physics.Raycast(ray, out hit, 100, drivableMask))
                     {
                         drivableRegionsDictionnary.TryGetValue(hit.collider.gameObject.layer, out movementPenalty);
                     }
@@ -108,21 +108,22 @@ public class GridE : MonoBehaviour
     }
 
 
-    void OnDrawGizmos() {
-        Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position + new Vector3(offsetX,0,offsetZ), new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
         Gizmos.color = Color.red;
 
 
-            if (grid != null && drawGrid == true)
+        if (grid != null && drawGrid == true)
+        {
+            foreach (NodeE n in grid)
             {
-                foreach (NodeE n in grid)
-                {
-                    Gizmos.color = (n.drivable) ? Color.white : Color.red;
-                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
-                }
+                Gizmos.color = (n.drivable) ? Color.white : Color.red;
+                Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
             }
-        
         }
+
+    }
 
     [System.Serializable]
     public class TerrainType
