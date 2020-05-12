@@ -14,7 +14,6 @@ public class ControleVoitureIaFelix : MonoBehaviour
     [Header("Variables de physique")]
     public float maxSteerAngle = 45f;
     public float targetSteerAngle = 0f;
-    public float turnSpeed = 5f;
     public float maxTorque = 500f;
     public float maxBrakeTorque = 1000f;
     public float currentSpeed;
@@ -40,7 +39,9 @@ public class ControleVoitureIaFelix : MonoBehaviour
     public float distanceAvance = 5f;
     public bool afficherPath = true;
 
-    [Header("Sensor")]
+    [Header("Sensor/Avoiding")]
+    public float turnSpeed = 5f;
+    public float turnMultiplier = 0.9f;
     public float sensorLeght = 10f;
     public float frontSideSensorPosition = 1F;
     public float frontSensorAngle = 30f;
@@ -69,7 +70,6 @@ public class ControleVoitureIaFelix : MonoBehaviour
 
     void FixedUpdate()
     {
-        TrouverChemin();
         Sensors();
         ApplySteer();
         Drive();
@@ -92,11 +92,6 @@ public class ControleVoitureIaFelix : MonoBehaviour
         {
             currentNode++;
         }
-    }
-
-    private void TrouverChemin()
-    {
-
     }
 
     private void ModulationDeVitesse()
@@ -185,7 +180,7 @@ public class ControleVoitureIaFelix : MonoBehaviour
 
         if (avoiding)
         {
-            targetSteerAngle = maxSteerAngle * avoidMultiplier;
+            targetSteerAngle = maxSteerAngle * avoidMultiplier * turnMultiplier;
         }
     }
 
@@ -259,6 +254,22 @@ public class ControleVoitureIaFelix : MonoBehaviour
     private void ApplySteer()
     {
         if (avoiding) return;
+        if (currentSpeed < 40f)
+        {
+            nbNodeAvance = Convert.ToInt32(15f - currentSpeed / 5f);
+            if (nbNodeAvance > 8)
+            {
+                nbNodeAvance = 8;
+            }
+        }
+        else
+        {
+            nbNodeAvance = Convert.ToInt32(currentSpeed / 15f);
+            if (nbNodeAvance > 8)
+            {
+                nbNodeAvance = 8;
+            }
+        }
         Vector3 relativeVector = transform.InverseTransformPoint(cheminCourt[currentNode + nbNodeAvance].Position);
         float newSteer = (relativeVector.x / relativeVector.magnitude) * maxSteerAngle;
         targetSteerAngle = newSteer;
