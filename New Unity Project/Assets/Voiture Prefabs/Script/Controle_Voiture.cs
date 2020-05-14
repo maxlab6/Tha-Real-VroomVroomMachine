@@ -66,6 +66,7 @@ public class Controle_Voiture : MonoBehaviour
     {
         orientation = transform.InverseTransformDirection(rb.velocity);
         vitesse = orientation.z * 3.6f;
+        maxTorque = (-1f / 25f) * Mathf.Pow(vitesse, 2) + 1000;
 
         if (vitesse > 5)
         {

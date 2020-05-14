@@ -89,14 +89,17 @@ public class ControleVoitureIaFelix : MonoBehaviour
         if (targetSpeed < 30f)
         {
             nbNodeAvance = 2;
+            distanceAvance = 12;
         }
         else if (targetSpeed < 50f)
         {
             nbNodeAvance = 4;
+            distanceAvance = 12;
         }
         else
         {
             nbNodeAvance = 6;
+            distanceAvance = 14;
         }
     }
 
@@ -317,6 +320,12 @@ public class ControleVoitureIaFelix : MonoBehaviour
     private void ForceVersLeBas()
     {
         wheelFL.attachedRigidbody.AddForce(-transform.up * 100 *
+                                                     wheelFL.attachedRigidbody.velocity.magnitude);
+        wheelFR.attachedRigidbody.AddForce(-transform.up * 100 *
+                                                     wheelFL.attachedRigidbody.velocity.magnitude);
+        wheelRL.attachedRigidbody.AddForce(-transform.up * 100 *
+                                                     wheelFL.attachedRigidbody.velocity.magnitude);
+        wheelRR.attachedRigidbody.AddForce(-transform.up * 100 *
                                                      wheelFL.attachedRigidbody.velocity.magnitude);
     }
 }
