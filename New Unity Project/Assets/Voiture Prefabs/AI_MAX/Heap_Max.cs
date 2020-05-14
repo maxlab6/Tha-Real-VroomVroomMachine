@@ -6,7 +6,7 @@ using System;
 public class Heap_Max<T> where T : IHeapItem<T>
 {
     T[] items;              //tableau qui va recevoir les sommets
-    int currentItemCount;   //
+    int currentItemCount;   //nombre d'item dans le tableau a un moment précis
 
     //Permet d'avoir la grosseur du tableau
     public Heap_Max(int maxHeapSize)
@@ -15,7 +15,7 @@ public class Heap_Max<T> where T : IHeapItem<T>
     }
 
     //Permet d'ajouter un item (sommet) au tableau
-    public void Add(T item)
+    public void Ajouter(T item)
     {
         item.HeapIndex = currentItemCount;
         items[currentItemCount] = item;
@@ -52,7 +52,7 @@ public class Heap_Max<T> where T : IHeapItem<T>
         }
     }
 
-    //Permet de savoir si la liste contient l'item envoyé 
+    //Permet de savoir si la liste contient l'item (le sommet) envoyé 
     public bool Contains(T item)
     {
         return Equals(items[item.HeapIndex], item);
@@ -124,3 +124,17 @@ public class Heap_Max<T> where T : IHeapItem<T>
         itemB.HeapIndex = tempIndexItemA;
     }
 }
+
+/*Aussi utilisé par Élian
+ * 
+//Permet à chaque items (sommet) de garder en mémoire
+//leur indexe dans le tableau
+public interface IHeapItem<T> : IComparable<T>
+{
+    int HeapIndex
+    {
+        get;
+        set;
+    }
+}
+*/

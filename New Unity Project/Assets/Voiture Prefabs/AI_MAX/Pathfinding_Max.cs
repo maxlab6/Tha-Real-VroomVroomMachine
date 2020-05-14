@@ -39,11 +39,11 @@ public class Pathfinding_Max : MonoBehaviour
         //Si le point de départ et le point d'arriver peu n'ont pas de mur
         //(est walkable) alors fait le code sinon ne fait pas le code et
         //pathSuccess reste false
-        if (sommetDepart.walkable && sommetDArrive.walkable)
+        if (sommetDepart.peuPasser && sommetDArrive.peuPasser)
         {
             Heap_Max<Sommet> openSet = new Heap_Max<Sommet>(grille.MaxSize); //Toute les case non vérifier/non calculer
             HashSet<Sommet> closedSet = new HashSet<Sommet>();  //case ou les distance on été calculer
-            openSet.Add(sommetDepart);
+            openSet.Ajouter(sommetDepart);
 
             //Tant qu'il reste de case à vérifier, continuer a vérifier les autres cases
             while (openSet.Count > 0)
@@ -69,12 +69,12 @@ public class Pathfinding_Max : MonoBehaviour
                 {
                     //Si le sommet n'est pas walkable (peuPasPasser) ou qui a déjà été vérifier
                     //(est dans closedSet) alors skip cette itération et passe à la prochaine
-                    if (!neighbour.walkable || closedSet.Contains(neighbour))
+                    if (!neighbour.peuPasser || closedSet.Contains(neighbour))
                     {
                         continue;
                     }
 
-                    int newCostToNeighbour = sommet.gCost + GetDistance(sommet, neighbour) + neighbour.movementPenality;
+                    int newCostToNeighbour = sommet.gCost + GetDistance(sommet, neighbour) + neighbour.movementPenalite;
 
                     //si le chemin entre la case actuelle et le voisin analysé est plus court
                     //ou que le voisin n'est pas dans l'openSet (a déjà été analysé)
@@ -87,7 +87,7 @@ public class Pathfinding_Max : MonoBehaviour
                         //si il n'était pas dans open set, le rajoute car il a un nouveau cout
                         //sinon fais juste changer les valeurs
                         if (!openSet.Contains(neighbour))
-                            openSet.Add(neighbour);
+                            openSet.Ajouter(neighbour);
                         else
                         {
                             openSet.UpdateItems(neighbour);
@@ -119,7 +119,7 @@ public class Pathfinding_Max : MonoBehaviour
             sommetActuelle = sommetActuelle.parent;
         }
 
-        Vector3[] waypoints = SimplifyPath(chemin);
+        Vector3[] waypoints = SimplifierChemin(chemin);
         Array.Reverse(waypoints);
         return waypoints;
 
@@ -127,7 +127,7 @@ public class Pathfinding_Max : MonoBehaviour
 
     //Permet de simplifier le chemin en regardant si la direction est la même entre
     //deux sommet, si oui, ignore le point jusqu'a ce qu'il y ait un changement de direction
-    Vector3[] SimplifyPath(List<Sommet> path)
+    Vector3[] SimplifierChemin(List<Sommet> path)
     {
         List<Vector3> waypoints = new List<Vector3>();
         Vector2 directionOld = Vector2.zero;

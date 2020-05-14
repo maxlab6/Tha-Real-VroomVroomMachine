@@ -31,6 +31,7 @@ public class VoitureAi_Max : MonoBehaviour
     public Transform transformJoueur;         //transforme (position dans le monde) du joueur
     public int positionAI;                    //position dans la course de l'IA
     public int positionJoueur;                //position dans la course du joueur
+    public bool roueTourneMax = false;        //Les roue tourne à l'angle maximum
     
 
 
@@ -221,8 +222,8 @@ public class VoitureAi_Max : MonoBehaviour
         //Sinon, s'occupe de suivre le chemin normalement
         else
         {
-            Tourner(pointcourrant);
             Avancer(pointcourrant);
+            Tourner(pointcourrant);
             Braker(pointcourrant);
 
             
@@ -237,8 +238,19 @@ public class VoitureAi_Max : MonoBehaviour
         vecteurRelatif = vecteurRelatif / vecteurRelatif.magnitude;
         directionRoues = (vecteurRelatif.x / vecteurRelatif.magnitude) * angleTournerMax;
 
+        Debug.Log("direction roues : " + directionRoues);
+
         roueAD.steerAngle = directionRoues;
         roueAG.steerAngle = directionRoues;
+
+        if (directionRoues >= angleTournerMax-2 || directionRoues <= -angleTournerMax + 2)
+        {
+            roueTourneMax = true;
+        }
+        else
+        {
+            roueTourneMax = false;
+        }
     }
 
     //Fonction qui s'occupe de faire avancer la voiture. Plus la distance est grande entre le point de passage
@@ -279,6 +291,7 @@ public class VoitureAi_Max : MonoBehaviour
         if (Vector3.Distance(transform.position, checkpoint) <= 20 && vitesse >= 85)
         {
             brakeTorqueAdaptatif = 5000;
+            
 
         }
         else if (Vector3.Distance(transform.position, checkpoint) <= 30 && vitesse >= 100)
@@ -292,6 +305,12 @@ public class VoitureAi_Max : MonoBehaviour
         else
         {
             brakeTorqueAdaptatif = 0;
+        }
+
+        if (roueTourneMax == true && vitesse > 30)
+        {
+            brakeTorqueAdaptatif += 1000;
+            
         }
 
         roueAD.brakeTorque = brakeTorqueAdaptatif;

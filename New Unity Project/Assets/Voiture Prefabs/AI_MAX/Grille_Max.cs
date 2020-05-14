@@ -31,7 +31,7 @@ public class Grille_Max : MonoBehaviour
 
         if (nomScene == "PisteÉlian1") { ajustementX = -2; ajustementY = 1; }
         else if (nomScene == "PisteÉlian2") { ajustementX = 2; ajustementY = 2; }
-        else if (nomScene == "PisteFelix") { ajustementX = 0; ajustementY = 1; }
+        else if (nomScene == "PisteFelix") { ajustementX = 0; ajustementY = 0; }
 
         //permet d'avoir le nombre de case selon la grosseur de la grille et la grosseur d'une case
         doubleLongueurSommet = longueurSommet * 2;
@@ -145,7 +145,7 @@ public class Grille_Max : MonoBehaviour
                 {
                     Gizmos.color = Color.blue;
                 }
-                Gizmos.color = (n.walkable) ? Color.white : Color.red;
+                Gizmos.color = (n.peuPasser) ? Color.white : Color.red;
 
                 Gizmos.DrawWireCube(n.worldPosition, Vector3.one * (doubleLongueurSommet - 0.1f));
             }
@@ -165,25 +165,25 @@ public class TerrainType
 public class Sommet : IHeapItem<Sommet>
 {
 
-    public bool walkable;           //Permet de savoir si on peu passer
+    public bool peuPasser;           //Permet de savoir si on peu passer
     public Vector3 worldPosition;   //Position dans le monde 
     public int grilleX;             //position en X dans la grille
     public int grilleY;             //Position en Y dans la grille
-    public int movementPenality;    //Penalité de mouvement relier à la case
+    public int movementPenalite;    //Penalité de mouvement relier à la case
 
     public int gCost;               //distance du point de départ
     public int hCost;               //distance du sommet d'arrivé
     public Sommet parent;           //Le parent de la case
-    int heapIndex;                  //Indexe du tas
+    int heapIndex;                  //Indexe de l'arbre
 
     //constructeur
-    public Sommet(bool walkable, Vector3 worldPos, int gridX, int gridY, int movementPenality)
+    public Sommet(bool peuPasser, Vector3 worldPos, int grilleX, int grilleY, int movementPenalite)
     {
-        this.walkable = walkable;
+        this.peuPasser = peuPasser;
         this.worldPosition = worldPos;
-        this.grilleX = gridX;
-        this.grilleY = gridY;
-        this.movementPenality = movementPenality;
+        this.grilleX = grilleX;
+        this.grilleY = grilleY;
+        this.movementPenalite = movementPenalite;
     }
 
     //Permet de get le fCost qui est la somme du gCost et du hCost
@@ -216,7 +216,7 @@ public class Sommet : IHeapItem<Sommet>
         int compare = fCost.CompareTo(sommetAComparer.fCost);
 
         //Si leur fCost est égale, alors on utilise le hCost 
-        //(distance en le point et le point finale)
+        //(distance entre le pointActuelle et le point à comparer)
         if (compare == 0)
         {
             compare = hCost.CompareTo(sommetAComparer.hCost);

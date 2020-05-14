@@ -6,13 +6,13 @@ using System;
 //S'occupe des demande de pathfinding
 public class PathRequestManager_Max : MonoBehaviour
 {
-    Queue<PathRequest> pathRequestQueue = new Queue<PathRequest>();
-    PathRequest currentPathRequest;
+    Queue<PathRequest> pathRequestQueue = new Queue<PathRequest>();     //File d'attente pour les demande pour trouver le chemin
+    PathRequest currentPathRequest;                                     //demande pour trouver le chemin du moment
 
-    static PathRequestManager_Max instance;
-    Pathfinding_Max pathfinding;
+    static PathRequestManager_Max instance;                             //instance de pathrequestManager
+    Pathfinding_Max pathfinding;                                        //permet d'accéder au fonction de pathfinding
 
-    bool isProcessingPath;
+    bool isProcessingPath;                                              //permet de savoir s'il est en train de trouver un chemin
 
     void Awake()
     {
@@ -20,6 +20,8 @@ public class PathRequestManager_Max : MonoBehaviour
         pathfinding = GetComponent<Pathfinding_Max>();
     }
 
+    //Demande de trouver un chemin entre 2 points (vector3) et l'action est le tableau du chemin 
+    //et une bool pour savoir si le chemin est possibles
     public static void RequestPath(Vector3 pathStart, Vector3 pathEnd, Action<Vector3[], bool> callback)
     {
         PathRequest newRequest = new PathRequest(pathStart, pathEnd, callback);
@@ -27,8 +29,11 @@ public class PathRequestManager_Max : MonoBehaviour
         instance.TryProcessNext();
     }
 
+    //Permet d'essayer de trouver le chemin le plus court
     void TryProcessNext()
     {
+        //s'il n'est pas entrain de process un chemin et que la queue (file d'attente)
+        //est plus grande que 0 (n'est pas vide)
         if (!isProcessingPath && pathRequestQueue.Count > 0)
         {
             currentPathRequest = pathRequestQueue.Dequeue();
@@ -37,6 +42,8 @@ public class PathRequestManager_Max : MonoBehaviour
         }
     }
 
+    //est appelé par Pathfinding_max lorsque le chemin à été trouvé et
+    //si le chemin est possible renvoie le chemin et essais de trouver le prochain
     public void FinishedProcessingPath(Vector3[] path, bool success)
     {
         currentPathRequest.callback(path, success);
@@ -44,6 +51,7 @@ public class PathRequestManager_Max : MonoBehaviour
         TryProcessNext();
     }
 
+    //Struct contenant toute les information necessaire pour faire une demande pour trouver le chemin
     struct PathRequest
     {
         public Vector3 pathStart;
