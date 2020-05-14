@@ -58,6 +58,9 @@ public class CarControllerE : MonoBehaviour
     private bool reachedEndPath;
     private float eulerAnglesY = 0;
 
+    //Max AI
+    [Header("Max AI")]
+    
 
 
     public static bool BoutonChanger = false;
