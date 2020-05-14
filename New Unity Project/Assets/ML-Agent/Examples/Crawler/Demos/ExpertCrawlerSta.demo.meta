@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 66f9f71a28495a84a9b70ab8906adf2a
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400002: Assets/ML-Agent/Examples/Crawler/Demos/ExpertCrawlerSta.demo
+  externalObjects: {}
+  userData: ' (MLAgents.Demonstration)'
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 7bd65ce151aaa4a41a45312543c56be1, type: 3}

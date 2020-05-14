@@ -231,4 +231,24 @@ public class Controle_Voiture : MonoBehaviour
                                                      Wheel_Collider_FL.attachedRigidbody.velocity.magnitude);
     }
 
+
+	public void Move(float steering, float accel)
+	{
+		Move(steering, accel, accel, 0);
+	}
+
+	public void Move(float steering, float accel, float footbrake, float handbrake)
+	{
+		Quaternion quat1;
+		Vector3 position1;
+		Wheel_Collider_FL.GetWorldPose(out position1, out quat1);
+		Wheel_Transformation_FL.transform.position = position1;
+		Wheel_Transformation_FL.transform.rotation = quat1;
+
+		Quaternion quat2;
+		Vector3 position2;
+		Wheel_Collider_FR.GetWorldPose(out position2, out quat2);
+		Wheel_Transformation_FR.transform.position = position2;
+		Wheel_Transformation_FR.transform.rotation = quat2;
+	}
 }

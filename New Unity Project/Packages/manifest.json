@@ -3,6 +3,7 @@
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.2.3",
     "com.unity.collab-proxy": "1.2.15",
+    "com.unity.ml-agents": "file:C:/Users/jonat/Desktop/Unity/AI Practice/ml-agents-0.14.1/com.unity.ml-agents",
     "com.unity.package-manager-ui": "2.0.8",
     "com.unity.probuilder": "4.2.3",
     "com.unity.progrids": "3.0.3-preview.5",
