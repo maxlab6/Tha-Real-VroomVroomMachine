@@ -33,7 +33,7 @@ public class Gestion_UI : MonoBehaviour
 
     private void vitesseVoiture()
     {
-        vitesseKMH = Mathf.Abs(Controle_Voiture.vitesse);
+        vitesseKMH = Mathf.Abs(Mouvement.vitesse);
 
         txtVitesse.text = vitesseKMH.ToString("0") + " Km/h";
     }
