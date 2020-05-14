@@ -127,14 +127,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 87
@@ -205,14 +197,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -285,14 +269,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 103
@@ -363,14 +339,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -443,14 +411,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 91
@@ -522,14 +482,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 87
@@ -595,7 +547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 110419252}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Trois_branche (2)
   m_TagString: Plancher
   m_Icon: {fileID: 0}
@@ -632,14 +584,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -712,14 +656,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 61
@@ -791,14 +727,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46
@@ -855,36 +783,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 233495147}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &287031728
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 1284635267}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 287031729}
-  m_Layer: 0
-  m_Name: Vehicule Joueur 1.6 (Missing Prefab)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &287031729
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 1284635267}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287031728}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &336928804
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,7 +792,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 336928805}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Trois_branche
   m_TagString: Plancher
   m_Icon: {fileID: 0}
@@ -931,14 +829,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1011,14 +901,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 52
@@ -1090,14 +972,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: fd8897a9f46db4ff1ba74975ec44af36, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: fd8897a9f46db4ff1ba74975ec44af36, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fd8897a9f46db4ff1ba74975ec44af36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 128
@@ -1154,12 +1028,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 396670802}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &428866006 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1104667222}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &433254202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1174,14 +1042,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1251,7 +1111,7 @@ GameObject:
   - component: {fileID: 442946810}
   - component: {fileID: 442946809}
   - component: {fileID: 442946808}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1337,10 +1197,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1556203722}
     m_Modifications:
-    - target: {fileID: 100000, guid: 05fede2a6022d42b1ade2912387039fa, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 05fede2a6022d42b1ade2912387039fa, type: 3}
       propertyPath: m_Name
       value: ModularTrackRampCurveLeft
@@ -1348,10 +1204,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 05fede2a6022d42b1ade2912387039fa, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 05fede2a6022d42b1ade2912387039fa, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 05fede2a6022d42b1ade2912387039fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1424,14 +1276,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46
@@ -1503,14 +1347,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 87
@@ -1574,10 +1410,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1556203722}
     m_Modifications:
-    - target: {fileID: 100000, guid: 109245566253c1c4aaa181dd71fad1a5, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 109245566253c1c4aaa181dd71fad1a5, type: 3}
       propertyPath: m_Name
       value: ModularTrackSCurveRight
@@ -1585,10 +1417,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 109245566253c1c4aaa181dd71fad1a5, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 109245566253c1c4aaa181dd71fad1a5, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 109245566253c1c4aaa181dd71fad1a5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1661,14 +1489,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 128
@@ -1739,14 +1559,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1819,14 +1631,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46
@@ -1897,14 +1701,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1977,14 +1773,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 93
@@ -2056,14 +1844,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 87
@@ -2134,14 +1914,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2283,14 +2055,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46
@@ -2361,14 +2125,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2441,14 +2197,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 81
@@ -2505,117 +2253,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1018911958}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1104667222
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1556203722}
-    m_Modifications:
-    - target: {fileID: 188954440334198755, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 47.27562
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.245
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 82.49092
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 57
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2889978331053894444, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174940738492994256, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: m_Name
-      value: AI Jo
-      objectReference: {fileID: 0}
-    - target: {fileID: 8126973572497230556, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: road
-      value: 
-      objectReference: {fileID: 1556203724}
-    - target: {fileID: 8126973572497230556, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-        type: 3}
-      propertyPath: raycastLayers.m_Bits
-      value: 131072
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7fb43002711282a4fa9e54f45dcf6ec8, type: 3}
---- !u!114 &1104667223 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8126973572497230556, guid: 7fb43002711282a4fa9e54f45dcf6ec8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1104667222}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b9ecb0e196c3b4487d975d76e985d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1143936012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2630,14 +2267,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2710,14 +2339,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46
@@ -2788,14 +2409,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 3cc54c2c67fc34a1abe6fe43c889f8e3, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3cc54c2c67fc34a1abe6fe43c889f8e3, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100008, guid: 3cc54c2c67fc34a1abe6fe43c889f8e3, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3cc54c2c67fc34a1abe6fe43c889f8e3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2868,14 +2481,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 102
@@ -2944,7 +2549,7 @@ GameObject:
   - component: {fileID: 1220018320}
   - component: {fileID: 1220018319}
   - component: {fileID: 1220018318}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3037,14 +2642,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3203,11 +2800,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_Layer
-      value: 17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_Layer
-      value: 17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3280,14 +2877,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3cc54c2c67fc34a1abe6fe43c889f8e3, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100008, guid: 3cc54c2c67fc34a1abe6fe43c889f8e3, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3cc54c2c67fc34a1abe6fe43c889f8e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46
@@ -3358,14 +2947,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3518,14 +3099,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 73
@@ -3597,14 +3170,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 87
@@ -3670,7 +3235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1425072988}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Trois_branche (1)
   m_TagString: Plancher
   m_Icon: {fileID: 0}
@@ -3711,17 +3276,9 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3794,14 +3351,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 81
@@ -3873,14 +3422,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 128
@@ -3949,7 +3490,7 @@ GameObject:
   - component: {fileID: 1526619684}
   - component: {fileID: 1526619683}
   - component: {fileID: 1526619682}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4043,14 +3584,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 127
@@ -4117,7 +3650,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1556203722}
   - component: {fileID: 1556203723}
-  - component: {fileID: 1556203724}
   m_Layer: 0
   m_Name: PisteJoV2
   m_TagString: Untagged
@@ -4134,7 +3666,7 @@ Transform:
   m_GameObject: {fileID: 1556203721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 233495148}
   - {fileID: 910388432}
@@ -4193,7 +3725,6 @@ Transform:
   - {fileID: 796058695}
   - {fileID: 1227225516}
   - {fileID: 100372608}
-  - {fileID: 428866006}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4211,24 +3742,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
---- !u!114 &1556203724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556203721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f6e186c6867f3a4e8024bf31a947e51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carAgent: {fileID: 1104667223}
-  cumulativeReward: {fileID: 0}
-  x: 222
-  y: 5
-  z: 120
-  rotation: 90
 --- !u!1001 &1634126913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4243,14 +3756,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4331,14 +3836,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 128
@@ -4409,14 +3906,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fb55a8802f7114aceb2a7d7f0918153b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4489,14 +3978,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46
@@ -4567,14 +4048,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4647,14 +4120,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 71
@@ -4725,14 +4190,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4805,14 +4262,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 73
@@ -4883,14 +4332,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a0922edcbe6b74564b40735068507f0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4963,14 +4404,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 81
@@ -5042,14 +4475,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 73
@@ -5113,10 +4538,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1556203722}
     m_Modifications:
-    - target: {fileID: 100000, guid: 05fede2a6022d42b1ade2912387039fa, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 05fede2a6022d42b1ade2912387039fa, type: 3}
       propertyPath: m_Name
       value: ModularTrackRampCurveLeft
@@ -5124,10 +4545,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 05fede2a6022d42b1ade2912387039fa, type: 3}
       propertyPath: m_TagString
       value: Plancher
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 05fede2a6022d42b1ade2912387039fa, type: 3}
-      propertyPath: m_Layer
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 05fede2a6022d42b1ade2912387039fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5200,14 +4617,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plancher
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: fd8897a9f46db4ff1ba74975ec44af36, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: fd8897a9f46db4ff1ba74975ec44af36, type: 3}
-      propertyPath: m_Layer
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fd8897a9f46db4ff1ba74975ec44af36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 108
@@ -5276,9 +4685,9 @@ GameObject:
   - component: {fileID: 2018295858}
   - component: {fileID: 2018295857}
   - component: {fileID: 2018295856}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Cube
-  m_TagString: Plancher
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5367,9 +4776,9 @@ GameObject:
   - component: {fileID: 2061808173}
   - component: {fileID: 2061808172}
   - component: {fileID: 2061808171}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Cube
-  m_TagString: Plancher
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
