@@ -44,7 +44,10 @@ public class VoitureAi_Max : MonoBehaviour
     public bool estSurCapot = false;          //bool permetant de savoir si la voiture doit est remis sur ses roues, est changé lorsque le rayon sur le toit touche au sol
     public int hauteurReset = 1;              //Hauteur du sol auquel la voiture est remis sur ses roue
 
-
+    //Systeme de Postion
+    public Transform lastWaypointPos;
+    public int currentWaypointPos;
+    public int currentLapPos;
 
     //
     //SECTION SUIVRE CHEMIN
@@ -402,4 +405,6 @@ public class VoitureAi_Max : MonoBehaviour
         ForceVersLeBas();
 
     }
+
+    
 }
