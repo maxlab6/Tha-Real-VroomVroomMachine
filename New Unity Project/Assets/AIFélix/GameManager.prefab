@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &614408704901563671
+--- !u!1 &7514313822554416706
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 614408704901563670}
-  - component: {fileID: 614408704901563672}
-  - component: {fileID: 614408704901563673}
+  - component: {fileID: 7514313822554416707}
+  - component: {fileID: 7514313822554416717}
+  - component: {fileID: 7514313822554416716}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -18,41 +18,41 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &614408704901563670
+--- !u!4 &7514313822554416707
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614408704901563671}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000030517578, y: 0, z: 0.000015258789}
+  m_GameObject: {fileID: 7514313822554416706}
+  m_LocalRotation: {x: -0, y: -0.73497176, z: -0, w: 0.6780978}
+  m_LocalPosition: {x: 16.865019, y: 12.85, z: 116.83331}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &614408704901563672
+--- !u!114 &7514313822554416717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614408704901563671}
+  m_GameObject: {fileID: 7514313822554416706}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c3b40ae3178d5d42a3fe0a77de6f014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: {fileID: 614408704901563673}
+  grid: {fileID: 7514313822554416716}
   StartPosition: {fileID: 0}
---- !u!114 &614408704901563673
+--- !u!114 &7514313822554416716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614408704901563671}
+  m_GameObject: {fileID: 7514313822554416706}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39d764ff72e98d546990baf994eee5fa, type: 3}
@@ -61,11 +61,11 @@ MonoBehaviour:
   StartPosition: {fileID: 0}
   WallMask:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 131072
   TrackMask:
     serializedVersion: 2
-    m_Bits: 32768
-  gridWorldSize: {x: 350, y: 350}
+    m_Bits: 8192
+  gridWorldSize: {x: 400, y: 400}
   nodeRadius: 1
   Distance: 0
-  afficher: 0
+  afficher: 1
