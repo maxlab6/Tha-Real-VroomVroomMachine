@@ -42,20 +42,18 @@ public class Gestion_UI : MonoBehaviour
     private void chrono()
     {
 
-
-        if(tour_comlete.boolComp == true)
+        if(tour_comlete.finitour == true)
         {
-            tempsTempo += Time.deltaTime;
+            tempsTempo = Time.deltaTime;
             tempsTxt.text = minute.ToString("00") + " : " + seconde.ToString("00.00");
+            temps = 0;
         }
         else
         {
-
-            temps += Time.deltaTime + tempsTempo;
+            temps += Time.deltaTime;
             seconde = (temps % 60f) % 100;
             minute = (int)(temps / 60f);
 
-            tempsTempo = 0.0f;
             tempsTxt.text = minute.ToString("00") + " : " + seconde.ToString("00.00");
         }
     }
