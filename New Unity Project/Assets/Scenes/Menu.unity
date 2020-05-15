@@ -415,7 +415,7 @@ RectTransform:
   - {fileID: 727502997}
   - {fileID: 1952650236}
   m_Father: {fileID: 102871157}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -661,13 +661,13 @@ RectTransform:
   m_Children:
   - {fileID: 6340258}
   - {fileID: 350573837}
-  - {fileID: 353492785}
   - {fileID: 343729260}
   - {fileID: 761767855}
   - {fileID: 849501655}
   - {fileID: 442647425}
   - {fileID: 2135704278}
   - {fileID: 14244695}
+  - {fileID: 353492785}
   m_Father: {fileID: 1678415107}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1691,7 +1691,7 @@ RectTransform:
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 102871157}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1716,7 +1716,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0da8b29ddaa23f5428dffcab0df6c933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82fdef9609177474e91703b808907fc6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1951,8 +1951,6 @@ MonoBehaviour:
   imageC: {fileID: 0}
   imageG: {fileID: 0}
   imageD: {fileID: 0}
-  spriteJ1: {fileID: 0}
-  spriteJ2: {fileID: 0}
   spriteF1: {fileID: 0}
   spriteE1: {fileID: 0}
   spriteE2: {fileID: 0}
@@ -1986,7 +1984,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 102871157}
-  m_RootOrder: 2
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2011,7 +2009,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61ca91095bd393447893b540d7c7b80e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db3effaefefa9de43b74f8856c4b7324, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2353,7 +2351,7 @@ RectTransform:
   m_Children:
   - {fileID: 526286741}
   m_Father: {fileID: 102871157}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2473,11 +2471,9 @@ MonoBehaviour:
   imageC: {fileID: 353492786}
   imageG: {fileID: 343729261}
   imageD: {fileID: 761767856}
-  spriteJ1: {fileID: 21300000, guid: 42cf041a6cd398147a660b2f93783be5, type: 3}
-  spriteJ2: {fileID: 21300000, guid: dff65e37376c1e64aa735007d8e638b9, type: 3}
-  spriteF1: {fileID: 21300000, guid: 61ca91095bd393447893b540d7c7b80e, type: 3}
-  spriteE1: {fileID: 21300000, guid: 0da8b29ddaa23f5428dffcab0df6c933, type: 3}
-  spriteE2: {fileID: 21300000, guid: 3f66c4a022bf5074e90a2c4239a27559, type: 3}
+  spriteF1: {fileID: 21300000, guid: db3effaefefa9de43b74f8856c4b7324, type: 3}
+  spriteE1: {fileID: 21300000, guid: 706124d3930cb0a4dae94000ec9d18e5, type: 3}
+  spriteE2: {fileID: 21300000, guid: 82fdef9609177474e91703b808907fc6, type: 3}
 --- !u!1 &446099954
 GameObject:
   m_ObjectHideFlags: 0
@@ -3564,7 +3560,7 @@ RectTransform:
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 102871157}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3589,7 +3585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61ca91095bd393447893b540d7c7b80e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 706124d3930cb0a4dae94000ec9d18e5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4011,7 +4007,7 @@ RectTransform:
   m_Children:
   - {fileID: 314798440}
   m_Father: {fileID: 102871157}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4033,11 +4029,9 @@ MonoBehaviour:
   imageC: {fileID: 353492786}
   imageG: {fileID: 343729261}
   imageD: {fileID: 761767856}
-  spriteJ1: {fileID: 21300000, guid: 42cf041a6cd398147a660b2f93783be5, type: 3}
-  spriteJ2: {fileID: 21300000, guid: dff65e37376c1e64aa735007d8e638b9, type: 3}
-  spriteF1: {fileID: 21300000, guid: 61ca91095bd393447893b540d7c7b80e, type: 3}
-  spriteE1: {fileID: 21300000, guid: 0da8b29ddaa23f5428dffcab0df6c933, type: 3}
-  spriteE2: {fileID: 21300000, guid: 3f66c4a022bf5074e90a2c4239a27559, type: 3}
+  spriteF1: {fileID: 21300000, guid: db3effaefefa9de43b74f8856c4b7324, type: 3}
+  spriteE1: {fileID: 21300000, guid: 706124d3930cb0a4dae94000ec9d18e5, type: 3}
+  spriteE2: {fileID: 21300000, guid: 82fdef9609177474e91703b808907fc6, type: 3}
 --- !u!114 &849501657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9864,7 +9858,7 @@ RectTransform:
   m_Children:
   - {fileID: 1843054315}
   m_Father: {fileID: 102871157}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

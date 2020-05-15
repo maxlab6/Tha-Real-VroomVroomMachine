@@ -17,13 +17,15 @@ public class Gestion_UI : MonoBehaviour
     private int tour;
 
 
-    private void Start()
+    private void Awake()
     {
-        positionVoiture = GetComponent<PositionVoiture>();
+        GameObject joueur = GameObject.Find("Vehicule Joueur 2.2");
+        positionVoiture = joueur.GetComponentInChildren<PositionVoiture>();
     }
 
     void Update()
     {
+        
         VitesseVoiture();
         Chrono();
         GestionDesTours();
@@ -48,9 +50,11 @@ public class Gestion_UI : MonoBehaviour
     private void Chrono()
     {
 
-        temps += positionVoiture.temps;
+        temps = positionVoiture.temps;
         seconde = (temps % 60f) % 100;
         minute = (int)(temps / 60f);
+
+        Debug.Log("TEMPS ===" + temps);
 
         tempsTxt.text = minute.ToString("00") + " : " + seconde.ToString("00.00");
 

@@ -57,7 +57,7 @@ public class CourseFinieScript : MonoBehaviour
                 posText = "PosText" + pos.ToString();
                 posTextList[i].GetComponent<TextMeshProUGUI>().text = pos.ToString();
 
-                tempsTextList[i].GetComponent<TextMeshProUGUI>().text = raceManager_.carOrder[i].temps.ToString();
+                tempsTextList[i].GetComponent<TextMeshProUGUI>().text = raceManager_.carOrder[i].temps.ToString("0.00");
 
                 nomTextList[i].GetComponent<TextMeshProUGUI>().text = raceManager_.carOrder[i].transform.parent.name;
 

@@ -6,7 +6,8 @@ public class RaceManager : MonoBehaviour
 {
     public PositionVoiture[] allCars;
     public PositionVoiture[] carOrder;
-    public int toursTotaux;
+    public bool joueurAFini = false;
+    public int toursTotaux = 2;
     public GameObject HUD;
     public GameObject MenuFinale;
     
@@ -26,10 +27,16 @@ public class RaceManager : MonoBehaviour
             if (allCars[i].currentLapPos >= toursTotaux)
             {
                 nbVoituresFinis++;
+                allCars[i].aTerminerCourse = true;
+            }
+
+            if (allCars[0].currentLapPos >= toursTotaux)
+            {
+                joueurAFini = true;
             }
         }
 
-        if(nbVoituresFinis == allCars.Length)
+        if(joueurAFini)
         {
             HUD.SetActive(false);
             MenuFinale.GetComponent<CanvasGroup>().alpha = 1;

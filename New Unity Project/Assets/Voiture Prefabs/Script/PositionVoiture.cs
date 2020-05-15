@@ -8,6 +8,7 @@ public class PositionVoiture : MonoBehaviour
     public int counterWaypointPos;
     public int currentLapPos;
     public Transform lastWaypointPos;
+    public bool aTerminerCourse = false;
 
     public float temps, tempsTempo;
     private float heure, minute, seconde;
@@ -56,7 +57,7 @@ public class PositionVoiture : MonoBehaviour
 
     private void Update()
     {
-        if(CourseFinieScript.courseFinie == false)
+        if(aTerminerCourse == false)
         {
             Chrono();
         }
