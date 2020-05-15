@@ -9,6 +9,9 @@ public class PositionVoiture : MonoBehaviour
     public int currentLapPos;
     public Transform lastWaypointPos;
 
+    private float temps, tempsTempo;
+    private float heure, minute, seconde;
+    private float tempsRapide = 1000000000000000;
 
     public void OnTriggerEnter(Collider col)
     {
@@ -48,5 +51,31 @@ public class PositionVoiture : MonoBehaviour
                 position++;
         }
         return position;
+    }
+
+
+    private void Update()
+    {
+        Chrono();
+    }
+
+   
+    public void Chrono()
+    {
+        if (tour_comlete.finitour == true)
+        {
+            tempsTempo = temps;
+            if (tempsRapide > tempsTempo)
+            {
+                tempsRapide = tempsTempo;
+            }
+        }
+        else
+        {
+            temps += Time.deltaTime;
+            seconde = (temps % 60f) % 100;
+            minute = (int)(temps / 60f);
+            tempsTempo = 0.0f;
+        }
     }
 }

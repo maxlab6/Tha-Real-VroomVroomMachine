@@ -25,6 +25,7 @@ public class ControleVoitureIaFelix : MonoBehaviour
     public float modulationVariable = 1f;
     public float targetSpeed;
     public float brakingFactor = 1.5f;
+    public float modulationFactor = 0f;
 
     [Header("Chemin/Checkpoints")]
     public Transform parentCheckPoint;
@@ -91,15 +92,20 @@ public class ControleVoitureIaFelix : MonoBehaviour
             nbNodeAvance = 2;
             distanceAvance = 12;
         }
-        else if (targetSpeed < 50f)
+        else if (targetSpeed < 60f)
         {
             nbNodeAvance = 4;
+            distanceAvance = 12;
+        }
+        else if (targetSpeed < 100f)
+        {
+            nbNodeAvance = 5;
             distanceAvance = 12;
         }
         else
         {
             nbNodeAvance = 6;
-            distanceAvance = 14;
+            distanceAvance = 17;
         }
     }
 
@@ -118,10 +124,16 @@ public class ControleVoitureIaFelix : MonoBehaviour
 
     private void ModulationDeVitesse()
     {
-        Vector3 relativeVectorModulation = transform.InverseTransformPoint(cheminCourt[currentNode + nbNodeAvance].Position);
-        float modulationFactor = Mathf.Pow((1f - (relativeVectorModulation.x / relativeVectorModulation.magnitude)),2) * maxSpeed;
-        //float modulationFactor = maxSpeed * (1f - (relativeVectorModulation.x / relativeVectorModulation.magnitude)) * (1f - (1 / relativeVectorModulation.x));
-        targetSpeed = modulationFactor;
+        Vector3 relativeVectorModulation = transform.InverseTransformPoint(cheminCourt[currentNode + nbNodeAvance*2].Position);
+        modulationFactor = (1f - (relativeVectorModulation.x / relativeVectorModulation.magnitude)) * maxSpeed - Mathf.Abs(relativeVectorModulation.x) * 4;
+        if (modulationFactor > 30f)
+        {
+            targetSpeed = modulationFactor;
+        }
+        else
+        {
+            targetSpeed = 30f;
+        }
     }
 
     private void Sensors()
@@ -136,7 +148,7 @@ public class ControleVoitureIaFelix : MonoBehaviour
 
         if (Physics.Raycast(sensorStartPos, transform.forward, out hit, 3f))
         {
-            if (hit.collider.CompareTag("mur") || hit.collider.CompareTag("car"))
+            if (hit.collider.CompareTag("mur"))
             {
                 reculer = true;
             }
@@ -149,7 +161,7 @@ public class ControleVoitureIaFelix : MonoBehaviour
         sensorStartPos += transform.right * frontSideSensorPosition;
         if (Physics.Raycast(sensorStartPos, transform.forward, out hit, sensorLeght))
         {
-            if (hit.collider.CompareTag("mur") || hit.collider.CompareTag("car"))
+            if (hit.collider.CompareTag("mur") || hit.collider.CompareTag("car") || hit.collider.CompareTag("carAiMax"))
             {
                 Debug.DrawLine(sensorStartPos, hit.point);
                 avoiding = true;
@@ -161,7 +173,7 @@ public class ControleVoitureIaFelix : MonoBehaviour
 
         else if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(frontSensorAngle, transform.up) * transform.forward, out hit, sensorLeght))
         {
-            if (hit.collider.CompareTag("mur") || hit.collider.CompareTag("car"))
+            if (hit.collider.CompareTag("mur") || hit.collider.CompareTag("car") || hit.collider.CompareTag("carAiMax"))
             {
                 Debug.DrawLine(sensorStartPos, hit.point);
                 avoiding = true;
@@ -173,7 +185,7 @@ public class ControleVoitureIaFelix : MonoBehaviour
         sensorStartPos -= transform.right * frontSideSensorPosition * 2;
         if (Physics.Raycast(sensorStartPos, transform.forward, out hit, sensorLeght))
         {
-            if (hit.collider.CompareTag("mur") || hit.collider.CompareTag("car"))
+            if (hit.collider.CompareTag("mur") || hit.collider.CompareTag("car") || hit.collider.CompareTag("carAiMax"))
             {
                 Debug.DrawLine(sensorStartPos, hit.point);
                 avoiding = true;
@@ -184,7 +196,7 @@ public class ControleVoitureIaFelix : MonoBehaviour
 
         else if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(-frontSensorAngle, transform.up) * transform.forward, out hit, sensorLeght))
         {
-            if (hit.collider.CompareTag("mur") || hit.collider.CompareTag("car"))
+            if (hit.collider.CompareTag("mur") || hit.collider.CompareTag("car") || hit.collider.CompareTag("carAiMax"))
             {
                 Debug.DrawLine(sensorStartPos, hit.point);
                 avoiding = true;
@@ -196,7 +208,7 @@ public class ControleVoitureIaFelix : MonoBehaviour
         {
             if (Physics.Raycast(sensorStartPos, transform.forward, out hit, sensorLeght))
             {
-                if (hit.collider.CompareTag("mur") || hit.collider.CompareTag("car"))
+                if (hit.collider.CompareTag("mur") || hit.collider.CompareTag("car") || hit.collider.CompareTag("carAiMax"))
                 {
                     Debug.DrawLine(sensorStartPos, hit.point);
                     avoiding = true;
@@ -313,6 +325,22 @@ public class ControleVoitureIaFelix : MonoBehaviour
 
     private void LerpToSteerAngle()
     {
+        if (currentSpeed >200)
+        {
+            turnSpeed = 8;
+        }
+        else if (currentSpeed > 100)
+        {
+            turnSpeed = 6;
+        }
+        else if (currentSpeed > 50)
+        {
+            turnSpeed = 4;
+        }
+        else
+        {
+            turnSpeed = 2;
+        }
         wheelFL.steerAngle = Mathf.Lerp(wheelFL.steerAngle, targetSteerAngle, Time.deltaTime * turnSpeed);
         wheelFR.steerAngle = Mathf.Lerp(wheelFR.steerAngle, targetSteerAngle, Time.deltaTime * turnSpeed);
     }

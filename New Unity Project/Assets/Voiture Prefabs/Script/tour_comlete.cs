@@ -6,7 +6,7 @@ public class tour_comlete : MonoBehaviour
 {
 
     public static int tours = 1;
-    public static bool boolComp;
+    public static bool finitour;
 
     // Update is called once per frame
     void start()
@@ -19,7 +19,7 @@ public class tour_comlete : MonoBehaviour
         if(other.tag == "car")
         {
             tours += 1;
-            boolComp = true;
+            finitour = true;
         }
     }
 
@@ -27,7 +27,7 @@ public class tour_comlete : MonoBehaviour
     {
         if(other.tag == "car")
         {
-            boolComp = false;
+            finitour = false;
         }
     }
 }
