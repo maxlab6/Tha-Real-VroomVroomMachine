@@ -380,7 +380,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &385958714
 MonoBehaviour:
@@ -609,7 +609,7 @@ Transform:
   - {fileID: 1119622341}
   - {fileID: 395779261}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630837093
 GameObject:
@@ -1360,7 +1360,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1177196342
 PrefabInstance:
@@ -1373,6 +1373,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514313822554416706, guid: 4119cbd44bdefd446979a84874eed562,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7514313822554416707, guid: 4119cbd44bdefd446979a84874eed562,
         type: 3}
@@ -1772,7 +1777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1900281610
 Transform:
   m_ObjectHideFlags: 0
@@ -1977,6 +1982,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "VehiculeIaF\xE9lix"
       objectReference: {fileID: 0}
+    - target: {fileID: 7253073279265025291, guid: 331b6d0c1b68f7443b353be72d5d314d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7253073281031830596, guid: 331b6d0c1b68f7443b353be72d5d314d,
         type: 3}
       propertyPath: gameManager
@@ -2045,7 +2055,7 @@ PrefabInstance:
     - target: {fileID: 1949968452902014320, guid: 888aa0e6d038be747855121cdc130c30,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1949968452902014320, guid: 888aa0e6d038be747855121cdc130c30,
         type: 3}
@@ -2071,6 +2081,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AI_MAX_V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638252287911314962, guid: 888aa0e6d038be747855121cdc130c30,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7214637608086692715, guid: 888aa0e6d038be747855121cdc130c30,
         type: 3}
@@ -2259,7 +2274,7 @@ PrefabInstance:
     - target: {fileID: 4056888046455419362, guid: 749baa84e3e22ce47b12508848df3c7e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4056888046455419362, guid: 749baa84e3e22ce47b12508848df3c7e,
         type: 3}
