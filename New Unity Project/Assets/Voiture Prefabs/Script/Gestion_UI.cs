@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Gestion_UI : MonoBehaviour
 {
+    PositionVoiture positionVoiture;
     public Text txtVitesse;
     private float vitesseKMH;
 
@@ -15,23 +16,28 @@ public class Gestion_UI : MonoBehaviour
     public Text txtTours;
     private int tour;
 
-    
+
+    private void Start()
+    {
+        positionVoiture = GetComponent<PositionVoiture>();
+    }
+
     void Update()
     {
-        vitesseVoiture();
-        chrono();
-        gestionDesTours();
+        VitesseVoiture();
+        Chrono();
+        GestionDesTours();
     }
 
 
-    private void gestionDesTours()
+    private void GestionDesTours()
     {
-        tour = tour_comlete.tours;
+        tour = positionVoiture.currentLapPos;
         txtTours.text = tour.ToString();
     }
 
 
-    private void vitesseVoiture()
+    private void VitesseVoiture()
     {
         vitesseKMH = Mathf.Abs(Controle_Voiture.vitesse);
 
@@ -39,22 +45,14 @@ public class Gestion_UI : MonoBehaviour
     }
 
 
-    private void chrono()
+    private void Chrono()
     {
 
-        if(tour_comlete.finitour == true)
-        {
-            tempsTempo = Time.deltaTime;
-            tempsTxt.text = minute.ToString("00") + " : " + seconde.ToString("00.00");
-            temps = 0;
-        }
-        else
-        {
-            temps += Time.deltaTime;
-            seconde = (temps % 60f) % 100;
-            minute = (int)(temps / 60f);
+        temps += positionVoiture.temps;
+        seconde = (temps % 60f) % 100;
+        minute = (int)(temps / 60f);
 
-            tempsTxt.text = minute.ToString("00") + " : " + seconde.ToString("00.00");
-        }
+        tempsTxt.text = minute.ToString("00") + " : " + seconde.ToString("00.00");
+
     }
 }
