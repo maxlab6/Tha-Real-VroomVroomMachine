@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CourseFinieScript : MonoBehaviour
 {
@@ -54,11 +55,11 @@ public class CourseFinieScript : MonoBehaviour
             {
                 pos = i + 1;
                 posText = "PosText" + pos.ToString();
-                posTextList[i].GetComponent<UnityEngine.UI.Text>().text = pos.ToString();
+                posTextList[i].GetComponent<TextMeshProUGUI>().text = pos.ToString();
 
-                tempsTextList[i].GetComponent<UnityEngine.UI.Text>().text = raceManager_.carOrder[i].temps.ToString();
+                tempsTextList[i].GetComponent<TextMeshProUGUI>().text = raceManager_.carOrder[i].temps.ToString();
 
-                nomTextList[i].GetComponent<UnityEngine.UI.Text>().text = raceManager_.carOrder[i].transform.parent.name;
+                nomTextList[i].GetComponent<TextMeshProUGUI>().text = raceManager_.carOrder[i].transform.parent.name;
 
             }
         }
