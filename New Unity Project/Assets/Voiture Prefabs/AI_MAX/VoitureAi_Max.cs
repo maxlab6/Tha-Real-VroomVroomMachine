@@ -238,7 +238,7 @@ public class VoitureAi_Max : MonoBehaviour
         vecteurRelatif = vecteurRelatif / vecteurRelatif.magnitude;
         directionRoues = (vecteurRelatif.x / vecteurRelatif.magnitude) * angleTournerMax;
 
-        Debug.Log("direction roues : " + directionRoues);
+
 
         roueAD.steerAngle = directionRoues;
         roueAG.steerAngle = directionRoues;
@@ -330,8 +330,9 @@ public class VoitureAi_Max : MonoBehaviour
         //Sensor AvantMilieu, si le tag est autre chose que Terrain, Arrive, ou checkpointMax, alors doitReculer = true
         if (Physics.Raycast(positionSensorsReculer, positionCarrosserie.forward, out RaycastHit hit, longueurRayons))
         {
-            if (hit.collider.tag != "Terrain" && hit.collider.tag != "Arrive" && hit.collider.tag != "checkpointMax")
+            if (hit.collider.tag != "Terrain" && hit.collider.tag != "Arrive" && hit.collider.tag != "checkpointMax" && hit.collider.tag != "waypoints")
             {
+                Debug.Log(hit.collider.name);
                 doitReculer = true;
                 StopCoroutine("ReculerPendentXSec");
                 StartCoroutine("ReculerPendentXSec");
