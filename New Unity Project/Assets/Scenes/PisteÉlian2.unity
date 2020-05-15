@@ -2255,6 +2255,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 4056888046692640588, guid: 749baa84e3e22ce47b12508848df3c7e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Asphalte
+      objectReference: {fileID: 0}
     - target: {fileID: 4056888046692640590, guid: 749baa84e3e22ce47b12508848df3c7e,
         type: 3}
       propertyPath: m_Layer
@@ -2394,6 +2399,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056888047127076229, guid: 749baa84e3e22ce47b12508848df3c7e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Asphalte
       objectReference: {fileID: 0}
     - target: {fileID: 4056888047127076231, guid: 749baa84e3e22ce47b12508848df3c7e,
         type: 3}
