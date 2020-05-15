@@ -40,13 +40,6 @@ public class CarController : MonoBehaviour
     public float hauteurReset;
     public float forceAntiFlip = 100;
 
-    //Position
-    [Header("Position")]
-    public int currentWaypointPos;
-    public int counterWaypointPos;
-    public int currentLapPos;
-    public Transform lastWaypointPos;
-
     //Élian AI
     [Header("Élian AI")]
     public Transform waypoints;
@@ -322,23 +315,6 @@ public class CarController : MonoBehaviour
         }
     }
 
-    public float GetDistancePos()
-    {
-        return (transform.position - lastWaypointPos.position).magnitude + currentWaypointPos * 100 + currentLapPos * (100 * GameObject.Find("Waypoints").transform.childCount);
-    }
-
-    public int GetCarPos(CarController[] allCars)
-    {
-        float distance = GetDistancePos();
-        int position = 1;
-        foreach (CarController car in allCars)
-        {
-            if (car.GetDistancePos() > distance)
-                position++;
-        }
-        return position;
-    }
-
     public void OnTriggerEnter(Collider col)
     {
         string tag = col.gameObject.tag;
@@ -346,25 +322,6 @@ public class CarController : MonoBehaviour
         if ("waypointsE" == tag)
         {
             isColliding = true;
-        }
-        if ("waypoints" == tag)
-        {
-            currentWaypointPos = System.Convert.ToInt32(col.gameObject.name);
-            {
-                if (currentWaypointPos == 0 && counterWaypointPos == GameObject.Find("Waypoints").transform.childCount)
-                {
-                    counterWaypointPos = 0;
-                    currentLapPos++;
-                }
-                Debug.Log(counterWaypointPos);
-                Debug.Log(currentWaypointPos);
-                if (counterWaypointPos == currentWaypointPos)
-                {
-                    Debug.Log("...................................................................................");
-                    lastWaypointPos = col.transform;
-                    counterWaypointPos++;
-                }
-            }
         }
     }
 

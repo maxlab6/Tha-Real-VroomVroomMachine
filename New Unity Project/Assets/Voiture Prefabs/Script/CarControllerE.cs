@@ -224,7 +224,7 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_FL.steerAngle = -1*newSteerAngle;
                 Wheel_Collider_FR.steerAngle = -1*newSteerAngle;
             }
-            if (Physics.Raycast(sensorBasePos,  Quaternion.AngleAxis(90f, transform.up) * transform.forward, out hit, 5f, 1 << 12) && stuck == false)
+            if (Physics.Raycast(sensorBasePos,  Quaternion.AngleAxis(90f, transform.up) * transform.forward, out hit, 5f, LayerMask.NameToLayer("car")) && stuck == false)
             {
                 attacking = true;
                 Wheel_Collider_FL.motorTorque = maxTorque;
@@ -237,8 +237,7 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_RR.brakeTorque = 0;
                 Wheel_Collider_FL.steerAngle = maxSteeringAngle;
             }
-
-            if (Physics.Raycast(sensorBasePos, Quaternion.AngleAxis(-90f, transform.up) * transform.forward, out hit, 5f, 1 << 12) && stuck == false)
+            if (Physics.Raycast(sensorBasePos, Quaternion.AngleAxis(-90f, transform.up) * transform.forward, out hit, 5f, LayerMask.NameToLayer("car")) && stuck == false)
             {
                 attacking = true;
                 Wheel_Collider_FL.motorTorque = maxTorque;
