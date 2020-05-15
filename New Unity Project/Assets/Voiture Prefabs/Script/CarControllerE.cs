@@ -181,6 +181,7 @@ public class CarControllerE : MonoBehaviour
                         eulerAnglesY = transform.eulerAngles.y;
                         yield break;
                     }
+                    //Si arriver à la fin du circuit, on recommence donc tout à 0
                     else if(waypointIndex == waypoints.childCount)
                     {
                         waypointIndex = 0;
@@ -253,6 +254,8 @@ public class CarControllerE : MonoBehaviour
 
             if (Vector3.Distance(transform.position, currentWaypoint) >= 10 && Vector3.Distance(transform.position, currentWaypoint) <= 30 && stuck == false && attacking == false && vitesse >= 50 && vitesse <= 60)
             {
+                Debug.Log("t con haha");
+
                 Wheel_Collider_FL.motorTorque = 0;
                 Wheel_Collider_FR.motorTorque = 0;
                 Wheel_Collider_RR.motorTorque = 0;
@@ -263,8 +266,9 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_RR.brakeTorque = 0;
                
             }
-            else if(Vector3.Distance(transform.position, currentWaypoint) < 50 && stuck == false && attacking == false && vitesse > 60)
+            else if(Vector3.Distance(transform.position, currentWaypoint) >= 10 && Vector3.Distance(transform.position, currentWaypoint) <= 30 && stuck == false && attacking == false && vitesse > 70)
             {
+                Debug.Log("t con haha x23");
                 Wheel_Collider_FL.motorTorque = 0;
                 Wheel_Collider_FR.motorTorque = 0;
                 Wheel_Collider_RR.motorTorque = 0;
@@ -470,25 +474,6 @@ public class CarControllerE : MonoBehaviour
         if ("waypointsE" == tag)
         {
             isColliding = true;
-        }
-        if ("waypoints" == tag)
-        {
-            currentWaypointPos = System.Convert.ToInt32(col.gameObject.name);
-            {
-                if (currentWaypointPos == 0 && counterWaypointPos == GameObject.Find("Waypoints").transform.childCount)
-                {
-                    counterWaypointPos = 0;
-                    currentLapPos++;
-                }
-                Debug.Log(counterWaypointPos);
-                Debug.Log(currentWaypointPos);
-                if (counterWaypointPos == currentWaypointPos)
-                {
-                    Debug.Log("...................................................................................");
-                    lastWaypointPos = col.transform;
-                    counterWaypointPos++;
-                }
-            }
         }
     }
 
