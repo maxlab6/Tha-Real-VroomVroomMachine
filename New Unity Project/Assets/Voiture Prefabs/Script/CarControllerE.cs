@@ -164,7 +164,8 @@ public class CarControllerE : MonoBehaviour
         waypointBox.transform.localScale = new Vector3(100, 10, 0.5f);
         waypointBox.transform.position = currentWaypoint;
         waypointBox.layer = LayerMask.NameToLayer("Ignore Raycast");
-        
+        Destroy(waypointBox.GetComponent<MeshRenderer>());
+
         while (true)
         {
             if (isColliding == true)
@@ -180,16 +181,11 @@ public class CarControllerE : MonoBehaviour
                         eulerAnglesY = transform.eulerAngles.y;
                         yield break;
                     }
-                    else
+                    else if(waypointIndex == waypoints.childCount)
                     {
-                        Wheel_Collider_FL.motorTorque = 0;
-                        Wheel_Collider_FR.motorTorque = 0;
-                        Wheel_Collider_RR.motorTorque = 0;
-                        Wheel_Collider_RL.motorTorque = 0;
-                        Wheel_Collider_FL.brakeTorque = maxTorque;
-                        Wheel_Collider_FR.brakeTorque = maxTorque;
-                        Wheel_Collider_RL.brakeTorque = maxTorque;
-                        Wheel_Collider_RR.brakeTorque = maxTorque;
+                        waypointIndex = 0;
+                        targetIndex = 0;
+                        PathRequesterE.RequestPath(transform.position, waypoints.Find(waypointIndex.ToString()).position, OnPathFound);
                         yield break;
                     }
                 }
@@ -224,7 +220,7 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_FL.steerAngle = -1*newSteerAngle;
                 Wheel_Collider_FR.steerAngle = -1*newSteerAngle;
             }
-            if (Physics.Raycast(sensorBasePos,  Quaternion.AngleAxis(90f, transform.up) * transform.forward, out hit, 5f, LayerMask.NameToLayer("car")) && stuck == false)
+            if (Physics.Raycast(sensorBasePos,  Quaternion.AngleAxis(90f, transform.up) * transform.forward, out hit, 5f, 1 << 15) && stuck == false)
             {
                 attacking = true;
                 Wheel_Collider_FL.motorTorque = maxTorque;
@@ -236,8 +232,9 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_RL.brakeTorque = 0;
                 Wheel_Collider_RR.brakeTorque = 0;
                 Wheel_Collider_FL.steerAngle = maxSteeringAngle;
+                Wheel_Collider_FR.steerAngle = maxSteeringAngle;
             }
-            if (Physics.Raycast(sensorBasePos, Quaternion.AngleAxis(-90f, transform.up) * transform.forward, out hit, 5f, LayerMask.NameToLayer("car")) && stuck == false)
+            if (Physics.Raycast(sensorBasePos, Quaternion.AngleAxis(-90f, transform.up) * transform.forward, out hit, 5f, 1 << 15) && stuck == false)
             {
                 attacking = true;
                 Wheel_Collider_FL.motorTorque = maxTorque;
@@ -249,60 +246,46 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_RL.brakeTorque = 0;
                 Wheel_Collider_RR.brakeTorque = 0;
                 Wheel_Collider_FL.steerAngle = -1 * maxSteeringAngle;
+                Wheel_Collider_FR.steerAngle = -1 * maxSteeringAngle;
             }
 
 
 
-            if (Mathf.Abs(newSteerAngle) > 25)
+            if (Vector3.Distance(transform.position, currentWaypoint) >= 10 && Vector3.Distance(transform.position, currentWaypoint) <= 30 && stuck == false && attacking == false && vitesse >= 50 && vitesse <= 60)
             {
-                if (vitesse < 40 && stuck == false && attacking == false)
-                {
-                    Wheel_Collider_FL.motorTorque = maxTorque;
-                    Wheel_Collider_FR.motorTorque = maxTorque;
-                    Wheel_Collider_RR.motorTorque = maxTorque;
-                    Wheel_Collider_RL.motorTorque = maxTorque;
-                    Wheel_Collider_FL.brakeTorque = 0;
-                    Wheel_Collider_FR.brakeTorque = 0;
-                    Wheel_Collider_RL.brakeTorque = 0;
-                    Wheel_Collider_RR.brakeTorque = 0;
-                }
-                else if (vitesse > 50 && stuck == false && attacking == false)
-                {
-                    Wheel_Collider_FL.motorTorque = 0;
-                    Wheel_Collider_FR.motorTorque = 0;
-                    Wheel_Collider_RR.motorTorque = 0;
-                    Wheel_Collider_RL.motorTorque = 0;
-                    Wheel_Collider_FL.brakeTorque = maxTorque;
-                    Wheel_Collider_FR.brakeTorque = maxTorque;
-                    Wheel_Collider_RL.brakeTorque = maxTorque;
-                    Wheel_Collider_RR.brakeTorque = maxTorque;
-                }
+                Wheel_Collider_FL.motorTorque = 0;
+                Wheel_Collider_FR.motorTorque = 0;
+                Wheel_Collider_RR.motorTorque = 0;
+                Wheel_Collider_RL.motorTorque = 0;
+                Wheel_Collider_FL.brakeTorque = 0;
+                Wheel_Collider_FR.brakeTorque = 0;
+                Wheel_Collider_RL.brakeTorque = 0;
+                Wheel_Collider_RR.brakeTorque = 0;
+               
             }
-            else
+            else if(Vector3.Distance(transform.position, currentWaypoint) < 50 && stuck == false && attacking == false && vitesse > 60)
             {
-                if (vitesse < 80 && stuck == false && attacking == false)
-                {
-                    Wheel_Collider_FL.motorTorque = maxTorque;
-                    Wheel_Collider_FR.motorTorque = maxTorque;
-                    Wheel_Collider_RR.motorTorque = maxTorque;
-                    Wheel_Collider_RL.motorTorque = maxTorque;
-                    Wheel_Collider_FL.brakeTorque = 0;
-                    Wheel_Collider_FR.brakeTorque = 0;
-                    Wheel_Collider_RL.brakeTorque = 0;
-                    Wheel_Collider_RR.brakeTorque = 0;
-                }
-                else if (vitesse > 80 && stuck == false && attacking == false)
-                {
-                    Wheel_Collider_FL.motorTorque = 0;
-                    Wheel_Collider_FR.motorTorque = 0;
-                    Wheel_Collider_RR.motorTorque = 0;
-                    Wheel_Collider_RL.motorTorque = 0;
-                    Wheel_Collider_FL.brakeTorque = 0;
-                    Wheel_Collider_FR.brakeTorque = 0;
-                    Wheel_Collider_RL.brakeTorque = 0;
-                    Wheel_Collider_RR.brakeTorque = 0;
-                }
+                Wheel_Collider_FL.motorTorque = 0;
+                Wheel_Collider_FR.motorTorque = 0;
+                Wheel_Collider_RR.motorTorque = 0;
+                Wheel_Collider_RL.motorTorque = 0;
+                Wheel_Collider_FL.brakeTorque = maxBrakeTorque;
+                Wheel_Collider_FR.brakeTorque = maxBrakeTorque;
+                Wheel_Collider_RL.brakeTorque = maxBrakeTorque;
+                Wheel_Collider_RR.brakeTorque = maxBrakeTorque;
             }
+            else if(stuck == false && attacking == false)
+            {
+                Wheel_Collider_FL.motorTorque = maxTorque;
+                Wheel_Collider_FR.motorTorque = maxTorque;
+                Wheel_Collider_RR.motorTorque = maxTorque;
+                Wheel_Collider_RL.motorTorque = maxTorque;
+                Wheel_Collider_FL.brakeTorque = 0;
+                Wheel_Collider_FR.brakeTorque = 0;
+                Wheel_Collider_RL.brakeTorque = 0;
+                Wheel_Collider_RR.brakeTorque = 0;
+            }
+
 
 
 
@@ -564,7 +547,7 @@ public class CarControllerE : MonoBehaviour
 
     void FixedUpdate()
     {
-  
+        maxTorque = (-1f / 25f) * Mathf.Pow(vitesse, 2) + 1000;
     }
 
 
