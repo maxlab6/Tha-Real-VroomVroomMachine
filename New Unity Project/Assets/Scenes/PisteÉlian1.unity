@@ -2265,6 +2265,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3894675407873621537, guid: e2494b76767f22144b77ea04f5232dcb,
+        type: 3}
+      propertyPath: m_TerrainData
+      value: 
+      objectReference: {fileID: 15600000, guid: 68a6fb6b70ff6df479439bad7718d679,
+        type: 2}
+    - target: {fileID: 3894675407873621537, guid: e2494b76767f22144b77ea04f5232dcb,
+        type: 3}
+      propertyPath: m_EnableTreeColliders
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3894675407886972534, guid: e2494b76767f22144b77ea04f5232dcb,
         type: 3}
       propertyPath: m_Enabled
