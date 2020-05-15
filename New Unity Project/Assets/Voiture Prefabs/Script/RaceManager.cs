@@ -33,7 +33,7 @@ public class RaceManager : MonoBehaviour
         {
             HUD.SetActive(false);
             MenuFinale.GetComponent<CanvasGroup>().alpha = 1;
-            MenuFinale.GetComponent<CourseFinieScript>().courseFinie = true;
+            CourseFinieScript.courseFinie = true;
         }
 
         foreach (PositionVoiture car in allCars)

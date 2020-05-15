@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CourseFinieScript : MonoBehaviour
 {
-    public bool courseFinie;
+    static public bool courseFinie;
     RaceManager raceManager_ = new RaceManager();
     GameObject[] posTextList;
-    GameObject[] nameTextList;
+    GameObject[] nomTextList;
     GameObject[] tempsTextList;
 
 
@@ -22,7 +22,7 @@ public class CourseFinieScript : MonoBehaviour
         raceManager_ = GameObject.Find("RaceManager").GetComponent<RaceManager>();
 
         posTextList = new GameObject[raceManager_.allCars.Length];
-        nameTextList = new GameObject[raceManager_.allCars.Length];
+        nomTextList = new GameObject[raceManager_.allCars.Length];
         tempsTextList = new GameObject[raceManager_.allCars.Length];
 
         for (i = 0; i < raceManager_.allCars.Length; i++)
@@ -33,7 +33,7 @@ public class CourseFinieScript : MonoBehaviour
            nomText = "NomText" + pos.ToString();
            tempsText = "TempsText" + pos.ToString();
            posTextList[i] = GameObject.Find(posText);
-           nameTextList[i] = GameObject.Find(nomText);
+           nomTextList[i] = GameObject.Find(nomText);
            tempsTextList[i] = GameObject.Find(tempsText);
         }
     }
@@ -54,6 +54,11 @@ public class CourseFinieScript : MonoBehaviour
                 pos = i + 1;
                 posText = "PosText" + pos.ToString();
                 posTextList[i].GetComponent<UnityEngine.UI.Text>().text = pos.ToString();
+
+                tempsTextList[i].GetComponent<UnityEngine.UI.Text>().text = raceManager_.carOrder[i].temps.ToString();
+
+                nomTextList[i].GetComponent<UnityEngine.UI.Text>().text = raceManager_.carOrder[i].transform.parent.name;
+
             }
         }
     }
