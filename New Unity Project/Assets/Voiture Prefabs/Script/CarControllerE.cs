@@ -160,8 +160,8 @@ public class CarControllerE : MonoBehaviour
 
     IEnumerator elianControlledScript()
     {
-        Vector3 currentWaypoint = path[0];
-        waypointBox.transform.localScale = new Vector3(150, 10, 0.5f);
+        Vector3 currentWaypoint = path[targetIndex];
+        waypointBox.transform.localScale = new Vector3(300, 10, 0.5f);
         waypointBox.transform.position = currentWaypoint;
         waypointBox.layer = LayerMask.NameToLayer("Ignore Raycast");
         Destroy(waypointBox.GetComponent<MeshRenderer>());
