@@ -275,6 +275,17 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_RL.brakeTorque = maxBrakeTorque;
                 Wheel_Collider_RR.brakeTorque = maxBrakeTorque;
             }
+            else if (newSteerAngle > 23 && stuck == false && attacking == false && vitesse > 10)
+            {
+                Wheel_Collider_FL.motorTorque = 0;
+                Wheel_Collider_FR.motorTorque = 0;
+                Wheel_Collider_RR.motorTorque = 0;
+                Wheel_Collider_RL.motorTorque = 0;
+                Wheel_Collider_FL.brakeTorque = maxBrakeTorque;
+                Wheel_Collider_FR.brakeTorque = maxBrakeTorque;
+                Wheel_Collider_RL.brakeTorque = maxBrakeTorque;
+                Wheel_Collider_RR.brakeTorque = maxBrakeTorque;
+            }
             else if(stuck == false && attacking == false)
             {
                 Wheel_Collider_FL.motorTorque = maxTorque;
