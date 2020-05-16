@@ -1607,6 +1607,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3317996126471159359, guid: 2be0d85f3c0375345b967460a152611d,
+        type: 3}
+      propertyPath: gridWorldSize.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 3317996126471159359, guid: 2be0d85f3c0375345b967460a152611d,
+        type: 3}
+      propertyPath: gridWorldSize.y
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 3317996126471159359, guid: 2be0d85f3c0375345b967460a152611d,
+        type: 3}
+      propertyPath: nodeRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5227470529276032856, guid: 2be0d85f3c0375345b967460a152611d,
         type: 3}
       propertyPath: m_Layer
