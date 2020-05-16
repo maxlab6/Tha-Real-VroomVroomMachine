@@ -11,7 +11,7 @@ public class RaceManager : MonoBehaviour
     public GameObject HUD;
     public GameObject MenuFinale;
     
-    public void Start()
+    public void Awake()
     {
         // set up the car objects
         carOrder = new PositionVoiture[allCars.Length];
@@ -45,7 +45,7 @@ public class RaceManager : MonoBehaviour
 
         foreach (PositionVoiture car in allCars)
         {
-            carOrder[car.GetCarPos(allCars) - 1] = car;
+            carOrder[car.GetCarPos(allCars)-1] = car;
         }
     }
 }

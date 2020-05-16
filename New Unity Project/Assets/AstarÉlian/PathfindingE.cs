@@ -48,7 +48,7 @@ public class PathfindingE : MonoBehaviour
                 if (currentNode == targetNode)
                 {
                     sw.Stop();
-                    UnityEngine.Debug.Log("Path trouvé:" + sw.ElapsedMilliseconds + " ms");
+
                     pathSuccess = true;
                     break;
                 }

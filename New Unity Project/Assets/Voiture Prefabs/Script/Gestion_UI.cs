@@ -40,7 +40,7 @@ public class Gestion_UI : MonoBehaviour
 
     private void GestionDesTours()
     {
-        tour = positionVoiture.currentLapPos + 1;
+        tour = (int)positionVoiture.currentLapPos + 1;
         txtTours.text = tour.ToString();
     }
 
@@ -60,7 +60,7 @@ public class Gestion_UI : MonoBehaviour
         seconde = (temps % 60f) % 100;
         minute = (int)(temps / 60f);
 
-        Debug.Log("TEMPS ===" + temps);
+
 
         tempsActuelleTxt.text = minute.ToString("00") + " : " + seconde.ToString("00.00");
 

@@ -28,7 +28,7 @@ public class Pathfinding_Max : MonoBehaviour
     IEnumerator TrouverChemin(Vector3 positionDepart, Vector3 positionDArrive)
     {
         Stopwatch chrono = new Stopwatch();
-        chrono.Start();
+
 
         Vector3[] waypoints = new Vector3[0]; 
         bool pathSuccess = false;             
@@ -56,8 +56,8 @@ public class Pathfinding_Max : MonoBehaviour
                 //l'objectif et n'a donc plus besoin de véçrifier les autres cases
                 if (sommet == sommetDArrive)
                 {
-                    chrono.Stop();
-                    print("Chemin Trouvé " + chrono.ElapsedMilliseconds + " ms");
+
+
 
                     pathSuccess = true;
 

@@ -10,14 +10,19 @@ public class PositionVoiture : MonoBehaviour
     public Transform lastWaypointPos;
     public bool aTerminerCourse = false;
     public bool aTerminerTour = false;
-    
+
     public int position;
 
     public float temps, tempsTempo;
     
     public float tempsRapide = 0;
     private float heure, minute, seconde;
-    
+
+
+    private void Start()
+    {
+        name = transform.parent.name;
+    }
 
     public void OnTriggerEnter(Collider col)
     {
@@ -44,20 +49,31 @@ public class PositionVoiture : MonoBehaviour
 
     public float GetDistancePos()
     {
-        return (transform.position - lastWaypointPos.position).magnitude + currentWaypointPos * 100 + currentLapPos * (100 * GameObject.Find("Waypoints").transform.childCount);
+        float result;
+        if (lastWaypointPos == null)
+        {
+            lastWaypointPos = GameObject.Find("Waypoints").transform;
+        }
+        
+        result = (transform.position - lastWaypointPos.position).magnitude + currentWaypointPos * 100 + currentLapPos * (100 * GameObject.Find("Waypoints").transform.childCount);
+        return result;
     }
 
     public int GetCarPos(PositionVoiture[] allCars)
     {
-        float distance = GetDistancePos();
-        int _position = 1;
-        foreach (PositionVoiture car in allCars)
+        if (aTerminerCourse == false)
         {
-            if (car.GetDistancePos() > distance)
-                position++;
+            float distance = GetDistancePos();
+            int _position = 1;
+            foreach (PositionVoiture car in allCars)
+            {
+                if (car.GetDistancePos() > distance)
+                    _position++;
+            }
+            position = _position;
+            return _position;
         }
-        position = _position;
-        return position;
+        return 0;
     }
 
 

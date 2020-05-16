@@ -45,7 +45,7 @@ public class CourseFinieScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (courseFinie == true)
+        if (raceManager_.joueurAFini == true)
         {
             int i = 0;
             int pos = 0;

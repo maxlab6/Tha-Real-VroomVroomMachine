@@ -161,10 +161,6 @@ public class VoitureAi_Max : MonoBehaviour
         vitesse = Mathf.Abs(orientation.z * 3.6f);
         float distance = Vector3.Distance(transform.position, cible.transform.position);
 
-
-        Debug.Log("compteur Checkpoints = " + compteurCheckpoints);
-        Debug.Log("checkpoints.Count = " + checkpoints.Count);
-
         //Si la distance entre le checkpoint (sphère) est plus petit que 15 et que le checkpoint à été atteint (collider), change pour le prochain checkpoint
         if (distance < 40 /*&& atteintCheckPoint == true*/)
         {
