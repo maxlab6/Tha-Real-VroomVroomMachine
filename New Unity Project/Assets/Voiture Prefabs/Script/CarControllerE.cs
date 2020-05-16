@@ -40,13 +40,6 @@ public class CarControllerE : MonoBehaviour
     public float hauteurReset;
     public float forceAntiFlip = 100;
 
-    //Position
-    [Header("Position")]
-    public int currentWaypointPos;
-    public int counterWaypointPos;
-    public int currentLapPos;
-    public Transform lastWaypointPos;
-
     //Élian AI
     [Header("Élian AI")]
     public Transform waypoints;
@@ -458,22 +451,7 @@ public class CarControllerE : MonoBehaviour
         }
     }
 
-    public float GetDistancePos()
-    {
-        return (transform.position - lastWaypointPos.position).magnitude + currentWaypointPos * 100 + currentLapPos * (100 * GameObject.Find("Waypoints").transform.childCount);
-    }
-
-    public int GetCarPos(CarControllerE[] allCars)
-    {
-        float distance = GetDistancePos();
-        int position = 1;
-        foreach (CarControllerE car in allCars)
-        {
-            if (car.GetDistancePos() > distance)
-                position++;
-        }
-        return position;
-    }
+   
 
     public void OnTriggerEnter(Collider col)
     {
