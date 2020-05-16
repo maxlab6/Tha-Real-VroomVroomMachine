@@ -29,7 +29,7 @@ public class Grille_Max : MonoBehaviour
         //Prend le nom de la scene Active pour permettre les petit ajustement selon la map
         nomScene = SceneManager.GetActiveScene().name;
 
-        if (nomScene == "PisteÉlian1") { ajustementX = -2; ajustementY = 1; }
+        if (nomScene == "PisteÉlian1") { ajustementX = 0; ajustementY = 0; }
         else if (nomScene == "PisteÉlian2") { ajustementX = 0; ajustementY = 1; }
         else if (nomScene == "PisteFelix") { ajustementX = 0; ajustementY = 0; }
 

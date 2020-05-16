@@ -11,6 +11,6 @@ public class CheckPointMax : MonoBehaviour
     //les scripts y ont accès. Utiliser dans VoitureAi.cs
     private void OnTriggerEnter(Collider other)
     {
-        atteintCheckPoint = true;
+         atteintCheckPoint = true;
     }
 }

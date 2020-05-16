@@ -32,7 +32,7 @@ public class VoitureAi_Max : MonoBehaviour
     public int positionAI;                    //position dans la course de l'IA
     public int positionJoueur;                //position dans la course du joueur
     public bool roueTourneMax = false;        //Les roue tourne à l'angle maximum
-    
+    public bool atteintCheckPoint = false;
 
 
     //Pour les sensors a l'avant (raycast)
@@ -166,7 +166,7 @@ public class VoitureAi_Max : MonoBehaviour
         Debug.Log("checkpoints.Count = " + checkpoints.Count);
 
         //Si la distance entre le checkpoint (sphère) est plus petit que 15 et que le checkpoint à été atteint (collider), change pour le prochain checkpoint
-        if (distance < 15 && CheckPointMax.atteintCheckPoint == true)
+        if (distance < 40 /*&& atteintCheckPoint == true*/)
         {
             CheckPointMax.atteintCheckPoint = false;
             //Si le compteur = au nombre de checkpoint, alors il a atteint le dernier checkpoint et change pour le permier
@@ -402,5 +402,13 @@ public class VoitureAi_Max : MonoBehaviour
 
         ForceVersLeBas();
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "checkpointMax")
+        {
+            atteintCheckPoint = true;
+        }
     }
 }
