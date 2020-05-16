@@ -2,19 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Gestion_UI : MonoBehaviour
 {
     PositionVoiture positionVoiture;
-    public Text txtVitesse;
+    public TextMeshProUGUI txtVitesse;
     private float vitesseKMH;
 
-    public Text tempsTxt;
-    private float temps, tempsTempo;
-    private float heure, minute, seconde;
+    public TextMeshProUGUI tempsActuelleTxt;
+    private float temps;
+    private float minute, seconde;
 
-    public Text txtTours;
+    public TextMeshProUGUI txtMeilleurTemps;
+    
+
+    public TextMeshProUGUI txtTours;
     private int tour;
+
+    public TextMeshProUGUI txtPosition;
+    private int position = 1;
 
 
     private void Awake()
@@ -25,7 +32,6 @@ public class Gestion_UI : MonoBehaviour
 
     void Update()
     {
-        
         VitesseVoiture();
         Chrono();
         GestionDesTours();
@@ -34,7 +40,7 @@ public class Gestion_UI : MonoBehaviour
 
     private void GestionDesTours()
     {
-        tour = positionVoiture.currentLapPos;
+        tour = positionVoiture.currentLapPos + 1;
         txtTours.text = tour.ToString();
     }
 
@@ -56,7 +62,20 @@ public class Gestion_UI : MonoBehaviour
 
         Debug.Log("TEMPS ===" + temps);
 
-        tempsTxt.text = minute.ToString("00") + " : " + seconde.ToString("00.00");
+        tempsActuelleTxt.text = minute.ToString("00") + " : " + seconde.ToString("00.00");
 
+    }
+
+    private void ChangerMeilleurTemps()
+    {
+        
+            txtMeilleurTemps.text = positionVoiture.tempsRapide.ToString("0.00");
+        
+        
+    }
+
+    private void ChangerPosition()
+    {
+        txtPosition.text = positionVoiture.position.ToString();
     }
 }
