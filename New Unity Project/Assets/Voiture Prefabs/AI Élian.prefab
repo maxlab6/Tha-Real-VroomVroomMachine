@@ -1539,7 +1539,7 @@ MonoBehaviour:
   maxTorque: 1000
   maxSteeringAngle: 25
   hauteurReset: 0
-  forceAntiFlip: 100
+  forceAntiFlip: 150
   currentWaypointPos: 0
   counterWaypointPos: 0
   currentLapPos: 0
@@ -1562,8 +1562,11 @@ MonoBehaviour:
   currentLapPos: 0
   lastWaypointPos: {fileID: 0}
   aTerminerCourse: 0
+  aTerminerTour: 0
+  position: 0
   temps: 0
   tempsTempo: 0
+  tempsRapide: 0
 --- !u!1 &7533927998475569625
 GameObject:
   m_ObjectHideFlags: 0
