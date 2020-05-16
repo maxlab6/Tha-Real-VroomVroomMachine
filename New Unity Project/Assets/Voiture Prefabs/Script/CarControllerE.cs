@@ -254,8 +254,6 @@ public class CarControllerE : MonoBehaviour
 
             if (Vector3.Distance(transform.position, currentWaypoint) >= 10 && Vector3.Distance(transform.position, currentWaypoint) <= 30 && stuck == false && attacking == false && vitesse >= 50 && vitesse <= 60)
             {
-                Debug.Log("t con haha");
-
                 Wheel_Collider_FL.motorTorque = 0;
                 Wheel_Collider_FR.motorTorque = 0;
                 Wheel_Collider_RR.motorTorque = 0;
@@ -268,7 +266,6 @@ public class CarControllerE : MonoBehaviour
             }
             else if(Vector3.Distance(transform.position, currentWaypoint) >= 0 && Vector3.Distance(transform.position, currentWaypoint) <= 45 && stuck == false && attacking == false && vitesse > 65)
             {
-                Debug.Log("t con haha x23");
                 Wheel_Collider_FL.motorTorque = 0;
                 Wheel_Collider_FR.motorTorque = 0;
                 Wheel_Collider_RR.motorTorque = 0;
