@@ -102,9 +102,14 @@ public class ControleVoitureIaFelix : MonoBehaviour
             nbNodeAvance = 5;
             distanceAvance = 12;
         }
-        else
+        else if (targetSpeed < 150f)
         {
             nbNodeAvance = 6;
+            distanceAvance = 14;
+        }
+        else
+        {
+            nbNodeAvance = 8;
             distanceAvance = 17;
         }
     }
@@ -125,7 +130,7 @@ public class ControleVoitureIaFelix : MonoBehaviour
     private void ModulationDeVitesse()
     {
         Vector3 relativeVectorModulation = transform.InverseTransformPoint(cheminCourt[currentNode + nbNodeAvance*2].Position);
-        modulationFactor = (1f - (relativeVectorModulation.x / relativeVectorModulation.magnitude)) * maxSpeed - Mathf.Abs(relativeVectorModulation.x) * 4;
+        modulationFactor = (1f - (relativeVectorModulation.x / relativeVectorModulation.magnitude)) * maxSpeed - Mathf.Pow(relativeVectorModulation.x, 4);
         if (modulationFactor > 30f)
         {
             targetSpeed = modulationFactor;
@@ -146,7 +151,7 @@ public class ControleVoitureIaFelix : MonoBehaviour
         avoiding = false;
         reculer = false;
 
-        if (Physics.Raycast(sensorStartPos, transform.forward, out hit, 3f))
+        if (Physics.Raycast(sensorStartPos, transform.forward, out hit, 5f))
         {
             if (hit.collider.CompareTag("mur"))
             {
