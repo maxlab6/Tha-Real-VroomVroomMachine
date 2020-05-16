@@ -160,8 +160,8 @@ public class CarControllerE : MonoBehaviour
 
     IEnumerator elianControlledScript()
     {
-        Vector3 currentWaypoint = path[0];
-        waypointBox.transform.localScale = new Vector3(150, 10, 0.5f);
+        Vector3 currentWaypoint = path[targetIndex];
+        waypointBox.transform.localScale = new Vector3(300, 10, 0.5f);
         waypointBox.transform.position = currentWaypoint;
         waypointBox.layer = LayerMask.NameToLayer("Ignore Raycast");
         Destroy(waypointBox.GetComponent<MeshRenderer>());
@@ -254,8 +254,6 @@ public class CarControllerE : MonoBehaviour
 
             if (Vector3.Distance(transform.position, currentWaypoint) >= 10 && Vector3.Distance(transform.position, currentWaypoint) <= 30 && stuck == false && attacking == false && vitesse >= 50 && vitesse <= 60)
             {
-                Debug.Log("t con haha");
-
                 Wheel_Collider_FL.motorTorque = 0;
                 Wheel_Collider_FR.motorTorque = 0;
                 Wheel_Collider_RR.motorTorque = 0;
@@ -268,7 +266,6 @@ public class CarControllerE : MonoBehaviour
             }
             else if(Vector3.Distance(transform.position, currentWaypoint) >= 0 && Vector3.Distance(transform.position, currentWaypoint) <= 45 && stuck == false && attacking == false && vitesse > 65)
             {
-                Debug.Log("t con haha x23");
                 Wheel_Collider_FL.motorTorque = 0;
                 Wheel_Collider_FR.motorTorque = 0;
                 Wheel_Collider_RR.motorTorque = 0;
