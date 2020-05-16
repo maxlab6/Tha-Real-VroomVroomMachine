@@ -17,7 +17,18 @@ public class RaceManager : MonoBehaviour
         carOrder = new PositionVoiture[allCars.Length];
         InvokeRepeating("ManualUpdate", 0.5f, 0.5f);
     }
-    
+
+    private void Start()
+    {
+        if (contreLaMontreToggle.contreLaMontreBool == true)
+        {
+            for (int i = 1; i < allCars.Length; i++)
+            {
+                Destroy(allCars[i].transform.parent.gameObject);
+            }
+        }
+    }
+
     // this gets called every frame
     public void ManualUpdate()
     {
