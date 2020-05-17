@@ -4,25 +4,15 @@ using UnityEngine;
 
 public class WaitBeforeStart : MonoBehaviour
 {
-
-    public GameObject countDown;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("StartCountDown");
+        
     }
 
-    IEnumerator StartCountDown()
+    // Update is called once per frame
+    void Update()
     {
-        Time.timeScale = 0;
-        float pausedTime = Time.realtimeSinceStartup + 4f;
-        while (Time.realtimeSinceStartup < pausedTime)
-        {
-            yield return 0;
-        }
-
-       
-        countDown.gameObject.SetActive(false);
-        Time.timeScale = 1;
+        
     }
 }

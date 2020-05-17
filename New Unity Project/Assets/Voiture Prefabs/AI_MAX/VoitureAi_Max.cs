@@ -56,11 +56,7 @@ public class VoitureAi_Max : MonoBehaviour
     {
         //associe la rigidbody de la voiture at rb
         rb = GetComponent<Rigidbody>();
-        transformJoueur = GameObject.Find("Player").transform;
-        positionAI = GetComponent<PositionVoiture>();
-        positionJoueur = GameObject.Find("Player").GetComponentInChildren<PositionVoiture>();
-
-
+        
     }
 
     void Start()
