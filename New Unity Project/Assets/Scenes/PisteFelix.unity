@@ -932,6 +932,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1465127871}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1023096867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9026528443271913020, guid: 0fca557565549df40bc4ff5a36bcbdb0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1465127871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1116934755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1579,6 +1585,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6491594680963481225, guid: 0fca557565549df40bc4ff5a36bcbdb0,
+        type: 3}
+      propertyPath: menuPause
+      value: 
+      objectReference: {fileID: 1023096867}
     - target: {fileID: 6594239303969172132, guid: 0fca557565549df40bc4ff5a36bcbdb0,
         type: 3}
       propertyPath: m_LocalPosition.z
