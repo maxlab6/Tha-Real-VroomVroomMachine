@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8683528652475123193}
   m_Layer: 15
   m_Name: CarAI_max
-  m_TagString: carAiMax
+  m_TagString: car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,8 +171,8 @@ MonoBehaviour:
   transformRoueDG: {fileID: 5495711126743330464}
   forceAntiFlip: 100
   transformJoueur: {fileID: 0}
-  positionAI: 0
-  positionJoueur: 0
+  positionAI: {fileID: 8683528652475123193}
+  positionJoueur: {fileID: 0}
   roueTourneMax: 0
   atteintCheckPoint: 0
   positionCarrosserie: {fileID: 4588294476890727724}
@@ -1580,7 +1580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2452488592536846602}
   m_Layer: 0
-  m_Name: AI_MAX_V2 1
+  m_Name: AI_MAX_V2.1
   m_TagString: carAiMax
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

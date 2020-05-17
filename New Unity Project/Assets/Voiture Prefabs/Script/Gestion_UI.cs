@@ -6,7 +6,7 @@ using TMPro;
 
 public class Gestion_UI : MonoBehaviour
 {
-    PositionVoiture positionVoiture;
+    public PositionVoiture positionVoiture;
     public TextMeshProUGUI txtVitesse;
     private float vitesseKMH;
 
@@ -26,17 +26,16 @@ public class Gestion_UI : MonoBehaviour
     public TextMeshProUGUI txtPosition;
     private int position = 1;
 
-    GameObject joueur;
+    
 
     private void Awake()
     {
-        joueur = GameObject.Find("Vehicule Joueur 2.2");
-        positionVoiture = joueur.GetComponentInChildren<PositionVoiture>();
+        
     }
 
     void Update()
     {
-        positionVoiture = joueur.GetComponentInChildren<PositionVoiture>();
+        
         VitesseVoiture();
         Chrono();
         GestionDesTours();

@@ -29,10 +29,13 @@ public class VoitureAi_Max : MonoBehaviour
     public static float vitesse = 0f;         //vitesse de la voiture
     public float forceAntiFlip = 100f;        //force empêchant que la voiture se renverse et s'adaptant selon la vitesse
     public Transform transformJoueur;         //transforme (position dans le monde) du joueur
-    public int positionAI;                    //position dans la course de l'IA
-    public int positionJoueur;                //position dans la course du joueur
+    public PositionVoiture positionAI;                   //position dans la course de l'IA
+    public PositionVoiture positionJoueur;                //position dans la course du joueur
     public bool roueTourneMax = false;        //Les roue tourne à l'angle maximum
-    public bool atteintCheckPoint = false;
+    public bool atteintCheckPoint = false;    //A atteint un checkpoint
+
+    
+    
 
 
     //Pour les sensors a l'avant (raycast)
@@ -260,18 +263,18 @@ public class VoitureAi_Max : MonoBehaviour
         //si ex l'IA est derrière le joueur et est a une distance supérieur à 75 entre les deux, alors l'IA 
         //voit sa force moteur augmenter et si au contraire, l'IA est en en avant du joueur avec une distance supérieur a 75,
         //alors sa force moteur se voit réduite
-        //if (Vector3.Distance(transform.position, transformJoueur.position) >= 75 && positionAI < positionJoueur)
-        //{
-        //    coupleMoteurAdaptatif += 200;
-        //}
-        //else if (Vector3.Distance(transform.position, transformJoueur.position) >= 75 && positionAI > positionJoueur)
-        //{
-        //    coupleMoteurAdaptatif -= 200;
-        //    if (coupleMoteurAdaptatif <= 0)
-        //    {
-        //        coupleMoteurAdaptatif = Mathf.Sqrt(10000f * Vector3.Distance(transform.position, checkpoint));
-        //    }
-        //}
+        if (Vector3.Distance(transform.position, transformJoueur.position) >= 75 && positionAI.position < positionJoueur.position)
+        {
+            coupleMoteurAdaptatif += 200;
+        }
+        else if (Vector3.Distance(transform.position, transformJoueur.position) >= 75 && positionAI.position > positionJoueur.position)
+        {
+            coupleMoteurAdaptatif -= 200;
+            if (coupleMoteurAdaptatif <= 0)
+            {
+                coupleMoteurAdaptatif = Mathf.Sqrt(10000f * Vector3.Distance(transform.position, checkpoint));
+            }
+        }
         
 
         roueAD.motorTorque = coupleMoteurAdaptatif;
