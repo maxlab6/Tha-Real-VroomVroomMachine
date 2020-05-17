@@ -6,141 +6,81 @@ using UnityEngine;
 
 public class CarControllerE : MonoBehaviour
 {
-    [Header("Controller")]
-    public bool playerControlled;
-    public bool elianControlled;
-    public bool felixControlled;
-    public bool maximeControlled;
-    public bool jonathanControlled;
+    //[Header("Controller")] 
+    //public bool playerControlled;               //Variable qui permet de controllé le véhicule avec WASD.       ***Variables abandonnées pour l'instant puisque chaque AI à sont prorpes prefab 
+    //public bool elianControlled;                //Variable qui permet de controllé le véhicule AI élian.     ------> Toujours vrai puisque ce prefab est Élian AI 
+    //public bool felixControlled;                //Variable qui permet de controllé le véhicule AI felix. 
+    //public bool maximeControlled;               //Variable qui permet de controllé le véhicule AI maxime. 
+    //public bool jonathanControlled;             //Variable qui permet de controllé le véhicule AI jonathan. 
+
 
     [Header("Colliders/Car Stuff")]
-    public WheelCollider Wheel_Collider_FL;
-    public WheelCollider Wheel_Collider_FR;
-    public WheelCollider Wheel_Collider_RL;
-    public WheelCollider Wheel_Collider_RR;
+    public WheelCollider Wheel_Collider_FL;     //Wheel collider roue avant gauche. 
+    public WheelCollider Wheel_Collider_FR;     //Wheel collider roue avant droit. 
+    public WheelCollider Wheel_Collider_RL;     //Wheel collider roue derriere gauche. 
+    public WheelCollider Wheel_Collider_RR;     //Wheel collider roue derriere droit. 
 
-    public Transform Wheel_Transformation_FL;
-    public Transform Wheel_Transformation_FR;
-    public Transform Wheel_Transformation_RL;
-    public Transform Wheel_Transformation_RR;
-    private Rigidbody rb;
+    public Transform Wheel_Transformation_FL;   //Wheel collider roue avant gauche. 
+    public Transform Wheel_Transformation_FR;   //Wheel collider roue avant droit. 
+    public Transform Wheel_Transformation_RL;   //Wheel collider roue derriere gauche. 
+    public Transform Wheel_Transformation_RR;   //Wheel collider roue derriere droit. 
+    private Rigidbody rb;                       //RigidBody de la voiture. 
 
-    private WheelHit hit;
+    private Vector3 orientation;                //Orientation du véhicule. 
 
-    private Vector3 orientation;
+    public static float vitesse;                //Vitesse du véhicule. 
 
-    public static float vitesse;
 
+    //Variables de base du véhicule. 
     [Header("Driving Variables")]
-    public float steeringAngle;
-    public float maxBrakeTorque = 1000;
-    public float maxTorque = 1000;
-    public float maxSteeringAngle = 45;
-    private float tempSteeringAngle;
-    public float hauteurReset;
-    public float forceAntiFlip = 100;
+    public float steeringAngle;                 //Angle de direction maximum de base. 
+    public float maxBrakeTorque = 1000;         //Torque de freinage maximum de base. 
+    public float maxTorque = 1000;              //Torque de d'accéleration maximum de base. 
+    private float tempSteeringAngle;            //Angle de direction temporaire afin de controller le véhicule. 
+    public float hauteurReset;                  //Hauteur de véhicule par rapport au sol quand le joueur reset celui-ci. 
+    public float forceAntiFlip = 100;           //Force qui permet à la voiture de ne pas faire de tonneau. 
 
-    //Élian AI
+
+    //Variables de l'intélligence artificiel Élian AI. 
     [Header("Élian AI")]
-    public Transform waypoints;
-    private bool isColliding = false;
-    private GameObject waypointBox;
-    private Vector3[] path;
-    private int targetIndex;
-    private int waypointIndex;
-    private bool reachedEndPath;
-    private float eulerAnglesY = 0;
+    public Transform waypoints;                 //Transform du parent des points de cheminement. 
+    private bool isColliding = false;           //Variable qui indique si le véhicule est en contact avec un point de cheminement.    
+    private GameObject waypointBox;             //Collider du point de cheminement pour chaque sommet A*. 
+    private Vector3[] path;                     //Array qui contient chaque sommet du chemin le plus rapide.   
+    private int targetIndex;                    //Garde en mémoire où est rendu le véhicule dans les sommets du chemin le plus rapide.   
+    private int waypointIndex;                  //Garde en mémoire où est rendu le véhicule dans les point de cheminement sur la piste.    
+    private bool reachedEndPath;                //Variable qui indique si le véhicule est à la fin du chemin le plus rapide. 
+    private float eulerAnglesY = 0;             //Angle de la voiture en Y lorsque la voiture passe un sommet dans le chemin le plus rapide.      
+    public float maxSteeringAngle = 25;         //Angle maximum de direction pour intélligence artificiel Élian AI. 
 
+    public static bool BoutonChanger = false;   //Variable pour inéragir avec les boutons 
 
-
-    public static bool BoutonChanger = false;
-
-    //Cameras
-    private Camera cameraConducteurAvant;
-    private Camera cameraConducteurArriere;
-    private Camera cameraMinimap;
-    private Camera cameraMultiple;
-    private Vector3 camPos;
-    private Transform carToFollow;
-    private Vector3 positionCameraPoursuiteAvancer = new Vector3(8, 5, 8);
-    private Vector3 rotationCameraPoursuiteAvancer = new Vector3(25, 0, 0);
-    private Vector3 positionCameraPoursuiteReculer = new Vector3(8, 5, 8);
-    private Vector3 rotationCameraPoursuiteReculer = new Vector3(25, 180, 0);
-    private Vector3 positionCameraTop = new Vector3(0, 40, 0);
-    private Vector3 rotationCameraTop = new Vector3(90, 0, 0);
-    private float vitesseTransition = 8;
-    private float vitesseChangementCamera = -10;
-    private bool camTop;
-    private bool camChase;
-
+    //Fonction appeler en premier lorsque le jeux est sur jouer. 
     void Start()
     {
-        carToFollow = this.transform;
-        cameraConducteurAvant = this.transform.Find("Camera_Conducteur_Avant").GetComponent<Camera>();
-        cameraConducteurArriere = this.transform.Find("Camera_Conducteur_Arriere").GetComponent<Camera>();
-        cameraMinimap = this.transform.Find("CameraMiniMap").GetComponent<Camera>();
-        cameraMultiple = this.transform.Find("CameraMultiple").GetComponent<Camera>();
         rb = GetComponent<Rigidbody>();
 
-        if (elianControlled == true)
+        //Initialise le collider pour le point de passage des sommets du chemin le plus rapide. 
+        waypointBox = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        waypointBox.GetComponent<BoxCollider>().isTrigger = true;
+        waypointBox.tag = "waypointsE";
+
+        //Commence la coroutine seulement si "Waypoints" n'est pas vide afin d'éviter des erreurs. 
+        if (waypoints != null)
         {
-            waypointBox = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            waypointBox.GetComponent<BoxCollider>().isTrigger = true;
-            waypointBox.tag = "waypointsE";
-            if (waypoints != null)
-            {
-                waypointIndex = 0;
-                PathRequesterE.RequestPath(transform.position, waypoints.Find(waypointIndex.ToString()).position, OnPathFound);
-            }
-
-            Destroy(this.transform.Find("Camera_Conducteur_Avant").gameObject);
-            Destroy(this.transform.Find("Camera_Conducteur_Arriere").gameObject);
-            Destroy(this.transform.Find("CameraMiniMap").gameObject);
-            Destroy(this.transform.Find("CameraMultiple").gameObject);
-        }
-        else if (jonathanControlled == true)
-        {
-
-
-            Destroy(this.transform.Find("Camera_Conducteur_Avant").gameObject);
-            Destroy(this.transform.Find("Camera_Conducteur_Arriere").gameObject);
-            Destroy(this.transform.Find("CameraMiniMap").gameObject);
-            Destroy(this.transform.Find("CameraMultiple").gameObject);
-        }
-        else if (maximeControlled == true)
-        {
-
-
-            Destroy(this.transform.Find("Camera_Conducteur_Avant").gameObject);
-            Destroy(this.transform.Find("Camera_Conducteur_Arriere").gameObject);
-            Destroy(this.transform.Find("CameraMiniMap").gameObject);
-            Destroy(this.transform.Find("CameraMultiple").gameObject);
-        }
-        else if (felixControlled == true)
-        {
-
-
-            Destroy(this.transform.Find("Camera_Conducteur_Avant").gameObject);
-            Destroy(this.transform.Find("Camera_Conducteur_Arriere").gameObject);
-            Destroy(this.transform.Find("CameraMiniMap").gameObject);
-            Destroy(this.transform.Find("CameraMultiple").gameObject);
-            Destroy(this.transform.Find("CanvasChar").gameObject);
-            Destroy(this.transform.Find("GameObject").gameObject);
-        }
-        else if (playerControlled == true)
-        {
-            cameraConducteurAvant.enabled = true;
-            cameraConducteurArriere.enabled = true;
-            cameraMinimap.enabled = true;
-            cameraMultiple.enabled = true;
-            StartCoroutine("playerControlledScript");
+            waypointIndex = 0;
+            PathRequesterE.RequestPath(transform.position, waypoints.Find(waypointIndex.ToString()).position, OnPathFound);
         }
 
-        
+
+
+
     }
 
+    //Fonction qui s'exécute quand le chemin le plus rapide est trouvé ou pas. 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
     {
+        //Commence la coroutine si un chemin est trouvé. 
         if (pathSuccessful)
         {
             path = newPath;
@@ -151,31 +91,38 @@ public class CarControllerE : MonoBehaviour
 
     }
 
+    //Fonction qui se répete plusieurs fois par seconde. 
     IEnumerator elianControlledScript()
     {
+        //Initialisations.... 
         Vector3 currentWaypoint = path[targetIndex];
         waypointBox.transform.localScale = new Vector3(300, 10, 0.5f);
         waypointBox.transform.position = currentWaypoint;
         waypointBox.layer = LayerMask.NameToLayer("Ignore Raycast");
         Destroy(waypointBox.GetComponent<MeshRenderer>());
 
+        //Boucle dans laquel tout le contrôle du véhicule se produit 
         while (true)
         {
+            //Si le véhicule touche un point de passage dans les sommets du chemin le plus court... 
             if (isColliding == true)
             {
                 targetIndex++;
                 eulerAnglesY = transform.eulerAngles.y;
+
+                //Si le véhicule atteint le dernier sommet dans les sommets du chemin le plus court... 
                 if (targetIndex >= path.Length)
                 {
                     waypointIndex++;
+                    //Si le prochain point de passage  dans la liste des points existe on continue... 
                     if (waypoints.Find(waypointIndex.ToString()) != null)
                     {
-                        Debug.Log("Next Waypoint Found!");
+                        Debug.Log("Élian AI: Next Waypoint Found!");
                         PathRequesterE.RequestPath(transform.position, waypoints.Find(waypointIndex.ToString()).position, OnPathFound);
                         yield break;
                     }
-                    //Si arriver à la fin du circuit, on recommence donc tout à 0
-                    else if(waypointIndex == waypoints.childCount)
+                    //Si arriver à la fin du circuit, on recommence donc tout à 0 et on refait le circuit... 
+                    else if (waypointIndex == waypoints.childCount)
                     {
                         waypointIndex = 0;
                         targetIndex = 0;
@@ -183,14 +130,11 @@ public class CarControllerE : MonoBehaviour
                         yield break;
                     }
                 }
+                //On fait apparaitre la boite invisible du point de passage sur le sommet cible. 
                 currentWaypoint = path[targetIndex];
                 waypointBox.transform.position = currentWaypoint;
             }
-
-            Vector3 relativeVector = transform.InverseTransformPoint(currentWaypoint);
-            float newSteerAngle = (relativeVector.x / relativeVector.magnitude) * maxSteeringAngle;
-            Wheel_Collider_FL.steerAngle = newSteerAngle;
-            Wheel_Collider_FR.steerAngle = newSteerAngle;
+            //Initialisations Raycast 
             RaycastHit hit;
             Vector3 sensorBasePos = transform.position;
             sensorBasePos += transform.forward * 2.30f;
@@ -199,7 +143,34 @@ public class CarControllerE : MonoBehaviour
             bool attacking = false;
 
 
-            //Sensors
+            //Angle relatif 
+            Vector3 relativeVector = transform.InverseTransformPoint(currentWaypoint);
+
+            //Mesure de l'angle des roue pour atteindre le sommet cible. 
+            float newSteerAngle = (relativeVector.x / relativeVector.magnitude) * maxSteeringAngle;
+            Wheel_Collider_FL.steerAngle = newSteerAngle;
+            Wheel_Collider_FR.steerAngle = newSteerAngle;
+
+            //Change l'angle du point de passage sur le prochain sommet du chemin le plus rapide. 
+            waypointBox.transform.eulerAngles = new Vector3(0, eulerAnglesY, 0);
+
+            //Mesure de l'orientation (angle) du véhicule 
+            orientation = transform.InverseTransformDirection(rb.velocity);
+
+            //Mesure de la vitesse du véhicule 
+            vitesse = orientation.z * 3.6f;
+
+            //Calcule l'angle des roues... 
+            if (Mathf.Abs(vitesse) < 50)
+            {
+                tempSteeringAngle = (-(Mathf.Abs(vitesse) / 5) + maxSteeringAngle);
+            }
+            else
+            {
+                tempSteeringAngle = 15;
+            }
+
+            //Raycast pour detecter si le véhicule est pris dans un mur ou autre objet. 
             if (Physics.Raycast(sensorBasePos, transform.forward, out hit, 5f) && vitesse < 2.0f)
             {
                 stuck = true;
@@ -211,10 +182,11 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_FR.brakeTorque = 0;
                 Wheel_Collider_RL.brakeTorque = 0;
                 Wheel_Collider_RR.brakeTorque = 0;
-                Wheel_Collider_FL.steerAngle = -1*newSteerAngle;
-                Wheel_Collider_FR.steerAngle = -1*newSteerAngle;
+                Wheel_Collider_FL.steerAngle = -1 * newSteerAngle;
+                Wheel_Collider_FR.steerAngle = -1 * newSteerAngle;
             }
-            if (Physics.Raycast(sensorBasePos,  Quaternion.AngleAxis(90f, transform.up) * transform.forward, out hit, 5f, 1 << 15) && stuck == false)
+            //Raycast pour detecter si un autre véhicule est à droite. 
+            if (Physics.Raycast(sensorBasePos, Quaternion.AngleAxis(90f, transform.up) * transform.forward, out hit, 5f, 1 << 15) && stuck == false)
             {
                 attacking = true;
                 Wheel_Collider_FL.motorTorque = maxTorque;
@@ -228,6 +200,7 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_FL.steerAngle = maxSteeringAngle;
                 Wheel_Collider_FR.steerAngle = maxSteeringAngle;
             }
+            //Raycast pour detecter si un autre véhicule est à gauche. 
             if (Physics.Raycast(sensorBasePos, Quaternion.AngleAxis(-90f, transform.up) * transform.forward, out hit, 5f, 1 << 15) && stuck == false)
             {
                 attacking = true;
@@ -244,7 +217,7 @@ public class CarControllerE : MonoBehaviour
             }
 
 
-
+            //Commandes pour gérer la vitesse selon plusieurs facteurs dont la disctance du prochain sommet, l'angle des roues, etc. 
             if (Vector3.Distance(transform.position, currentWaypoint) >= 10 && Vector3.Distance(transform.position, currentWaypoint) <= 30 && stuck == false && attacking == false && vitesse >= 50 && vitesse <= 60)
             {
                 Wheel_Collider_FL.motorTorque = 0;
@@ -255,9 +228,9 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_FR.brakeTorque = 0;
                 Wheel_Collider_RL.brakeTorque = 0;
                 Wheel_Collider_RR.brakeTorque = 0;
-               
+
             }
-            else if(Vector3.Distance(transform.position, currentWaypoint) >= 0 && Vector3.Distance(transform.position, currentWaypoint) <= 45 && stuck == false && attacking == false && vitesse > 65)
+            else if (Vector3.Distance(transform.position, currentWaypoint) >= 0 && Vector3.Distance(transform.position, currentWaypoint) <= 45 && stuck == false && attacking == false && vitesse > 65)
             {
                 Wheel_Collider_FL.motorTorque = 0;
                 Wheel_Collider_FR.motorTorque = 0;
@@ -279,7 +252,7 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_RL.brakeTorque = maxBrakeTorque;
                 Wheel_Collider_RR.brakeTorque = maxBrakeTorque;
             }
-            else if(stuck == false && attacking == false)
+            else if (stuck == false && attacking == false)
             {
                 Wheel_Collider_FL.motorTorque = maxTorque;
                 Wheel_Collider_FR.motorTorque = maxTorque;
@@ -290,191 +263,38 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_RL.brakeTorque = 0;
                 Wheel_Collider_RR.brakeTorque = 0;
             }
-
-
-
-
-            orientation = transform.InverseTransformDirection(rb.velocity);
-            vitesse = orientation.z * 3.6f;
-
-            waypointBox.transform.eulerAngles = new Vector3(0, eulerAnglesY, 0);
-
-            if (Mathf.Abs(vitesse) < 50)
-            {
-                tempSteeringAngle = (-(Mathf.Abs(vitesse) / 5) + maxSteeringAngle);
-            }
-            else
-            {
-                tempSteeringAngle = 15;
-            }
-
-            yield return null;
-
-        }
-    }
-
-    IEnumerator playerControlledScript()
-    {
-        while (true)
-        {
-                CameraUpdate();
-                orientation = transform.InverseTransformDirection(rb.velocity);
-                vitesse = orientation.z * 3.6f;
-
-                if (vitesse > 5)
-                {
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        Wheel_Collider_FL.motorTorque = maxTorque;
-                        Wheel_Collider_FR.motorTorque = maxTorque;
-                        Wheel_Collider_RR.motorTorque = maxTorque;
-                        Wheel_Collider_RL.motorTorque = maxTorque;
-                        Wheel_Collider_FL.brakeTorque = 0;
-                        Wheel_Collider_FR.brakeTorque = 0;
-                        Wheel_Collider_RL.brakeTorque = 0;
-                        Wheel_Collider_RR.brakeTorque = 0;
-
-                    }
-                    else if (Input.GetKey(KeyCode.S))
-                    {
-                        Wheel_Collider_FL.motorTorque = 0;
-                        Wheel_Collider_FR.motorTorque = 0;
-                        Wheel_Collider_RR.motorTorque = 0;
-                        Wheel_Collider_RL.motorTorque = 0;
-                        Wheel_Collider_FL.brakeTorque = maxBrakeTorque * 20;
-                        Wheel_Collider_FR.brakeTorque = maxBrakeTorque * 20;
-                        Wheel_Collider_RL.brakeTorque = maxBrakeTorque * 20;
-                        Wheel_Collider_RR.brakeTorque = maxBrakeTorque * 20;
-                    }
-                    else
-                    {
-                        Wheel_Collider_FL.motorTorque = 0;
-                        Wheel_Collider_FR.motorTorque = 0;
-                        Wheel_Collider_RR.motorTorque = 0;
-                        Wheel_Collider_RL.motorTorque = 0;
-                        Wheel_Collider_FL.brakeTorque = 0;
-                        Wheel_Collider_FR.brakeTorque = 0;
-                        Wheel_Collider_RL.brakeTorque = 0;
-                        Wheel_Collider_RR.brakeTorque = 0;
-                    }
-                }
-
-
-                else if (vitesse < -5)
-                {
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        Wheel_Collider_FL.motorTorque = 0;
-                        Wheel_Collider_FR.motorTorque = 0;
-                        Wheel_Collider_RR.motorTorque = 0;
-                        Wheel_Collider_RL.motorTorque = 0;
-                        Wheel_Collider_FL.brakeTorque = maxBrakeTorque * 20;
-                        Wheel_Collider_FR.brakeTorque = maxBrakeTorque * 20;
-                        Wheel_Collider_RL.brakeTorque = maxBrakeTorque * 20;
-                        Wheel_Collider_RR.brakeTorque = maxBrakeTorque * 20;
-
-                    }
-                    else if (Input.GetKey(KeyCode.S))
-                    {
-                        Wheel_Collider_FL.motorTorque = -maxTorque;
-                        Wheel_Collider_FR.motorTorque = -maxTorque;
-                        Wheel_Collider_RR.motorTorque = -maxTorque;
-                        Wheel_Collider_RL.motorTorque = -maxTorque;
-                        Wheel_Collider_FL.brakeTorque = 0;
-                        Wheel_Collider_FR.brakeTorque = 0;
-                        Wheel_Collider_RL.brakeTorque = 0;
-                        Wheel_Collider_RR.brakeTorque = 0;
-                    }
-                    else
-                    {
-                        Wheel_Collider_FL.motorTorque = 0;
-                        Wheel_Collider_FR.motorTorque = 0;
-                        Wheel_Collider_RR.motorTorque = 0;
-                        Wheel_Collider_RL.motorTorque = 0;
-                        Wheel_Collider_FL.brakeTorque = 0;
-                        Wheel_Collider_FR.brakeTorque = 0;
-                        Wheel_Collider_RL.brakeTorque = 0;
-                        Wheel_Collider_RR.brakeTorque = 0;
-                    }
-                }
-                else
-                {
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        Wheel_Collider_FL.motorTorque = maxTorque;
-                        Wheel_Collider_FR.motorTorque = maxTorque;
-                        Wheel_Collider_RR.motorTorque = maxTorque;
-                        Wheel_Collider_RL.motorTorque = maxTorque;
-                        Wheel_Collider_FL.brakeTorque = 0;
-                        Wheel_Collider_FR.brakeTorque = 0;
-                        Wheel_Collider_RL.brakeTorque = 0;
-                        Wheel_Collider_RR.brakeTorque = 0;
-
-                    }
-                    else if (Input.GetKey(KeyCode.S))
-                    {
-                        Wheel_Collider_FL.motorTorque = -maxTorque;
-                        Wheel_Collider_FR.motorTorque = -maxTorque;
-                        Wheel_Collider_RR.motorTorque = -maxTorque;
-                        Wheel_Collider_RL.motorTorque = -maxTorque;
-                        Wheel_Collider_FL.brakeTorque = 0;
-                        Wheel_Collider_FR.brakeTorque = 0;
-                        Wheel_Collider_RL.brakeTorque = 0;
-                        Wheel_Collider_RR.brakeTorque = 0;
-                    }
-                    else
-                    {
-                        Wheel_Collider_FL.motorTorque = 0;
-                        Wheel_Collider_FR.motorTorque = 0;
-                        Wheel_Collider_RR.motorTorque = 0;
-                        Wheel_Collider_RL.motorTorque = 0;
-                        Wheel_Collider_FL.brakeTorque = 0;
-                        Wheel_Collider_FR.brakeTorque = 0;
-                        Wheel_Collider_RL.brakeTorque = 0;
-                        Wheel_Collider_RR.brakeTorque = 0;
-                    }
-                }
-
-                if (Mathf.Abs(vitesse) < 50)
-                {
-                    tempSteeringAngle = (-(Mathf.Abs(vitesse) / 5) + steeringAngle);
-                }
-                else
-                {
-                    tempSteeringAngle = 15;
-                }
-
-                Wheel_Collider_FL.steerAngle = tempSteeringAngle * Input.GetAxis("Horizontal");
-                Wheel_Collider_FR.steerAngle = tempSteeringAngle * Input.GetAxis("Horizontal");
-            
             yield return null;
         }
     }
 
-   
-
+    //Fonction qui s'éxecute quand la voiture entre dans un Collider type Trigger. 
     public void OnTriggerEnter(Collider col)
     {
         string tag = col.gameObject.tag;
 
+        //Si le trigger à le bon tag il entre en collision avec le point de passage sommet du chemin le plus court. 
         if ("waypointsE" == tag)
         {
             isColliding = true;
         }
     }
 
+    //Fonction qui s'éxecute quand la voiture sort d'un Collider type Trigger. 
     void OnTriggerExit(Collider col)
     {
         string tag = col.gameObject.tag;
 
+        //Si le trigger à le bon tag il arrete d'être en collision avec le point de passage sommet du chemin le plus court. 
         if ("waypointsE" == tag)
         {
             isColliding = false;
         }
     }
 
+    //Fonction qui affiche des objets dans l'éditeur Unity. 
     public void OnDrawGizmos()
     {
+        //Affiche des cubes sur les sommets du chemin le plus court et dessine les aretes entre les sommets. 
         if (path != null)
         {
             for (int i = targetIndex; i < path.Length; i++)
@@ -494,10 +314,13 @@ public class CarControllerE : MonoBehaviour
         }
     }
 
+    //Fonction qui s'éxecute quand la voiture entre en collision avec un autre GameObject qui a un collider et reste en collision. 
     private void OnCollisionStay(Collision collision)
     {
+        //Permet de savoir si le véhicule est sur l'herbe, la route, ou autre... 
         if (collision.gameObject.tag == "Herbe" || collision.gameObject.tag == "Rampe" || collision.gameObject.tag == "Asphalte")
         {
+            //Permet de reset la voiture avec la touche "R". 
             if (Input.GetKeyDown(KeyCode.R))
             {
                 rb.MovePosition(new Vector3(rb.position.x, rb.position.y + hauteurReset, rb.position.z));
@@ -508,6 +331,7 @@ public class CarControllerE : MonoBehaviour
         }
     }
 
+    //Fonction qui s'éxecute quand la voiture entre en collision avec un autre GameObject qui a un collider. 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "BoutonChanger")
@@ -516,16 +340,17 @@ public class CarControllerE : MonoBehaviour
         }
     }
 
+    //Focntion qui s'actualise plusieurs fois par seconde. 
     void FixedUpdate()
     {
+        //Change le torque maximum en focntion de la vitesse du véhicule 
         maxTorque = (-1f / 25f) * Mathf.Pow(vitesse, 2) + 1000;
     }
 
-
-
+    //Focntion qui s'actualise plusieurs fois par seconde. 
     void Update()
     {
-        //changing tyre direction
+        //Change la direction des roues visuellement. 
         Vector3 temp = Wheel_Transformation_FL.localEulerAngles;
         Vector3 temp1 = Wheel_Transformation_FR.localEulerAngles;
         temp.y = Wheel_Collider_FL.steerAngle - (Wheel_Transformation_FL.localEulerAngles.z);
@@ -539,134 +364,7 @@ public class CarControllerE : MonoBehaviour
         Change_Position_Roue(Wheel_Collider_RR, Wheel_Transformation_RR);
     }
 
-    void CameraUpdate()
-    {
-        //Choix de camera
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            //Camera vue poursuite
-            camChase = true;
-            camTop = false;
-
-            cameraMultiple.enabled = true;
-            cameraConducteurAvant.enabled = false;
-            cameraConducteurArriere.enabled = false;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            //Camera vue du haut
-            camChase = false;
-            camTop = true;
-
-            cameraMultiple.enabled = true;
-            cameraConducteurAvant.enabled = false;
-            cameraConducteurArriere.enabled = false;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            //Camera vue conducteur
-            camChase = false;
-            camTop = false;
-
-            cameraMultiple.enabled = false;
-        }
-
-
-        if (cameraMultiple.enabled == true)
-        {
-            //Initialisation variable de rotation
-            var rot = transform.rotation.eulerAngles;
-
-            //Vérifie quelle caméra est active
-            if (camChase == true)
-            {
-
-                if (Input.GetKey(KeyCode.V))
-                {
-                    //Camera de poursuite reculon
-
-                    //Position de la camera
-                    camPos.x = carToFollow.position.x + (positionCameraPoursuiteReculer.x * Mathf.Sin(carToFollow.eulerAngles.y * Mathf.PI / 180));
-                    camPos.y = positionCameraPoursuiteReculer.y + carToFollow.position.y;
-                    camPos.z = carToFollow.position.z + (positionCameraPoursuiteReculer.z * Mathf.Cos(carToFollow.transform.eulerAngles.y * Mathf.PI / 180));
-
-                    //Rotation de la camera           
-                    rot.x = rotationCameraPoursuiteReculer.x;
-                    rot.y = rotationCameraPoursuiteReculer.y + carToFollow.transform.localEulerAngles.y;
-                    rot.z = rotationCameraPoursuiteReculer.z;
-                }
-                else if (vitesse > vitesseChangementCamera)
-                {
-                    //Camera de poursuite avancer
-
-                    //Camera de poursuite reculon
-
-                    //Position de la camera
-                    camPos.x = carToFollow.position.x - (positionCameraPoursuiteAvancer.x * Mathf.Sin(carToFollow.eulerAngles.y * Mathf.PI / 180));
-                    camPos.y = positionCameraPoursuiteAvancer.y + carToFollow.position.y;
-                    camPos.z = carToFollow.position.z - (positionCameraPoursuiteAvancer.z * Mathf.Cos(carToFollow.transform.eulerAngles.y * Mathf.PI / 180));
-
-                    //Rotation de la camera                               
-                    rot.x = rotationCameraPoursuiteAvancer.x;
-                    rot.y = rotationCameraPoursuiteAvancer.y + carToFollow.transform.localEulerAngles.y;
-                    rot.z = rotationCameraPoursuiteAvancer.z;
-                }
-                else
-                {
-                    //Camera de poursuite avancer
-
-                    //Position de la camera
-                    camPos.x = carToFollow.position.x + (positionCameraPoursuiteReculer.x * Mathf.Sin(carToFollow.eulerAngles.y * Mathf.PI / 180));
-                    camPos.y = positionCameraPoursuiteReculer.y + carToFollow.position.y;
-                    camPos.z = carToFollow.position.z + (positionCameraPoursuiteReculer.z * Mathf.Cos(carToFollow.transform.eulerAngles.y * Mathf.PI / 180));
-
-                    //Rotation de la camera           
-                    rot.x = rotationCameraPoursuiteReculer.x;
-                    rot.y = rotationCameraPoursuiteReculer.y + carToFollow.transform.localEulerAngles.y;
-                    rot.z = rotationCameraPoursuiteReculer.z;
-                }
-            }
-            else if (camTop == true)
-            {
-                //Camera avec une vue du haut.
-
-                //Position de la camera
-                camPos.x = carToFollow.position.x + positionCameraTop.x;
-                camPos.y = carToFollow.position.y + positionCameraTop.y;
-                camPos.z = carToFollow.position.z + positionCameraTop.z;
-
-                //Rotation de la camera           
-                rot.x = rotationCameraTop.x;
-                rot.y = rotationCameraTop.y + carToFollow.transform.localEulerAngles.y;
-                rot.z = rotationCameraTop.z;
-            }
-
-
-            //Attribue les valeurs défini à la position et la rotation.
-            // transform.position = Vector3.Lerp(transform.position, camPos, vitesseTransition * Time.deltaTime);
-            // transform.rotation = Quaternion.Euler(rot);
-        }
-        else if (cameraMultiple.enabled == false)
-        {
-            if (Input.GetKey(KeyCode.V))
-            {
-                cameraConducteurAvant.enabled = false;
-                cameraConducteurArriere.enabled = true;
-            }
-            else if (vitesse > vitesseChangementCamera)
-            {
-                cameraConducteurAvant.enabled = true;
-                cameraConducteurArriere.enabled = false;
-            }
-            else
-            {
-                cameraConducteurAvant.enabled = false;
-                cameraConducteurArriere.enabled = true;
-            }
-        }
-    }
-
-
+    //Focntion qui change la direction des roues visuellement et applique la force vers le bas (anti-flip). 
     private void Change_Position_Roue(WheelCollider _collider, Transform _transform)
     {
         Vector3 _pos = _transform.position;
@@ -681,8 +379,7 @@ public class CarControllerE : MonoBehaviour
 
     }
 
-    //Plus la voiture va vite, plus il y a un grande force d'appliquer sur la voiture pour
-    //l'empecher de se renverser
+    //Plus la voiture va vite, plus il y a un grande force d'appliquer sur la voiture pour l'empecher de se renverser. 
     private void ForceVersLeBas()
     {
         Wheel_Collider_FL.attachedRigidbody.AddForce(-transform.up * forceAntiFlip *
