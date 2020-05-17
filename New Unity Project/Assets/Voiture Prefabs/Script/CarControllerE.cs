@@ -96,7 +96,7 @@ public class CarControllerE : MonoBehaviour
     {
         //Initialisations.... 
         Vector3 currentWaypoint = path[targetIndex];
-        waypointBox.transform.localScale = new Vector3(300, 10, 0.5f);
+        waypointBox.transform.localScale = new Vector3(140, 10, 0.5f);
         waypointBox.transform.position = currentWaypoint;
         waypointBox.layer = LayerMask.NameToLayer("Ignore Raycast");
         Destroy(waypointBox.GetComponent<MeshRenderer>());
@@ -141,6 +141,7 @@ public class CarControllerE : MonoBehaviour
             sensorBasePos += transform.up * 0.9f;
             bool stuck = false;
             bool attacking = false;
+            bool stuckOnTop = false;
 
 
             //Angle relatif 
@@ -214,6 +215,16 @@ public class CarControllerE : MonoBehaviour
                 Wheel_Collider_RR.brakeTorque = 0;
                 Wheel_Collider_FL.steerAngle = -1 * maxSteeringAngle;
                 Wheel_Collider_FR.steerAngle = -1 * maxSteeringAngle;
+            }
+            //Raycast pour detecter si le véhicule est sur son toit.
+            if (Physics.Raycast(sensorBasePos, transform.up, out hit, 5f) && vitesse < 0.5f)
+            {
+                stuckOnTop = true;
+                rb.MovePosition(new Vector3(rb.position.x, rb.position.y + hauteurReset, rb.position.z));
+                rb.MoveRotation(Quaternion.Euler(rb.transform.localEulerAngles.x, rb.transform.localEulerAngles.y, 0));
+                rb.velocity = new Vector3(0f, 0f, 0f);
+                rb.angularVelocity = new Vector3(0f, 0f, 0f);
+
             }
 
 

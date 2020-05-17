@@ -1107,6 +1107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDown: {fileID: 1037678713102906731}
+  menuPause: {fileID: 0}
 --- !u!95 &5041671810644723440
 Animator:
   serializedVersion: 3
@@ -6647,7 +6648,7 @@ MonoBehaviour:
   maxTorque: 1000
   steeringAngle: 25
   hauteurReset: 2
-  forceAntiFlip: 100
+  forceAntiFlip: 150
 --- !u!114 &6268084930507405399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6950,7 +6951,7 @@ GameObject:
   - component: {fileID: 6594239303972563594}
   - component: {fileID: 6594239303971596362}
   - component: {fileID: 6086591890285724650}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
