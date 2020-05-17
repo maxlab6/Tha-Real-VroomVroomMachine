@@ -10,6 +10,7 @@ public class PositionVoiture : MonoBehaviour
     public Transform lastWaypointPos;
     public bool aTerminerCourse = false;
     public bool aTerminerTour = false;
+    
 
     public int position;
 
@@ -36,6 +37,7 @@ public class PositionVoiture : MonoBehaviour
                 {
                     counterWaypointPos = 0;
                     currentLapPos++;
+                    aTerminerTour = true;
                 }
 
                 if (counterWaypointPos == currentWaypointPos)
@@ -91,11 +93,11 @@ public class PositionVoiture : MonoBehaviour
     public void Chrono()
     {
 
-        if (currentWaypointPos == 0 && counterWaypointPos == GameObject.Find("Waypoints").transform.childCount)
+        if (aTerminerTour == true)
         {
-            Debug.Log("finisTour");
+            aTerminerTour = false;
             tempsTempo = temps;
-            if (tempsRapide > tempsTempo)
+            if (tempsRapide > tempsTempo || tempsRapide == 0)
             {
                 tempsRapide = tempsTempo;
             }
