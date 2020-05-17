@@ -14,6 +14,9 @@ public class Gestion_UI : MonoBehaviour
     private float temps;
     private float minute, seconde;
 
+    private float minuteMeilleurTemps;
+    private float secondeMeilleurTemps;
+
     public TextMeshProUGUI txtMeilleurTemps;
     
 
@@ -23,18 +26,22 @@ public class Gestion_UI : MonoBehaviour
     public TextMeshProUGUI txtPosition;
     private int position = 1;
 
+    GameObject joueur;
 
     private void Awake()
     {
-        GameObject joueur = GameObject.Find("Vehicule Joueur 2.2");
+        joueur = GameObject.Find("Vehicule Joueur 2.2");
         positionVoiture = joueur.GetComponentInChildren<PositionVoiture>();
     }
 
     void Update()
     {
+        positionVoiture = joueur.GetComponentInChildren<PositionVoiture>();
         VitesseVoiture();
         Chrono();
         GestionDesTours();
+        ChangerMeilleurTemps();
+        ChangerPosition();
     }
 
 
@@ -60,22 +67,45 @@ public class Gestion_UI : MonoBehaviour
         seconde = (temps % 60f) % 100;
         minute = (int)(temps / 60f);
 
-
-
         tempsActuelleTxt.text = minute.ToString("00") + " : " + seconde.ToString("00.00");
 
     }
 
     private void ChangerMeilleurTemps()
     {
+        if (positionVoiture.tempsRapide == -5)
+        {
+            txtMeilleurTemps.text = "00 : " + positionVoiture.tempsRapide.ToString("0.00");
+        }
+        else
+        {
+            secondeMeilleurTemps = (positionVoiture.tempsRapide % 60f) % 100;
+            minuteMeilleurTemps = (int)(positionVoiture.tempsRapide / 60f);
+            txtMeilleurTemps.text = minuteMeilleurTemps.ToString("00") + " : " + secondeMeilleurTemps.ToString("00.00");
+        }
         
-            txtMeilleurTemps.text = positionVoiture.tempsRapide.ToString("0.00");
-        
-        
+
     }
 
     private void ChangerPosition()
     {
-        txtPosition.text = positionVoiture.position.ToString();
+        switch (positionVoiture.position)
+        {
+            case 1:
+                txtPosition.text = "1er";
+                break;
+            case 2:
+                txtPosition.text = "2e";
+                break;
+            case 3:
+                txtPosition.text = "3e";
+                break;
+            case 4:
+                txtPosition.text = "4e";
+                break;
+            default:
+                break;
+        }
+        
     }
 }

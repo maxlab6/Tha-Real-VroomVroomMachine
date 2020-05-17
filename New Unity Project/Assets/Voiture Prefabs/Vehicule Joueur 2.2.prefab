@@ -1621,7 +1621,7 @@ MonoBehaviour:
   position: 1
   temps: 0
   tempsTempo: 0
-  tempsRapide: -5
+  tempsRapide: 0
 --- !u!1 &986470186648230086
 GameObject:
   m_ObjectHideFlags: 0
@@ -3982,8 +3982,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 19
+  m_fontSizeBase: 19
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8714,6 +8714,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3598153000318677406, guid: 47026dec8b2e77f469186b0e05161d2d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -255
+      objectReference: {fileID: 0}
     - target: {fileID: 3598153000326836893, guid: 47026dec8b2e77f469186b0e05161d2d,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -8738,6 +8743,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598153000627529815, guid: 47026dec8b2e77f469186b0e05161d2d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3598153000837704075, guid: 47026dec8b2e77f469186b0e05161d2d,
         type: 3}
@@ -8852,7 +8862,7 @@ PrefabInstance:
     - target: {fileID: 3598153000837704076, guid: 47026dec8b2e77f469186b0e05161d2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3598153000867204703, guid: 47026dec8b2e77f469186b0e05161d2d,
         type: 3}
@@ -8903,6 +8913,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598153000919194353, guid: 47026dec8b2e77f469186b0e05161d2d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -130
       objectReference: {fileID: 0}
     - target: {fileID: 3598153000979713313, guid: 47026dec8b2e77f469186b0e05161d2d,
         type: 3}

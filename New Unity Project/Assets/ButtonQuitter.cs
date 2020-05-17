@@ -12,6 +12,7 @@ public class ButtonQuitter : MonoBehaviour
         SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 
+    
     public void buttonQuitter()
     {
     #if UNITY_EDITOR
