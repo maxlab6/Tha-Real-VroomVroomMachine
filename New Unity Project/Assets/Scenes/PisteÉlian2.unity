@@ -2363,6 +2363,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8270293073170969607, guid: 0fca557565549df40bc4ff5a36bcbdb0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270293073170969607, guid: 0fca557565549df40bc4ff5a36bcbdb0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8880045857901655761, guid: 0fca557565549df40bc4ff5a36bcbdb0,
         type: 3}
       propertyPath: m_textInfo.characterCount
