@@ -25,7 +25,6 @@ public class Grille_Max : MonoBehaviour
 
     void Awake()
     {
-
         //Prend le nom de la scene Active pour permettre les petit ajustement selon la map
         nomScene = SceneManager.GetActiveScene().name;
 
@@ -165,7 +164,7 @@ public class TerrainType
 public class Sommet : IHeapItem<Sommet>
 {
 
-    public bool peuPasser;           //Permet de savoir si on peu passer
+    public bool peuPasser;          //Permet de savoir si on peu passer
     public Vector3 worldPosition;   //Position dans le monde 
     public int grilleX;             //position en X dans la grille
     public int grilleY;             //Position en Y dans la grille
@@ -214,7 +213,7 @@ public class Sommet : IHeapItem<Sommet>
         //CompareTo renvoit 1 si le int est plus gros, 0 si égale
         //Et -1 si plus petit
         int compare = fCost.CompareTo(sommetAComparer.fCost);
-
+        
         //Si leur fCost est égale, alors on utilise le hCost 
         //(distance entre le pointActuelle et le point à comparer)
         if (compare == 0)

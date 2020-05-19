@@ -27,9 +27,6 @@ public class Pathfinding_Max : MonoBehaviour
     //Fonction qui permet de trouver le chemin jusqu'au point d'arriver
     IEnumerator TrouverChemin(Vector3 positionDepart, Vector3 positionDArrive)
     {
-        Stopwatch chrono = new Stopwatch();
-
-
         Vector3[] waypoints = new Vector3[0]; 
         bool pathSuccess = false;             
 
@@ -41,56 +38,51 @@ public class Pathfinding_Max : MonoBehaviour
         //pathSuccess reste false
         if (sommetDepart.peuPasser && sommetDArrive.peuPasser)
         {
-            Heap_Max<Sommet> openSet = new Heap_Max<Sommet>(grille.MaxSize); //Toute les case non vérifier/non calculer
-            HashSet<Sommet> closedSet = new HashSet<Sommet>();  //case ou les distance on été calculer
+            Heap_Max<Sommet> openSet = new Heap_Max<Sommet>(grille.MaxSize); //Contient toutes les case qui ne sont pas dans la closedList dans le heap (arbre binaire)
+            HashSet<Sommet> closedSet = new HashSet<Sommet>();               //case ou les distances ont été calculé
             openSet.Ajouter(sommetDepart);
 
             //Tant qu'il reste de case à vérifier, continuer a vérifier les autres cases
             while (openSet.Count > 0)
             {
                 Sommet sommet = openSet.RemoveFirst();
-
                 closedSet.Add(sommet);
 
                 //Si le sommetActuelle = au sommetDArrive, ça veux dire qu'il a atteint
                 //l'objectif et n'a donc plus besoin de véçrifier les autres cases
                 if (sommet == sommetDArrive)
                 {
-
-
-
                     pathSuccess = true;
-
                     break;
                 }
 
                 //Pour tout les voisins du sommet analysé 
-                foreach (Sommet neighbour in grille.GetVoisins(sommet))
+                foreach (Sommet voisin in grille.GetVoisins(sommet))
                 {
                     //Si le sommet n'est pas walkable (peuPasPasser) ou qui a déjà été vérifier
                     //(est dans closedSet) alors skip cette itération et passe à la prochaine
-                    if (!neighbour.peuPasser || closedSet.Contains(neighbour))
+                    if (!voisin.peuPasser || closedSet.Contains(voisin))
                     {
                         continue;
                     }
 
-                    int newCostToNeighbour = sommet.gCost + GetDistance(sommet, neighbour) + neighbour.movementPenalite;
+                    int newCostToNeighbour = sommet.gCost + GetDistance(sommet, voisin) + voisin.movementPenalite;
 
                     //si le chemin entre la case actuelle et le voisin analysé est plus court
-                    //ou que le voisin n'est pas dans l'openSet (a déjà été analysé)
-                    if (newCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour))
+                    //ou que le voisin n'est pas dans l'openSet (n'a pas déjà été analysé)
+                    if (newCostToNeighbour < voisin.gCost || !openSet.Contains(voisin))
                     {
-                        neighbour.gCost = newCostToNeighbour;
-                        neighbour.hCost = GetDistance(neighbour, sommetDArrive);
-                        neighbour.parent = sommet;
+                        voisin.gCost = newCostToNeighbour;
+                        voisin.hCost = GetDistance(voisin, sommetDArrive);
+                        voisin.parent = sommet;
 
-                        //si il n'était pas dans open set, le rajoute car il a un nouveau cout
+                        //si il n'était pas dans open set, le rajoute
                         //sinon fais juste changer les valeurs
-                        if (!openSet.Contains(neighbour))
-                            openSet.Ajouter(neighbour);
+                        if (!openSet.Contains(voisin))
+                            openSet.Ajouter(voisin);
                         else
                         {
-                            openSet.UpdateItems(neighbour);
+                            openSet.UpdateItems(voisin);
                         }
                     }
                 }
@@ -105,9 +97,9 @@ public class Pathfinding_Max : MonoBehaviour
 
     }
 
-    //En gros part du Point d'arrivé (parce que j'ustilise les parents
-    //et se rend au point de départ et inverse le chemin S'occuper aussi 
-    //d'utiliser la simplification du chemin
+    //En gros part du point d'arrivé et ajoute son parent a une liste,répète jusqu'a
+    //se qu'on ait atteint le point de départ et inverse le chemin s'occuper
+    //aussi d'utiliser la simplification du chemin
     Vector3[] RetrouverChemin(Sommet sommetDepart, Sommet sommetDArrive)
     {
         List<Sommet> chemin = new List<Sommet>();
@@ -130,16 +122,16 @@ public class Pathfinding_Max : MonoBehaviour
     Vector3[] SimplifierChemin(List<Sommet> path)
     {
         List<Vector3> waypoints = new List<Vector3>();
-        Vector2 directionOld = Vector2.zero;
+        Vector2 oldDirection = Vector2.zero;
 
         for (int i = 1; i < path.Count; i++)
         {
-            Vector2 directionNew = new Vector2(path[i - 1].grilleX - path[i].grilleX, path[i - 1].grilleY - path[i].grilleY);
-            if (directionNew != directionOld)
+            Vector2 newDirection = new Vector2(path[i - 1].grilleX - path[i].grilleX, path[i - 1].grilleY - path[i].grilleY);
+            if (newDirection != oldDirection)
             {
                 waypoints.Add(path[i].worldPosition);
             }
-            directionOld = directionNew;
+            oldDirection = newDirection;
         }
 
         return waypoints.ToArray();
@@ -151,6 +143,10 @@ public class Pathfinding_Max : MonoBehaviour
         int distanceX = Mathf.Abs(sommetA.grilleX - sommetB.grilleX);
         int distanceY = Mathf.Abs(sommetA.grilleY - sommetB.grilleY);
 
+        //Si la distance En X est plus grande qu'en Y, alors le nombre
+        //de mouvement en diagonal est le nombre de mouvement en Y
+        //et les mouvements a l'horizontal son le restant des cases
+        //a parcourir en x. Sinon, c'est l'inverse
         if (distanceX > distanceY)
             return 14 * distanceY + 10 * (distanceX - distanceY);
         return 14 * distanceX + 10 * (distanceY - distanceX);
