@@ -1,33 +1,36 @@
-﻿using System;
+﻿//Auteur : Félix Doyon
+//Ce script sert à créer la grille et contient les fonctions relatives aux nodes
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GridF : MonoBehaviour
 {
-    public Transform StartPosition;
-    public LayerMask WallMask;
-    public LayerMask TrackMask;
-    public Vector2 gridWorldSize;
-    public float nodeRadius;
-    public float Distance;
-    public bool afficher;
+    public Transform StartPosition; //Position de départ (position de l'auto
+    public LayerMask WallMask; //Layer des murs
+    public LayerMask TrackMask; //Layer de la route
+    public Vector2 gridWorldSize; //Grosseur de la grille
+    public float nodeRadius; //Rayon d'une node
+    public float Distance; //Distance entre les node (0 dans le jeu)
+    public bool afficher; //Si on affiche ou non la grille
 
-    NodeF[,] grid;
-    public List<NodeF> FinalPath;
+    NodeF[,] grid; //Liste des nodes
+    public List<NodeF> FinalPath; //Liste des nodes du chemin finale
 
-    float nodeDiameter;
-    int gridSizeX, gridSizeY;
+    float nodeDiameter; //Diamètre d'une node
+    int gridSizeX, gridSizeY; //Nombre de node de la grille en x et en y
 
     private void Start()
     {
         nodeDiameter = nodeRadius * 2;
-        gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
+        gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter); //Trouver le nombre de node en x et en y
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
         CreateGrid();
     }
 
-    public NodeF NodeFromWorldPosition(Vector3 _sPos)
+    public NodeF NodeFromWorldPosition(Vector3 _sPos) //Trouve la node à une position
     {
         float xPoint = ((_sPos.x + gridWorldSize.x / 2) / gridWorldSize.x);
         float yPoint = ((_sPos.z + gridWorldSize.y / 2) / gridWorldSize.y);
@@ -43,20 +46,20 @@ public class GridF : MonoBehaviour
 
     }
 
-    private void CreateGrid()
+    private void CreateGrid() //Cette fonction créé la grille
     {
         grid = new NodeF[gridSizeX, gridSizeY];
-        Vector3 bottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2 - Vector3.forward * gridWorldSize.y / 2;
+        Vector3 bottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2 - Vector3.forward * gridWorldSize.y / 2; //Trouve la position en bas à gauche de la grille
 
-        for (int y = 0; y < gridSizeY; y++)
+        for (int y = 0; y < gridSizeY; y++) //Les deux for créé une node à chaque carré
         {
             for (int x = 0; x < gridSizeX; x++)
             {
-                Vector3 worldPoint = bottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
+                Vector3 worldPoint = bottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius); //Trouve la position que la node doit avoir
                 bool Wall = false;
                 bool Track = false;
 
-                if (Physics.CheckSphere(worldPoint, nodeRadius, WallMask))
+                if (Physics.CheckSphere(worldPoint, nodeRadius, WallMask)) //Regarde si la node à le layer mur ou piste
                 {
                     Wall = true;
                 }
@@ -70,25 +73,25 @@ public class GridF : MonoBehaviour
         }
     }
 
-    public List<NodeF> GetNeighboringNodes(NodeF cNode)
+    public List<NodeF> GetNeighboringNodes(NodeF cNode) //Retourne les nodes adjacentes à la node envoyé en argument
     {
-        List<NodeF> NeighboringNodes = new List<NodeF>();
+        List<NodeF> NeighboringNodes = new List<NodeF>(); //Liste des nodes adjacentes
 
         for (int x = -1; x <= 1; x++)
         {
             for (int y = -1; y <= 1; y++)
             {
-                if (x == 0 && y == 0)
+                if (x == 0 && y == 0) //Si la node est à 0 en x et en y, c'est qu'il s'agit d'elle même
                 {
                     continue;
                 }
 
-                int checkX = cNode.gridX + x;
+                int checkX = cNode.gridX + x; //Les deux variables sont pour vérifier qu'il s'agit bien d'une node qui n'est pas à l'extérieur de la grille
                 int checkY = cNode.gridY + y;
 
                 if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
                 {
-                    NeighboringNodes.Add(grid[checkX, checkY]);
+                    NeighboringNodes.Add(grid[checkX, checkY]); //Ajoute la node en question dans la liste des nodes adjacentes
                 }
 
             }
@@ -96,7 +99,7 @@ public class GridF : MonoBehaviour
             return NeighboringNodes;
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmos() //Fonction pour afficher le chemin court visuellement
     {
         if (afficher)
         {
@@ -133,7 +136,7 @@ public class GridF : MonoBehaviour
         }
     }
 
-    public List<NodeF> returnFinalPath()
+    public List<NodeF> returnFinalPath() //Retourne le chemin court (utilisé pour le script PathFindingF)
     {
         return FinalPath;
     }

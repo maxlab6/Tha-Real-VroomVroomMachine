@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Auteur : Flix Doyon
+//Se script ne sert plus variment, mais il servait à tracer une ligne entre les check point
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
