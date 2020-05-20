@@ -68,12 +68,14 @@ public class Heap_Max<T> where T : IHeapItem<T>
 			int childIndexDroite = item.HeapIndex * 2 + 2;
 			int indexEchange = 0;
 
-            //Vérfie si il y a un child « gauche », puisque le chiled est trouvé avec la formule plus haut
+            //Vérfie si il y a un child « gauche », puisque le child est trouvé avec la formule plus haut
+            //et le sommet pourrait ne pas avoir de child du tout
 			if (childIndexGauche < currentItemCount)
             {
 				indexEchange = childIndexGauche;
-                
+
                 //Vérfie s'il y a un child « droite », puisque le child est trouvé avec la formule plus haut
+                //et le sommet pourrait seulment avoir un child gauche sans child droit (seulment 1 child au lieu de deux
                 if (childIndexDroite < currentItemCount) {
 					if (items[childIndexGauche].CompareTo(items[childIndexDroite]) < 0) 
                     indexEchange = childIndexDroite;
