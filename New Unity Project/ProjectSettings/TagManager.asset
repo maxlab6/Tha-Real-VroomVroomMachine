@@ -22,6 +22,7 @@ TagManager:
   - waypointsE
   - waypoints
   - Check Points
+  - carFelix
   layers:
   - Default
   - TransparentFX
@@ -41,12 +42,6 @@ TagManager:
   - Voiture
   - Finish Line
   - Wall
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

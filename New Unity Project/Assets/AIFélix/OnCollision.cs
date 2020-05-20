@@ -11,7 +11,7 @@ public class OnCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) //Lorsque l'auto entre dans le check point
     {
-        if (other.tag == "car") //Compare le tag de l'élément qui rentre dans le check point    ERREUR : le projet est déja compiler à l'heure qu'il est mais il serait sencé que ce soit le tag "IAFelix" et non "car"
+        if (other.tag == "carFelix") //Compare le tag de l'élément qui rentre dans le check point    ERREUR : le projet est déja compiler à l'heure qu'il est mais il serait sencé que ce soit le tag "IAFelix" et non "car"
         {
             isColliding = true;
         }
@@ -19,7 +19,7 @@ public class OnCollision : MonoBehaviour
 
     private void OnTriggerExit(Collider other) //Compare le tag de l'élément qui sort pour savoir s'il s'agit belle et bien de l'IA
     {
-        if (other.tag == "car")
+        if (other.tag == "carFelix")
         {
             isColliding = false;
         }
