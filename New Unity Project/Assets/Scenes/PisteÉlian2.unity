@@ -353,21 +353,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2867f181c89ec459196c3530566512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawGrid: 0
+  drawGrid: 1
   undrivableMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4096
   gridWorldSize: {x: 550, y: 650}
   nodeRadius: 2
   drivableRegions:
   - terrainMask:
       serializedVersion: 2
-      m_Bits: 1024
+      m_Bits: 8192
     terrainPenalty: 0
   - terrainMask:
       serializedVersion: 2
-      m_Bits: 2048
-    terrainPenalty: 10
+      m_Bits: 16384
+    terrainPenalty: 100
 --- !u!4 &385958713
 Transform:
   m_ObjectHideFlags: 0
@@ -1305,7 +1305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa09bd3637efd98448cead696c0cc2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayGridGizmos: 1
+  DisplayGridGizmos: 0
   peuPasPasserMask:
     serializedVersion: 2
     m_Bits: 4096
